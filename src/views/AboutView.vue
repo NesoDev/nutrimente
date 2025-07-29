@@ -8,14 +8,22 @@
       </p>
       <div class="video-container">
         <video
+          ref="videoPlayer"
           class="video-player"
           :src="cloudinaryVideoUrl"
           :poster="cloudinaryThumbnailUrl"
-          controls
           preload="metadata"
+          @play="handlePlay"
+          @pause="handlePause"
+          @click="togglePlay"
         >
           Your browser does not support the video tag.
         </video>
+        <div v-if="showPlayButton" class="play-button-overlay" @click="togglePlay">
+          <svg class="play-icon" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
       </div>
     </main>
   </div>
@@ -28,6 +36,7 @@ export default {
     return {
       cloudName: 'dlejpox8a',
       cloudinaryVideoId: 'Video_1_corregido_1_ewlrfy',
+      showPlayButton: true, // Initially show the play button
     };
   },
   computed: {
@@ -38,6 +47,31 @@ export default {
       return `https://res.cloudinary.com/${this.cloudName}/video/upload/f_jpg,q_auto,w_800/${this.cloudinaryVideoId}.jpg`;
     },
   },
+  methods: {
+    togglePlay() {
+      const video = this.$refs.videoPlayer;
+      if (video.paused || video.ended) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    },
+    handlePlay() {
+      this.showPlayButton = false;
+    },
+    handlePause() {
+      this.showPlayButton = true;
+    },
+  },
+  mounted() {
+    // Ensure the play button is visible when the video loads (before first play)
+    const video = this.$refs.videoPlayer;
+    video.addEventListener('loadedmetadata', () => {
+      if (video.paused) {
+        this.showPlayButton = true;
+      }
+    });
+  }
 };
 </script>
 
@@ -92,7 +126,6 @@ export default {
   background-color: #f0f0f0;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Video ocupa todo el contenedor, con borde blanco */
@@ -102,8 +135,37 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 20px solid white;   /* Ajusta grosor aquí */
-  border-radius: 15px;
+  border: 20px solid white; /* Adjust border thickness here */
+  border-radius: 80px; /* Make it more rounded to match the image */
   box-sizing: border-box;
+  object-fit: cover; /* Ensures the video covers the area without distortion */
+}
+
+/* Play button overlay */
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; /* Adjust size as needed */
+  height: 80px; /* Adjust size as needed */
+  background-color: #7673FF; /* Blue background with transparency */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10; /* Ensure it's above the video */
+  transition: background-color 0.3s ease;
+}
+
+.play-button-overlay:hover {
+  background-color: #2925f5; /* Darker on hover */
+}
+
+.play-icon {
+  fill: white;
+  width: 40px; /* Size of the play icon */
+  height: 40px; /* Size of the play icon */
 }
 </style>
