@@ -18,7 +18,6 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 
 .app {
   position: relative;
@@ -38,6 +37,7 @@
   flex-direction: row;
   align-items: center;
   padding: 30px 50px;
+  z-index: 999;
 
   .logo {
     width: fit-content;
@@ -68,7 +68,7 @@
   nav {
     position: absolute;
     left: 50%;
-    transform: translateX(-65%);
+    transform: translateX(-77%);
     width: fit-content;
     height: 50px;
     background: #fff;
@@ -102,7 +102,11 @@
       border-radius: 9999px;
     }
   }
+}
 
-
+@media (max-width: 768px) {
+    .head { 
+        padding: 20px 10px;
+    }
 }
 </style>
