@@ -14,6 +14,8 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display:wght@200&display=swap');
+
 .hero-section {
     width: 100%;
     height: 100dvh;
@@ -28,6 +30,23 @@
         width: 80%;
         height: fit-content;
         text-align: center;
+        background: #dadada;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+            h1 {
+                font-family: 'Tilt Warp', cursive;
+                font-size: 30px;
+            }
+            
+            img {
+                width: fit-content;
+                height: 20px;
+            }
+        }
+
 
     }
 }

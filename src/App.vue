@@ -7,7 +7,7 @@
       </div>
       <nav>
         <router-link to="/" exact-active-class="active">Inicio</router-link>
-        <div class="circle"/>
+        <div class="circle" />
         <router-link to="/about" exact-active-class="active">Nosotros</router-link>
       </nav>
       <div></div>
@@ -18,6 +18,7 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 
 .app {
   position: relative;
@@ -40,18 +41,18 @@
 
   .logo {
     width: fit-content;
-    height: 90px;
+    height: 50px;
     background: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px;
     box-sizing: border-box;
     gap: 10px;
     border-radius: 9999px;
 
     img {
-      width: 50px;
+      width: 20px;
       aspect-ratio: 1/1;
     }
 
@@ -60,7 +61,7 @@
       padding: 0;
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
-      font-size: 30px;
+      font-size: 15px;
     }
   }
 
@@ -69,14 +70,14 @@
     left: 50%;
     transform: translateX(-65%);
     width: fit-content;
-    height: 90px;
+    height: 50px;
     background: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px;
     box-sizing: border-box;
-    gap: 30px;
+    gap: 15px;
     border-radius: 9999px;
 
     a {
@@ -85,7 +86,7 @@
       padding: 0;
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
-      font-size: 30px;
+      font-size: 15px;
       color: #C6C6C6;
       transition: color 0.3s ease;
     }
@@ -95,7 +96,7 @@
     }
 
     .circle {
-      width: 20px;
+      width: 10px;
       aspect-ratio: 1/1;
       background: #F4F4F4;
       border-radius: 9999px;
