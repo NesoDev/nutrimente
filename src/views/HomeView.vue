@@ -13,6 +13,6 @@ import HeroSection from '@/components/HeroSection.vue';
 .home {
   width: 100%;
   height: auto;
-  background: yellow;
+  background: black;
 }
 </style>
