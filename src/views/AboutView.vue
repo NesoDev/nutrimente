@@ -1,6 +1,5 @@
 <template>
   <div class="page-container">
-
     <main class="main-content">
       <h1 class="main-title">¿Quiénes somos?</h1>
       <h2 class="subtitle">Apasionados. Creativos.</h2>
@@ -11,13 +10,14 @@
         et dolore magna.
       </p>
       <div class="video-container">
-        <img src="http://googleusercontent.com/file_content/1" alt="Universidad Nacional Mayor de San Marcos" class="video-thumbnail" />
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
-            <path d="M8 5v14l11-7z" />
-          </svg>
+        <video class="video-player"
+               :src="cloudinaryVideoUrl"
+               :poster="cloudinaryThumbnailUrl"
+               controls
+               preload="metadata">
+          Your browser does not support the video tag.
+        </video>
         </div>
-      </div>
     </main>
   </div>
 </template>
@@ -25,6 +25,23 @@
 <script>
 export default {
   name: 'AboutContent',
+  data() {
+    return {
+      cloudName: 'dlejpox8a',
+      cloudinaryVideoId: 'Video_1_corregido_1_ewlrfy',
+    };
+  },
+  computed: {
+    cloudinaryVideoUrl() {
+      // Constructs the video URL for MP4 format
+      return `https://res.cloudinary.com/${this.cloudName}/video/upload/${this.cloudinaryVideoId}.mp4`;
+    },
+    cloudinaryThumbnailUrl() {
+      // Constructs a thumbnail URL (e.g., first frame as JPG)
+      // You can customize transformations like 'w_800' for width, 'q_auto' for quality, 'f_jpg' for format
+      return `https://res.cloudinary.com/${this.cloudName}/video/upload/f_jpg,q_auto,w_800/v${this.cloudinaryVideoId}.jpg`;
+    },
+  },
 };
 </script>
 
@@ -32,14 +49,15 @@ export default {
 .page-container {
   font-family: Arial, sans-serif;
   background-color: #f7f3ed; /* Light beige background */
-  min-height: 100vh; /* Changed from calc(100vh - 80px) to occupy full viewport height */
+  min-height: 100vh;
   padding: 100px 20px 20px 20px; /* Added padding for top and bottom */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header {
+/* Header styles are commented out as per your previous requests, assuming they are in a separate component/file */
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +67,7 @@ export default {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin-bottom: 40px; /* Space between header and main content */
+  margin-bottom: 40px;
 }
 
 .logo {
@@ -61,10 +79,9 @@ export default {
 }
 
 .logo-icon {
-  width: 24px; /* Placeholder size */
-  height: 24px; /* Placeholder size */
+  width: 24px;
+  height: 24px;
   margin-right: 8px;
-  /* In a real app, replace with your actual logo image */
 }
 
 .navigation {
@@ -92,7 +109,7 @@ export default {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #4CAF50; /* Example accent color */
+  background-color: #4CAF50;
 }
 
 .header-icons .icon {
@@ -100,8 +117,7 @@ export default {
   height: 24px;
   margin-left: 15px;
   cursor: pointer;
-  /* In a real app, replace with actual SVG icons */
-}
+} */
 
 .main-content {
   width: 80%;
@@ -111,7 +127,6 @@ export default {
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  /* margin-top removed as margin-bottom is in header now */
 }
 
 .main-title {
@@ -146,21 +161,27 @@ export default {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* The display: flex, justify-content, align-items here might interfere with video,
+     but are kept for visual consistency if you revert to an image/overlay.
+     For a standard video, these might not be necessary. */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.video-thumbnail {
+.video-player {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image covers the area */
+  object-fit: cover; /* Ensures the video covers the area */
 }
 
-.play-button {
+/* The play-button styles are kept but commented out in the template as native controls are used.
+   If you wish to implement a custom play button overlay, you can uncomment it and
+   add JavaScript to control the video. */
+/* .play-button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -180,6 +201,6 @@ export default {
   width: 40px;
   height: 40px;
   color: #fff;
-  margin-left: 5px; /* Adjust for triangular shape */
-}
+  margin-left: 5px;
+} */
 </style>
