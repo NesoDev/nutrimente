@@ -38,8 +38,11 @@ export default {
     },
     cloudinaryThumbnailUrl() {
       // Constructs a thumbnail URL (e.g., first frame as JPG)
-      // You can customize transformations like 'w_800' for width, 'q_auto' for quality, 'f_jpg' for format
-      return `https://res.cloudinary.com/${this.cloudName}/video/upload/f_jpg,q_auto,w_800/v${this.cloudinaryVideoId}.jpg`;
+      // This approach is typically more reliable for generating thumbnails from video IDs.
+      // It specifies the desired format (f_jpg) and quality (q_auto), and a width (w_800).
+      return `https://res.cloudinary.com/${this.cloudName}/video/upload/f_jpg,q_auto,w_800/${this.cloudinaryVideoId}.jpg`;
+      // If the above doesn't work, try explicitly requesting the first frame:
+      // return `https://res.cloudinary.com/${this.cloudName}/video/upload/q_auto,f_jpg,pg_1,w_800/${this.cloudinaryVideoId}.jpg`;
     },
   },
 };
