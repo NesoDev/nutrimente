@@ -168,4 +168,4 @@ export default {
   width: 40px; /* Size of the play icon */
   height: 40px; /* Size of the play icon */
 }
-</style>
+</style> 
