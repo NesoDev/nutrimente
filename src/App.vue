@@ -37,6 +37,7 @@
   flex-direction: row;
   align-items: center;
   padding: 30px 50px;
+  box-sizing: border-box;
   z-index: 999;
 
   .logo {
@@ -67,8 +68,7 @@
 
   nav {
     position: absolute;
-    left: 50%;
-    transform: translateX(-77%);
+    left: calc(50% - 89px);
     width: fit-content;
     height: 50px;
     background: #fff;
@@ -105,8 +105,21 @@
 }
 
 @media (max-width: 768px) {
-    .head { 
-        padding: 20px 10px;
+  .head {
+    padding: 10px 20px;
+
+    .logo {
+      padding: 20px 15px;
+      
+      h2 {
+        display: none;
+      }
     }
+
+    nav {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }
 </style>

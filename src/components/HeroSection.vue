@@ -15,11 +15,15 @@
         </div>
         <img class="decorate" id="bear" src="../assets/bear.png" alt="">
         <img class="decorate" id="watermelon" src="../assets/watermelon.png" alt="">
-        <video class="video-player" :src="cloudinaryVideoUrl" :poster="cloudinaryThumbnailUrl" controls
-            preload="metadata">
-            Your browser does not support the video tag.
-        </video>
-        <img class="bg" src="../assets/bg-home.svg" alt="">
+        <div class="video-wrapper">
+            <video ref="video" class="video-player" :src="cloudinaryVideoUrl" :poster="cloudinaryThumbnailUrl"
+                preload="metadata" @click="playVideo"></video>
+            <button class="custom-play-button" @click="playVideo">
+                <img src="../assets/play.svg" alt="">
+            </button>
+        </div>
+        <img class="bg" id="bg-desktop" src="../assets/bg-desktop.svg" alt="">
+        <img class="bg" id="bg-mobile" src="../assets/bg-mobile.svg" alt="">
     </div>
 </template>
 
@@ -46,6 +50,14 @@ export default {
             // return `https://res.cloudinary.com/${this.cloudName}/video/upload/q_auto,f_jpg,pg_1,w_800/${this.cloudinaryVideoId}.jpg`;
         },
     },
+    methods: {
+        playVideo() {
+            const video = this.$refs.video;
+            video.play();
+            const btn = document.querySelector('.custom-play-button');
+            if (btn) btn.style.display = 'none';
+        }
+    }
 };
 </script>
 
@@ -73,6 +85,7 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        z-index: 1;
 
         .main-text {
             h1 {
@@ -96,13 +109,43 @@ export default {
         }
     }
 
-    .video-player {
+    .video-wrapper {
+        position: relative;
         width: 70%;
-        height: auto;
-        background: #fff;
+        display: flex;
+        justify-content: center;
         z-index: 1;
-        border-radius: 60px;
-        border: 20px solid #fff;
+
+        .video-player {
+            height: 100%;
+            background: #fff;
+            display: block;
+            border-radius: 68px;
+            border: 20px solid #fff;
+        }
+
+        .custom-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #7673FF;
+            border: none;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-play-button:hover {
+            background-color: rgb(132, 130, 242);
+        }
     }
 
     .bg {
@@ -113,8 +156,17 @@ export default {
         width: 100%;
     }
 
+    #bg-desktop {
+        display: block;
+    }
+
+    #bg-mobile {
+        display: none;
+    }
+
     .decorate {
         position: absolute;
+        z-index: 1;
     }
 
     #bear {
@@ -129,21 +181,69 @@ export default {
 }
 
 @media (max-width: 768px) {
-    .hero-section { 
-        padding: 60px 0px 20px 0px;
-    }
+    .hero-section {
+        gap: 200px;
+        padding: 100px 0px;
 
-    .hero-section .text {
-        /* Adaptaciones para el texto */
-    }
+        .text {
+            width: calc(100% - 60px);
 
-    .hero-section .video-player {
-        /* Adaptaciones para el video */
-    }
+            .main-text {
+                h1 {
+                    font-size: 24px;
+                }
+            }
 
-    .hero-section #bear,
-    .hero-section #watermelon {
-        /* Adaptaciones para decoraciones móviles */
+            .desc-text {
+                font-size: 14px;
+            }
+        }
+
+        .video-wrapper {
+            width: 85%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border: 12px solid #fff;
+            border-radius: 52px;
+
+            .video-player {
+                height: 100%;
+                border-radius: 58px;
+            }
+
+            .custom-play-button {
+                width: 80px;
+                height: 80px;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        #bg-desktop {
+            display: none;
+        }
+
+        #bg-mobile {
+            display: block;
+        }
+
+        .decorate {
+            width: 50px;
+            height: auto;
+        }
+
+        #bear {
+            left: -10px;
+            top: 100px;
+        }
+
+        #watermelon {
+            right: -10px;
+            top: 100px;
+        }
     }
 }
 </style>
