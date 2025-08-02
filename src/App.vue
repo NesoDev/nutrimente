@@ -26,6 +26,7 @@
   background: #F3F1EA;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .head {
@@ -36,11 +37,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 30px 50px;
   box-sizing: border-box;
   z-index: 999;
 
   .logo {
+    position: absolute;
+    left: 50px;
     width: fit-content;
     height: 50px;
     background: #fff;
@@ -67,8 +71,6 @@
   }
 
   nav {
-    position: absolute;
-    left: calc(50% - 89px);
     width: fit-content;
     height: 50px;
     background: #fff;
@@ -109,16 +111,12 @@
     padding: 10px 20px;
 
     .logo {
+      left: 20px;
       padding: 20px 15px;
       
       h2 {
         display: none;
       }
-    }
-
-    nav {
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
 }
