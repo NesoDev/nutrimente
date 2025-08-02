@@ -21,7 +21,7 @@
 
 .app {
   position: relative;
-  width: 100%;
+  width: 100dvw;
   height: 100%;
   background: #F3F1EA;
   display: flex;

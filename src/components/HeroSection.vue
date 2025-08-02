@@ -13,11 +13,13 @@
                 para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
             </p>
         </div>
-        <img class="decorate" id="bear" src="../assets/bear.png" alt="">
-        <img class="decorate" id="watermelon" src="../assets/watermelon.png" alt="">
+        <div class="box-decorate">
+            <img id="bear" src="../assets/bear.png" alt="">
+            <img id="watermelon" src="../assets/watermelon.png" alt="">
+        </div>
 
         <div class="group-video-bg">
-            <div class="video-wrapper" @click="handleVideoClick" >
+            <div class="video-wrapper" @click="handleVideoClick">
                 <video ref="video" class="video-player" :src="cloudinaryVideoUrl" :poster="cloudinaryThumbnailUrl"
                     preload="metadata" @ended="onVideoEnded"></video>
 
@@ -429,9 +431,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Solway:wght@500&display=swap');
 
 .hero-section {
-    position: relative;
     width: 100%;
     height: auto;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -441,7 +443,7 @@ export default {
     padding: 120px 0px 0px 0px;
 
     .text {
-        width: 60%;
+        width: 70%;
         height: fit-content;
         text-align: center;
         display: flex;
@@ -451,8 +453,10 @@ export default {
 
         .main-text {
             h1 {
-                font-family: 'Tilt Warp', cursive;
-                font-size: 40px;
+                font-family: 'Solway', serif;
+                font-size: 45px;
+                font-weight: bolder;
+                color: #5b3636;
                 overflow-wrap: break-word;
                 white-space: normal;
             }
@@ -473,7 +477,7 @@ export default {
 
     .group-video-bg {
         position: relative;
-        width: 100dvw;
+        width: 100%;
         height: fit-content;
         display: flex;
         justify-content: center;
@@ -482,10 +486,10 @@ export default {
         .video-wrapper {
             position: relative;
             top: -30px;
-            width: 70%;
+            width: 60%;
             height: 450px;
-            background: black;
-            border: 20px solid #fff;
+            background: white;
+            border: 18px solid #fff;
             border-radius: 64px;
             display: flex;
             justify-content: center;
@@ -494,9 +498,11 @@ export default {
             z-index: 1;
 
             .video-player {
-                width: 100%;
+                height: 100%;
+                min-height: 100%;
+                min-width: 100%;
+                object-fit: cover;
                 background: white;
-                display: block;
             }
 
             .custom-play-button,
@@ -547,7 +553,7 @@ export default {
         .bg {
             position: absolute;
             z-index: 0;
-            bottom: -150px;
+            bottom: -180px;
             width: 100%;
         }
 
@@ -561,21 +567,26 @@ export default {
         }
     }
 
-    .decorate {
+    .box-decorate {
         position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1;
-        width: 150px;
-        height: auto;
-    }
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 65dvw;
+        align-items: center;
+        padding: 0px;
+        box-sizing: border-box;
 
-    #bear {
-        left: 150px;
-        top: 120px;
-    }
+        img {
+            width: 120px;
+        }
 
-    #watermelon {
-        right: 150px;
-        top: 120px;
     }
 }
 
@@ -590,7 +601,7 @@ export default {
 
             .main-text {
                 h1 {
-                    font-size: 30px;
+                    font-size: 28px;
                 }
             }
 
@@ -614,9 +625,9 @@ export default {
                 justify-content: center;
 
                 .video-player {
-                    height: 100%;
+                    width: auto;
+                    min-height: 100%;
                     object-fit: cover;
-                    background: black;
                 }
 
                 .custom-play-button,
@@ -648,19 +659,16 @@ export default {
             }
         }
 
-        .decorate {
-            width: 65px;
-            height: auto;
-        }
+        .box-decorate {
+            top: 80px;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0px 10px;
 
-        #bear {
-            left: 5px;
-            top: 85px;
-        }
-
-        #watermelon {
-            right: 5px;
-            top: 85px;
+            img {
+                width: 65px;
+                height: auto;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ import HeroSection from '@/components/HeroSection.vue';
 
 <style scoped>
 .home {
-  width: 100%;
+  width: 100dvw;
   height: auto;
   background: #F3F1EA;
 }
