@@ -21,7 +21,7 @@
 
 .app {
   position: relative;
-  width: 100dvw;
+  width: 100%;
   height: 100%;
   background: #F3F1EA;
   display: flex;
@@ -72,15 +72,16 @@
 
   nav {
     width: fit-content;
-    height: 50px;
+    height: 60px;
     background: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
     gap: 15px;
     border-radius: 9999px;
+    box-shadow: 0px 0px 12px -8px rgba(0, 0, 0, 0.5);
 
     a {
       text-decoration: none;
@@ -113,7 +114,7 @@
     .logo {
       left: 20px;
       padding: 20px 15px;
-      
+
       h2 {
         display: none;
       }
