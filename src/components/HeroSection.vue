@@ -209,7 +209,7 @@ export default {
         p {
             text-align: center;
             font-family: "Work Sans", sans-serif;
-            font-weight: normal;
+            font-weight:600;
             font-size: 18px;
             color: #6d8f9d;
             max-width: 80ch;
