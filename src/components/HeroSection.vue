@@ -278,8 +278,9 @@ export default {
 
     #container {
         width: 90%;
-        height: 80dvh;
+        height: 80svh;
         bottom: 60px;
+        gap: 0px;
 
         .decorations {
             position: absolute;
