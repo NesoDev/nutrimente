@@ -240,7 +240,6 @@ export default {
         overflow: hidden;
         border: 12px solid #ffffff;
         border-radius: 48px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         position: relative;
 
         .video-wrapper {

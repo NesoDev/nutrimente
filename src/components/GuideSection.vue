@@ -34,8 +34,8 @@
 #guide-section {
     width: 100%;
     height: auto;
-    background-color: #f7feff;
-    background-image: radial-gradient(circle, #cbfbff 4px, transparent 1px);
+    background-color: #f4feff;
+    background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
     background-size: 20px 20px;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@
 .extension-bg-img {
     width: 100%;
     height: 60px;
-    background: linear-gradient(to bottom, #0FDAC2, #63cbff90);
+    background: linear-gradient(to bottom, #0FDAC2, #e5fafc, transparent);
 }
 
 .container {
@@ -120,7 +120,6 @@
 
     .extension-bg-img {
         height: 80px;
-        border-radius: 0px 0px 40px 40px;
     }
 
     .container {
