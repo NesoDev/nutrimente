@@ -34,8 +34,8 @@
 #guide-section {
     width: 100%;
     height: auto;
-    background-color: #f4feff;
-    background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
+    background-color: #f7feff;
+    background-image: radial-gradient(circle, #cbfbff 4px, transparent 1px);
     background-size: 20px 20px;
     display: flex;
     flex-direction: column;
@@ -46,9 +46,8 @@
 
 .extension-bg-img {
     width: 100%;
-    height: 80px;
-    background: linear-gradient(to bottom, #0FDAC2, #f4feff);
-    border-radius: 0px 0px 60px 60px;
+    height: 60px;
+    background: linear-gradient(to bottom, #0FDAC2, #63cbff90);
 }
 
 .container {
@@ -68,19 +67,17 @@
 
         h2 {
             font-family: "BeachDay";
-            font-weight: 200;
             font-size: 50px;
-            color: #0E8AF7;
+            color: #63cbff;
             text-align: center;
         }
 
         p {
             font-family: "Work Sans", sans-serif;
-            font-weight:600;
-            font-size: 18px;
-            color: #6d8f9d;
+            font-weight: normal;
             font-size: 18px;
             backdrop-filter: blur(2px);
+            color: #6d8f9d;
             max-width: 50ch;
         }
     }
@@ -122,7 +119,7 @@
     }
 
     .extension-bg-img {
-        height: 10px;
+        height: 80px;
         border-radius: 0px 0px 40px 40px;
     }
 
