@@ -318,14 +318,13 @@ export default {
                     }
 
                     #line-2 {
-                        color: #272727;
                         font-size: 45px;
                     }
                 }
             }
 
             p {
-                color: #272727;
+                color: #53767e;
                 font-size: 15px;
                 max-width: 40ch;
                 padding: 15px;
