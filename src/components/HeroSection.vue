@@ -271,7 +271,7 @@ export default {
         .extension-bg-img {
             display: block;
             width: 100%;
-            height: 30dvh;
+            height: 30svh;
             background: #0FDAC2;
         }
     }
