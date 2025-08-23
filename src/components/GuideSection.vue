@@ -56,7 +56,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 60px;
 
     .text {
         width: 100%;
@@ -99,17 +99,18 @@
 
         .blocks {
             width: 100%;
-            height: 600px;
+            height: auto;
             background: yellow;
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            row-gap: 20px;
+            justify-content: center;
 
             .block {
-                flex: 1 1 30%;
-                min-width: 500px;
-                max-width: 600pc;
+                width: 400px;
                 height: 170px;
+                flex-shrink: 0;
                 background: #ffffff;
             }
         }
@@ -126,6 +127,8 @@
     }
 
     .container {
+        gap: 30px;
+
         .text {
             flex-direction: column;
             align-items: center;

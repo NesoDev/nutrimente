@@ -280,7 +280,7 @@ export default {
         width: 90%;
         height: 80svh;
         bottom: 30px;
-        gap: 0px;
+        gap: 20px;
 
         .decorations {
             position: absolute;
