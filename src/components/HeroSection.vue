@@ -131,7 +131,7 @@ export default {
     bottom: 50px;
     width: 70%;
     height: 80dvh;
-    z-index: 9999;
+    z-index: 99;
     display: flex;
     flex-direction: column;
     align-items: center;
