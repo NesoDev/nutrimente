@@ -47,7 +47,8 @@
 .extension-bg-img {
     width: 100%;
     height: 60px;
-    background: linear-gradient(to bottom, #0FDAC2, #e5fafc, transparent);
+    background: #0FDAC2;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .container {
@@ -74,10 +75,10 @@
 
         p {
             font-family: "Work Sans", sans-serif;
-            font-weight: normal;
+            font-weight:600;
             font-size: 18px;
-            backdrop-filter: blur(2px);
             color: #6d8f9d;
+            backdrop-filter: blur(2px);
             max-width: 50ch;
         }
     }
