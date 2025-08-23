@@ -34,8 +34,8 @@
 #guide-section {
     width: 100%;
     height: auto;
-    background-color: #f7feff;
-    background-image: radial-gradient(circle, #cbfbff 4px, transparent 1px);
+    background-color: #f4feff;
+    background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
     background-size: 20px 20px;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@
 .extension-bg-img {
     width: 100%;
     height: 60px;
-    background: #0FDAC2;
+    background: linear-gradient(to bottom, #0FDAC2, transparent);
     border-radius: 0px 0px 40px 40px;
 }
 
@@ -69,16 +69,17 @@
         h2 {
             font-family: "BeachDay";
             font-size: 50px;
-            color: #63cbff;
+            color: #0E8AF7;
             text-align: center;
         }
 
         p {
             font-family: "Work Sans", sans-serif;
-            font-weight: normal;
+            font-weight:600;
+            font-size: 18px;
+            color: #6d8f9d;
             font-size: 18px;
             backdrop-filter: blur(2px);
-            color: #6d8f9d;
             max-width: 50ch;
         }
     }
