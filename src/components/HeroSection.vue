@@ -201,7 +201,7 @@ export default {
                     display: block;
                     white-space: nowrap;
                     font-size: 80px;
-                    color: #FF74CE;
+                    color: #0FDAC2;
                 }
             }
         }
@@ -225,7 +225,7 @@ export default {
 
             #p-2 {
                 font-weight: bold;
-                color: #FF74CE
+                color: #0FDAC2
             }
         }
     }
