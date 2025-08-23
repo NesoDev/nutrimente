@@ -120,7 +120,7 @@
     }
 
     .extension-bg-img {
-        height: 80px;
+        height: 20px;
     }
 
     .container {
