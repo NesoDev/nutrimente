@@ -69,7 +69,7 @@
         h2 {
             font-family: "BeachDay";
             font-size: 50px;
-            color: #63cbff;
+            color: #1783e2;
             text-align: center;
         }
 
@@ -80,6 +80,7 @@
             color: #6d8f9d;
             backdrop-filter: blur(2px);
             max-width: 50ch;
+            line-height: 1.6;
         }
     }
 
