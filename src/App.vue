@@ -40,7 +40,7 @@
   justify-content: center;
   padding: 30px 50px;
   box-sizing: border-box;
-  z-index: 999;
+  z-index: 9999;
 
   .logo {
     position: absolute;

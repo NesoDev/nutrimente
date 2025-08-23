@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <HeroSection />
+
+    <HeroSection />
   </div>
 </template>
 
