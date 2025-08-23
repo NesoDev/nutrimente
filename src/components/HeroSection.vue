@@ -194,14 +194,14 @@ export default {
                     display: block;
                     white-space: nowrap;
                     font-size: 50px;
-                    color: #A97FFF;
+                    color: #0E8AF7;
                 }
 
                 #line-2 {
                     display: block;
                     white-space: nowrap;
                     font-size: 80px;
-                    color: #0FDAC2;
+                    color: #FF74CE;
                 }
             }
         }
@@ -220,12 +220,12 @@ export default {
 
             #p-1 {
                 font-weight: bold;
-                color: #A97FFF
+                color: #0E8AF7
             }
 
             #p-2 {
                 font-weight: bold;
-                color: #0FDAC2
+                color: #FF74CE
             }
         }
     }

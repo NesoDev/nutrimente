@@ -2,11 +2,12 @@
   <div class="home">
     <HeroSection />
 
-    <HeroSection />
+    <GuideSection />
   </div>
 </template>
 
 <script setup>
+import GuideSection from '@/components/GuideSection.vue';
 import HeroSection from '@/components/HeroSection.vue';
 </script>
 
