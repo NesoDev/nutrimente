@@ -68,6 +68,7 @@
 
         h2 {
             font-family: "BeachDay";
+            font-weight: 200;
             font-size: 50px;
             color: #1783e2;
             text-align: center;
@@ -75,7 +76,7 @@
 
         p {
             font-family: "Work Sans", sans-serif;
-            font-weight:600;
+            font-weight: 600;
             font-size: 18px;
             color: #6d8f9d;
             backdrop-filter: blur(2px);
