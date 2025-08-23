@@ -279,7 +279,7 @@ export default {
     #container {
         width: 90%;
         height: 80svh;
-        bottom: 60px;
+        bottom: 30px;
         gap: 0px;
 
         .decorations {
