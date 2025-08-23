@@ -194,7 +194,7 @@ export default {
                     display: block;
                     white-space: nowrap;
                     font-size: 50px;
-                    color: #0E8AF7;
+                    color: #1783e2;
                 }
 
                 #line-2 {
@@ -280,6 +280,7 @@ export default {
     #container {
         width: 90%;
         height: 80dvh;
+        bottom: 30px;
 
         .decorations {
             position: absolute;

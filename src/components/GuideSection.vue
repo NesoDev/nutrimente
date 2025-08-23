@@ -46,9 +46,9 @@
 
 .extension-bg-img {
     width: 100%;
-    height: 60px;
+    height: 80px;
     background: linear-gradient(to bottom, #0FDAC2, #f4feff);
-    border-radius: 0px 0px 40px 40px;
+    border-radius: 0px 0px 60px 60px;
 }
 
 .container {
