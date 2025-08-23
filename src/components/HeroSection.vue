@@ -296,16 +296,16 @@ export default {
 
             #bear {
                 position: absolute;
-                top: 100px;
-                left: -20px;
-                width: 55px;
+                top: -5px;
+                left: -0px;
+                width: 40px;
             }
 
             #watermelon {
                 position: absolute;
-                top: 100px;
-                right: -20px;
-                width: 55px;
+                top: -5px;
+                right: -0px;
+                width: 40px;
             }
         }
 
