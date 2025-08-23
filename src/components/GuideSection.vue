@@ -10,11 +10,50 @@
                 </p>
             </div>
             <div class="content">
-                <img src="@/assets/jaguar.svg" alt="">
+                <img class="img-content" src="@/assets/jaguar.svg" alt="">
                 <div class="blocks">
-                    <div class="block"></div>
-                    <div class="block"></div>
-                    <div class="block"></div>
+                    <div class="block">
+                        <img class="img-block" src="@/assets/carrot.svg" alt="">
+                        <div class="text-block">
+                            <div class="top-text">
+                                <h3>Bloque 1</h3>
+                                <div class="top-btn">
+                                    <img src="@/assets/arrow-right.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="bottom-text">
+                                Alimentando el futuro desde de los primeros años.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img class="img-block" src="@/assets/blocks.svg" alt="">
+                        <div class="text-block">
+                            <div class="top-text">
+                                <h3>Bloque 2</h3>
+                                <div class="top-btn">
+                                    <img src="@/assets/arrow-right.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="bottom-text">
+                                Alimentando el futuro desde de los primeros años.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img class="img-block" src="@/assets/calculator.svg" alt="">
+                        <div class="text-block">
+                            <div class="top-text">
+                                <h3>Bloque 1</h3>
+                                <div class="top-btn">
+                                    <img src="@/assets/arrow-right.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="bottom-text">
+                                Alimentando el futuro desde de los primeros años.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,7 +133,7 @@
         align-items: center;
         gap: 20px;
 
-        img {
+        .img-content {
             display: block;
             width: 30dvw;
         }
@@ -104,8 +143,8 @@
             height: auto;
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            row-gap: 20px;
+            gap: 40px;
+            row-gap: 40px;
             justify-content: center;
 
             .block {
@@ -114,11 +153,63 @@
                 min-width: 400px;
                 height: 170px;
                 flex-shrink: 0;
-                background: #fff;
+                background: #e6f2f2;
                 border-radius: 32px;
-                border:  1px solid #e5f6f8;
-                box-shadow:  0px 0px 10px 2px #e9f5f5;
+                border: 1px solid #e5f6f8;
+                box-shadow: 0px 0px 10px 2px #e9f5f5;
+                gap: 25px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 16px;
+                box-sizing: border-box;
 
+                .img-block {
+                    height: 100%;
+                    width: auto;
+                    border-radius: 16px;
+                }
+
+                .text-block {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .top-text {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        h3 {
+                            font-family: "Work Sans", sans-serif;
+                            font-weight: bold;
+                            font-size: 30px;
+                            color: #619e90;
+                        }
+
+                        .top-btn {
+                            background: #f8fdfd;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 20px;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .bottom-text {
+                        font-family: "Work Sans", sans-serif;
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: #86a59f;
+                        line-height: 1.6;
+                    }
+                }
             }
         }
     }
@@ -154,7 +245,7 @@
         }
 
         .content {
-            img {
+            .img-content {
                 display: none;
             }
 
@@ -163,6 +254,33 @@
 
                 .block {
                     border-radius: 20px;
+                    flex-direction: row;
+
+                    .img-block {
+                        display: block;
+                    }
+
+                    .text-block {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        .top-text {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+
+                        .bottom-text {
+                            font-family: "Work Sans", sans-serif;
+                            font-weight: 500;
+                            font-size: 15px;
+                            color: #6d8f9d;
+                        }
+                    }
                 }
             }
         }
