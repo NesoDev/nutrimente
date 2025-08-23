@@ -52,7 +52,7 @@
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,7 +70,9 @@
             font-family: "BeachDay";
             font-weight: 200;
             font-size: 50px;
-            color: #1783e2;
+            color: #FFBB52;
+            letter-spacing: 4px;
+            -webkit-text-stroke: 2px #8f5a5c;
             text-align: center;
         }
 
@@ -94,13 +96,12 @@
 
         img {
             display: block;
-            width: 300px;
+            width: 30dvw;
         }
 
         .blocks {
             width: 100%;
             height: auto;
-            background: yellow;
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
@@ -109,10 +110,15 @@
 
             .block {
                 max-width: 100%;
-                width: 400px;
+                width: 40%;
+                min-width: 400px;
                 height: 170px;
                 flex-shrink: 0;
-                background: #ffffff;
+                background: #fff;
+                border-radius: 32px;
+                border:  1px solid #e5f6f8;
+                box-shadow:  0px 0px 10px 2px #e9f5f5;
+
             }
         }
     }
@@ -137,6 +143,7 @@
 
             h2 {
                 font-size: 30px;
+                -webkit-text-stroke: 1px #693f41;
             }
 
             p {
@@ -149,6 +156,14 @@
         .content {
             img {
                 display: none;
+            }
+
+            .blocks {
+                gap: 10px;
+
+                .block {
+                    border-radius: 20px;
+                }
             }
         }
     }

@@ -189,12 +189,14 @@ export default {
                 margin: 0;
                 z-index: 2;
                 line-height: 1;
+                letter-spacing: 4px;
 
                 #line-1 {
                     display: block;
                     white-space: nowrap;
                     font-size: 50px;
-                    color: #1783e2;
+                    color: #56abf7;
+                    -webkit-text-stroke: 2px #106cd5;
                 }
 
                 #line-2 {
@@ -202,6 +204,7 @@ export default {
                     white-space: nowrap;
                     font-size: 80px;
                     color: #0FDAC2;
+                    -webkit-text-stroke: 3px #019a86;
                 }
             }
         }
@@ -209,7 +212,7 @@ export default {
         p {
             text-align: center;
             font-family: "Work Sans", sans-serif;
-            font-weight:600;
+            font-weight: 600;
             font-size: 18px;
             color: #6d8f9d;
             max-width: 80ch;
@@ -316,10 +319,12 @@ export default {
                 h1 {
                     #line-1 {
                         font-size: 30px;
+                        -webkit-text-stroke: 1px #106cd5;
                     }
 
                     #line-2 {
                         font-size: 45px;
+                        -webkit-text-stroke: 2px #019a86;
                     }
                 }
             }
