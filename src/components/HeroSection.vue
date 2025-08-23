@@ -75,7 +75,7 @@ export default {
 #hero-section {
     position: relative;
     width: 100%;
-    height: 100dvh;
+    height: 100svh;
     background-color: #f4feff;
     /* color base */
     background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
