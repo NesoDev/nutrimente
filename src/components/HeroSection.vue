@@ -9,8 +9,13 @@
 
         <div id="container">
             <div class="decorations">
-                <img id="bear" src="@/assets/bear.png" alt="">
-                <img id="watermelon" src="@/assets/watermelon.png" alt="">
+                <!-- Mobile -->
+                <img id="bear" class="mobile-only" src="@/assets/bear.png" alt="">
+                <img id="watermelon" class="mobile-only" src="@/assets/watermelon.png" alt="">
+
+                <!-- Desktop -->
+                <img id="decoration-left" class="desktop-only" src="@/assets/decoration-left.svg" alt="">
+                <img id="decoration-right" class="desktop-only" src="@/assets/decoration-right.svg" alt="">
             </div>
             <div class="text">
                 <div class="main-text">
@@ -20,7 +25,9 @@
                     </h1>
                 </div>
                 <p>
-                    NutriMente ofrece recursos expertos y prácticos para padres y cuidadores que buscan mejorar la alimentación y el aprendizaje de los más chicos a través de la <span id="p-1">NUTRICIÓN</span> y el <span id="p-2">JUEGO</span>.
+                    NutriMente ofrece recursos expertos y prácticos para padres y cuidadores que buscan mejorar la
+                    alimentación y el aprendizaje de los más chicos a través de la <span id="p-1">NUTRICIÓN</span> y el
+                    <span id="p-2">JUEGO</span>.
                 </p>
             </div>
 
@@ -59,19 +66,21 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
-  font-family: "BeachDay";
-  src: url("@/assets/fonts/beachday.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "BeachDay";
+    src: url("@/assets/fonts/beachday.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 #hero-section {
     position: relative;
     width: 100%;
     height: 100dvh;
-    background-color: #E9FDFF; /* color base */
-  background-image: radial-gradient(circle, #bffaff 4px, transparent 1px);
-  background-size: 20px 20px; /* distancia entre puntos */
+    background-color: #E9FDFF;
+    /* color base */
+    background-image: radial-gradient(circle, #bffaff 4px, transparent 1px);
+    background-size: 20px 20px;
+    /* distancia entre puntos */
     overflow: hidden;
 }
 
@@ -80,7 +89,7 @@ export default {
     top: 0;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
 }
 
 #cloud-bg-desktop {
@@ -133,18 +142,28 @@ export default {
         top: 0;
         width: 100%;
 
-        #bear {
-            position: absolute;
-            top: 10px;
-            left: -120px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        .desktop-only {
+            display: block;
         }
 
-        #watermelon {
+        .mobile-only {
+            display: none;
+        }
+
+        #bear,
+        #decoration-left {
             position: absolute;
             top: 10px;
-            right: -120px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+            left: -200px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        #watermelon,
+        #decoration-right {
+            position: absolute;
+            top: 10px;
+            right: -200px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
         }
     }
 
@@ -192,7 +211,7 @@ export default {
             font-family: "Work Sans", sans-serif;
             font-weight: normal;
             font-size: 18px;
-            color: #1D181C;
+            color: #6d8f9d;
             max-width: 80ch;
             backdrop-filter: blur(2px);
             padding: 10px;
@@ -203,6 +222,7 @@ export default {
                 font-weight: bold;
                 color: #A97FFF
             }
+
             #p-2 {
                 font-weight: bold;
                 color: #0FDAC2
@@ -220,13 +240,13 @@ export default {
         overflow: hidden;
         border: 12px solid #ffffff;
         border-radius: 48px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         position: relative;
 
         .video-wrapper {
             width: 100%;
             height: 100%;
-            object-fit:fill;
+            object-fit: fill;
             overflow: hidden;
             border-radius: 28px;
 
@@ -253,7 +273,7 @@ export default {
             display: block;
             width: 100%;
             height: 30dvh;
-            background: #06B58E;
+            background: #0FDAC2;
         }
     }
 
@@ -266,18 +286,26 @@ export default {
             top: 0;
             width: 100%;
 
+            .desktop-only {
+                display: none;
+            }
+
+            .mobile-only {
+                display: block;
+            }
+
             #bear {
                 position: absolute;
-                top: 10px;
+                top: 100px;
                 left: -20px;
-                width: 60px;
+                width: 55px;
             }
 
             #watermelon {
                 position: absolute;
-                top: 10px;
+                top: 100px;
                 right: -20px;
-                width: 60px;
+                width: 55px;
             }
         }
 
@@ -288,8 +316,9 @@ export default {
                     #line-1 {
                         font-size: 30px;
                     }
+
                     #line-2 {
-                        font-size: 50px;
+                        font-size: 45px;
                     }
                 }
             }
