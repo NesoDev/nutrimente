@@ -68,6 +68,7 @@
 
         h2 {
             font-family: "BeachDay";
+            font-weight: 200;
             font-size: 50px;
             color: #0E8AF7;
             text-align: center;
