@@ -5,15 +5,14 @@
             <div class="text">
                 <h2 class="main-text">Nutrimente te brinda</h2>
                 <p>
-                    Juegos, recetas y recursos prácticos para el desarrollo de tu hijo, todo ordenado por bloques
-                    temáticos.
+                    Juegos interactivos, recetas saludables y herramientas prácticas para acompañar el crecimiento de tu hijo. Todo está organizado por bloques temáticos para que puedas acceder fácil y rápido a lo que necesitas.
                 </p>
             </div>
             <div class="content">
                 <img class="img-content" src="@/assets/jaguar.svg" alt="">
                 <div class="blocks">
-                    <div class="block">
-                        <img class="img-block" src="@/assets/carrot.svg" alt="">
+                    <div class="block" id="block-1">
+                        <img class="img-block" src="@/assets/apple.svg" alt="">
                         <div class="text-block">
                             <div class="top-text">
                                 <h3>Bloque 1</h3>
@@ -26,7 +25,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="block" id="block-2">
                         <img class="img-block" src="@/assets/blocks.svg" alt="">
                         <div class="text-block">
                             <div class="top-text">
@@ -40,11 +39,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="block" id="block-3">
                         <img class="img-block" src="@/assets/calculator.svg" alt="">
                         <div class="text-block">
                             <div class="top-text">
-                                <h3>Bloque 1</h3>
+                                <h3>Bloque 3</h3>
                                 <div class="top-btn">
                                     <img src="@/assets/arrow-right.svg" alt="" />
                                 </div>
@@ -100,18 +99,18 @@
     .text {
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 20px;
 
         h2 {
             font-family: "BeachDay";
             font-weight: 200;
-            font-size: 50px;
-            color: #FFBB52;
+            font-size: 70px;
+            color: #57ABF7;
             letter-spacing: 4px;
-            -webkit-text-stroke: 2px #8f5a5c;
+            -webkit-text-stroke: 2px #106CD5;
             text-align: center;
         }
 
@@ -121,8 +120,9 @@
             font-size: 18px;
             color: #6d8f9d;
             backdrop-filter: blur(2px);
-            max-width: 50ch;
             line-height: 1.6;
+            text-align: center;
+            max-width: 80ch;
         }
     }
 
@@ -150,12 +150,12 @@
             .block {
                 max-width: 100%;
                 width: 40%;
-                min-width: 400px;
+                min-width: 420px;
                 height: 170px;
                 flex-shrink: 0;
-                background: #e6f2f2;
+                background: #ffffff;
                 border-radius: 32px;
-                border: 1px solid #e5f6f8;
+                border: 4px solid #ededed;
                 box-shadow: 0px 0px 10px 2px #e9f5f5;
                 gap: 25px;
                 display: flex;
@@ -168,6 +168,7 @@
                     height: 100%;
                     width: auto;
                     border-radius: 16px;
+                    box-shadow: 0 0 2px 2px #e8edef;
                 }
 
                 .text-block {
@@ -187,14 +188,15 @@
                             font-family: "Work Sans", sans-serif;
                             font-weight: bold;
                             font-size: 30px;
-                            color: #619e90;
+                            color: #606060;
                         }
 
                         .top-btn {
-                            background: #f8fdfd;
+                            background: #FFFFFF;
                             width: 40px;
                             height: 40px;
                             border-radius: 20px;
+                            box-shadow: 0 0 2px 2px #e8edef;
 
                             img {
                                 width: 100%;
@@ -206,7 +208,7 @@
                         font-family: "Work Sans", sans-serif;
                         font-weight: 500;
                         font-size: 18px;
-                        color: #86a59f;
+                        color: #949494;
                         line-height: 1.6;
                     }
                 }
@@ -234,7 +236,7 @@
 
             h2 {
                 font-size: 30px;
-                -webkit-text-stroke: 1px #693f41;
+                -webkit-text-stroke: 1px #106CD5;
             }
 
             p {
