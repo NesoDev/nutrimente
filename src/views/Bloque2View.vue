@@ -11,14 +11,11 @@
       <!-- 👇 botones de categorías -->
       <div class="video-selector">
         <button 
-          @click="selectCategory('4-6')" 
-          :class="{ active: currentCategory === '4-6' }">
-          4 a 6 meses
-        </button>
-        <button 
-          @click="selectCategory('7-9')" 
-          :class="{ active: currentCategory === '7-9' }">
-          7 a 9 meses
+          v-for="cat in Object.keys(videos)"
+          :key="cat"
+          @click="selectCategory(cat)" 
+          :class="{ active: currentCategory === cat }">
+          {{ labels[cat] }}
         </button>
       </div>
 
@@ -33,10 +30,6 @@
           Video {{ index + 1 }}
         </button>
       </div>
-
-      <h3 class="video-title">
-        {{ videos[currentCategory][currentVideoIndex].title }}
-      </h3>
 
       <div class="video-container">
         <video
@@ -63,7 +56,7 @@
     <section class="bottom-section">
       <div class="info-bar">
         <div class="info-text">
-          {{ videos[currentCategory][currentVideoIndex].infoText }}
+          {{ videos[currentCategory][currentVideoIndex].title }}
         </div>
         <div class="info-icon" @click="toggleCard">
           <div class="line"></div>
@@ -95,47 +88,45 @@ export default {
       currentVideoIndex: 0,     // ✅ video por defecto
       showPlayButton: true,
       showCard: false,
+      labels: {
+        "4-6": "4 a 6 meses",
+        "7-9": "7 a 9 meses",
+        "10-12": "10 a 12 meses",
+        "12-18": "12 a 18 meses",
+        "18-24": "18 a 24 meses",
+        "25-36": "25 a 36 meses",
+      },
       videos: {
         "4-6": [
-          {
-            id: "v1756145232/Exploremos_diferentes_texturas_1_cxcpkk",
-            title: "Exploramos diferentes texturas",
-            infoText: "Explorar texturas ayuda a los niños de 4 a 6 meses a descubrir el mundo.",
-            cardText: "Tocar distintos objetos estimula la curiosidad y fortalece los sentidos de tu bebé.",
-          },
-          {
-            id: "v1756145959/Exploración_de_manos_y_pies_ua24mg",
-            title: "Exploración de manos y pies",
-            infoText: "El reconocimiento de manos y pies favorece la coordinación y el autocontrol.",
-            cardText: "Durante esta etapa, los bebés descubren su propio cuerpo y mejoran su percepción.",
-          },
-          {
-            id: "v1756146152/El_juego_de_la_botella_sensorial_1_guazyu",
-            title: "Juego de la botella sensorial",
-            infoText: "Los objetos sensoriales despiertan la atención y concentración.",
-            cardText: "Este juego fortalece la observación y fomenta la interacción con colores y movimientos.",
-          },
+          { id: "v1756145232/Exploremos_diferentes_texturas_1_cxcpkk", title: "Exploramos diferentes texturas", cardText: "Tocar distintos objetos estimula la curiosidad y fortalece los sentidos de tu bebé." },
+          { id: "v1756145959/Exploración_de_manos_y_pies_ua24mg", title: "Exploración de manos y pies", cardText: "Durante esta etapa, los bebés descubren su propio cuerpo y mejoran su percepción." },
+          { id: "v1756146152/El_juego_de_la_botella_sensorial_1_guazyu", title: "Juego de la botella sensorial", cardText: "Este juego fortalece la observación y fomenta la interacción con colores y movimientos." },
         ],
         "7-9": [
-          {
-            id: "v1756145412/Música_y_percusión_kccyyt",
-            title: "Música y percusión",
-            infoText: "La música y la percusión estimulan la coordinación en los niños de 7 a 9 meses.",
-            cardText: "Los juegos musicales apoyan el ritmo, la memoria y la motricidad, favoreciendo la creatividad.",
-          },
-          {
-            id: "v1756146275/Escondamos_el_objeto_diogli",
-            title: "Escondamos el objeto",
-            infoText: "Los juegos de escondidas desarrollan la memoria visual y la anticipación.",
-            cardText: "Tu bebé aprende que los objetos existen aunque no los vea, fortaleciendo su comprensión del mundo.",
-          },
-          {
-            id: "v1756146332/Cajita_de_tesoros_udawmy",
-            title: "Cajita de tesoros",
-            infoText: "Explorar una cajita de tesoros estimula la curiosidad y el aprendizaje.",
-            cardText: "Este juego fomenta la creatividad y la coordinación al manipular diferentes objetos.",
-          },
-        ]
+          { id: "v1756145412/Música_y_percusión_kccyyt", title: "Música y percusión", cardText: "Los juegos musicales apoyan el ritmo, la memoria y la motricidad, favoreciendo la creatividad." },
+          { id: "v1756146275/Escondamos_el_objeto_diogli", title: "Escondamos el objeto", cardText: "Tu bebé aprende que los objetos existen aunque no los vea, fortaleciendo su comprensión del mundo." },
+          { id: "v1756146332/Cajita_de_tesoros_udawmy", title: "Cajita de tesoros", cardText: "Este juego fomenta la creatividad y la coordinación al manipular diferentes objetos." },
+        ],
+        "10-12": [
+          { id: "v1756147303/Pelota_rodante_elpt9k", title: "Pelota rodante", cardText: "Rodar una pelota favorece la coordinación motora y la interacción social." },
+          { id: "v1756147361/Movámonos_divertidamente_qwxcbk", title: "Movámonos divertidamente", cardText: "El movimiento estimula el equilibrio, la coordinación y la energía positiva." },
+          { id: "v1756147431/Apilar_vasitos_yovitf", title: "Apilar vasitos", cardText: "Apilar fortalece la motricidad fina y la capacidad de resolver problemas." },
+        ],
+        "12-18": [
+          { id: "v1756147533/Objetos_en_movimiento_heeuuc", title: "Objetos en movimiento", cardText: "Seguir objetos ayuda a entrenar la atención y la coordinación ojo-mano." },
+          { id: "v1756147599/Clasificacion_sencilla_eynjqb", title: "Clasificación sencilla", cardText: "Clasificar fomenta el pensamiento lógico y la organización mental." },
+          { id: "v1756147633/Armando_torres_con_bloques_dkwbgl", title: "Armando torres con bloques", cardText: "Construir con bloques desarrolla la paciencia y la creatividad." },
+        ],
+        "18-24": [
+          { id: "v1756147719/Encontrando_la_tapa_correcta_alyjzp", title: "Encontrando la tapa correcta", cardText: "Emparejar tapas y envases estimula la memoria y la resolución de problemas." },
+          { id: "v1756147822/Carreras_con_animalitos_zqw02y", title: "Carreras con animalitos", cardText: "Correr con juguetes motiva el ejercicio físico y la coordinación." },
+          { id: "v1756147859/Búsqueda_de_objetos_mprtji", title: "Búsqueda de objetos", cardText: "La búsqueda estimula la curiosidad y fortalece la atención." },
+        ],
+        "25-36": [
+          { id: "v1756147949/Los_muñecos_parlantes_c9is3f", title: "Los muñecos parlantes", cardText: "El juego simbólico con muñecos fomenta el lenguaje y la empatía." },
+          { id: "v1756148016/La_tiendita_o2ifhp", title: "La tiendita", cardText: "Jugar a la tienda impulsa la imaginación y habilidades sociales." },
+          { id: "v1756148077/Cocina_de_mentiritas_co1ykk", title: "Cocina de mentiritas", cardText: "La cocina simbólica desarrolla la creatividad y el juego colaborativo." },
+        ],
       }
     };
   },
@@ -167,7 +158,7 @@ export default {
     },
     selectCategory(category) {
       this.currentCategory = category;
-      this.currentVideoIndex = 0; // reset al primer video
+      this.currentVideoIndex = 0;
       this.showCard = false;
       this.resetVideo();
     },
@@ -195,6 +186,30 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.video-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.video-selector button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+.video-selector button.active {
+  background-color: #4caf50;
+  color: white;
+}
+.sub-selector {
+  margin-top: -5px;
+}
+</style>
+
 
 <style scoped>
 .video-selector {
