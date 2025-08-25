@@ -2,11 +2,7 @@
   <div class="page-container">
     <main class="main-content">
       <h1 class="main-title">Bloque 2: ¡Pequeños juegos, grandes mentes!</h1>
-      <p class="description">
-        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños. 
-        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos, 
-        para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
-      </p>
+
 
       <!-- 👇 botones de categorías -->
       <div class="video-selector">
@@ -18,6 +14,12 @@
           {{ labels[cat] }}
         </button>
       </div>
+
+      <p class="description">
+        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños. 
+        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos, 
+        para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
+      </p>
 
       <!-- 👇 botones de videos según la categoría -->
       <div class="video-selector sub-selector">
@@ -188,53 +190,57 @@ export default {
 </script>
 
 <style scoped>
+/* Centered category selector */
 .video-selector {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 15px;
+  justify-content: center;
 }
-.video-selector button {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  background-color: #e0e0e0;
-}
-.video-selector button.active {
-  background-color: #4caf50;
-  color: white;
-}
-.sub-selector {
+
+/* Sub-selector aligned to the left */
+.video-selector.sub-selector {
+  justify-content: flex-start;
   margin-top: -5px;
 }
-</style>
 
-
-<style scoped>
-.video-selector {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
+/* Button styles */
 .video-selector button {
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 14px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
-  background-color: #e0e0e0;
-}
-.video-selector button.active {
-  background-color: #4caf50;
+  background-color: #FFAE50;
   color: white;
 }
-.sub-selector {
-  margin-top: -5px;
+
+/* Active button style */
+.video-selector button.active {
+  background-color: #FFAE50; /* Orange background */
+  color: white;              /* White text */
+  border-radius: 25px;       /* Rounded corners */
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4); /* Dark soft shadow */
+  font-weight: bold;         /* Optional: make the text bold like in the image */
 }
+
+/* Optional title style */
 .video-title {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.video-selector.sub-selector button {
+  background-color: rgba(16, 156, 123, 0.7);
+  color: white;
+}
+
+
+.video-selector.sub-selector button.active {
+  background-color: #0DB68F;
+  box-shadow: -4px 4px 6px rgb(255, 255, 20);
+
 }
 </style>
 
