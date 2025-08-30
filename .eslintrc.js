@@ -3,13 +3,16 @@ module.exports = {
   env: {
     node: true
   },
-  'extends': [
+  extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/typescript/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2020
+  },
+  globals: {
+    google: 'readonly' // Add this line
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
