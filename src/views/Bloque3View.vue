@@ -880,27 +880,29 @@ export default {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .age-group-button {
-  padding: 8px 16px;
-  border: 2px solid #38B2AC;
-  border-radius: 20px;
-  background-color: white;
-  color: #38B2AC;
-  cursor: pointer;
-  font-family: 'Solway', serif;
-  font-size: 0.85em;
-  transition: all 0.3s ease;
+    padding: 10px 14px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: #FFAE50;
+    color: white;
 }
 
 .age-group-button:hover {
-  background-color: #f0f9ff;
+  background-color: #FFAE50;
 }
 
 .age-group-button.active {
-  background-color: #38B2AC;
-  color: white;
+    background-color: #FFAE50;
+    color: white;
+    border-radius: 25px;
+    box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+
 }
 
 /* Centered category selector */
