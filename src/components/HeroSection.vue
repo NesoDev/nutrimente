@@ -20,14 +20,14 @@
             <div class="text">
                 <div class="main-text">
                     <h1>
-                        <span id="line-1">Aprendizaje que</span>
-                        <span id="line-2">nutre y divierte</span>
+                        <span id="line-1">Nutrimente</span>
                     </h1>
                 </div>
                 <p>
-                    NutriMente ofrece recursos expertos y prácticos para padres y cuidadores que buscan mejorar la
-                    alimentación y el aprendizaje de los más chicos a través de la <span id="p-1">NUTRICIÓN</span> y el
-                    <span id="p-2">JUEGO</span>.
+                    Una plataforma digital con recursos 
+                    <span id="p-1">prácticos, confiables y validados por expertos</span>, 
+                    que busca sensibilizar y orientar a padres y cuidadores sobre la importancia de una alimentación saludable y el juego en los primeros años, 
+                    para <span id="p-2">informar, guiar y brindar herramientas accesibles</span> que impulsen el desarrollo integral de los niños.
                 </p>
             </div>
 
@@ -39,7 +39,13 @@
                     </video>
                 </div>
             </div>
+            
+
+<div class="highlight-phrase">
+    <p>Cada pequeño cambio cuenta y puede marcar la diferencia en su futuro</p>
+</div>
         </div>
+        
     </div>
 </template>
 
@@ -124,6 +130,37 @@ export default {
     }
 }
 
+.highlight-phrase {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #019a86;
+    text-align: center;
+    max-width: 60ch;
+    background: rgba(15, 218, 194, 0.1);
+    backdrop-filter: blur(4px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid rgba(15, 218, 194, 0.2);
+    line-height: 1.5;
+    margin-top: 0px;
+    box-shadow: 0 4px 12px rgba(15, 218, 194, 0.15);
+
+    p {
+        margin: 0; /* remove default spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    .highlight-phrase {
+        font-size: 16px;
+        max-width: 35ch;
+        padding: 12px 16px;
+        margin-top: 10px;
+    }
+}
+
+
 #container {
     position: absolute;
     left: 50%;
@@ -173,7 +210,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 15px;
 
         .main-text {
             position: relative;
@@ -184,7 +221,7 @@ export default {
             h1 {
                 position: relative;
                 text-align: center;
-                font-family: "BeachDay";
+                font-family: "Cooper Black";
                 font-weight: 200;
                 margin: 0;
                 z-index: 2;
@@ -194,7 +231,7 @@ export default {
                 #line-1 {
                     display: block;
                     white-space: nowrap;
-                    font-size: 50px;
+                    font-size: 45px;
                     color: #56abf7;
                     -webkit-text-stroke: 2px #106cd5;
                 }
@@ -202,7 +239,7 @@ export default {
                 #line-2 {
                     display: block;
                     white-space: nowrap;
-                    font-size: 80px;
+                    font-size: 40px;
                     color: #0FDAC2;
                     -webkit-text-stroke: 3px #019a86;
                 }
@@ -213,9 +250,9 @@ export default {
             text-align: center;
             font-family: "Work Sans", sans-serif;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 14px;
             color: #6d8f9d;
-            max-width: 80ch;
+            max-width: 800ch;
             backdrop-filter: blur(2px);
             padding: 10px;
             border-radius: 8px;
@@ -230,6 +267,23 @@ export default {
                 font-weight: bold;
                 color: #0FDAC2
             }
+        }
+
+        .highlight-phrase {
+            font-family: "Work Sans", sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #019a86;
+            text-align: center;
+            max-width: 60ch;
+            background: rgba(15, 218, 194, 0.1);
+            backdrop-filter: blur(4px);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(15, 218, 194, 0.2);
+            line-height: 1.5;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(15, 218, 194, 0.15);
         }
     }
 
@@ -334,6 +388,13 @@ export default {
                 font-size: 15px;
                 max-width: 40ch;
                 padding: 15px;
+            }
+
+            .highlight-phrase {
+                font-size: 16px;
+                max-width: 35ch;
+                padding: 12px 16px;
+                margin-top: 5px;
             }
         }
 
