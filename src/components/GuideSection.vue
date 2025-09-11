@@ -106,7 +106,7 @@
         gap: 20px;
 
         h2 {
-            font-family: "BeachDay";
+            font-family: 'Cooper Black', Arial, sans-serif;
             font-weight: 200;
             font-size: 70px;
             color: #57ABF7;

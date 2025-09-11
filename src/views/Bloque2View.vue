@@ -249,7 +249,9 @@ export default {
 <style scoped>
 .page-container {
   font-family: Arial, sans-serif;
-  background-color: #f7f3ed; /* Light beige background */
+  background-color: #f4feff;
+  background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
+  background-size: 20px 20px;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
   display: flex;
@@ -270,7 +272,7 @@ export default {
   display: inline-block;
   border-radius: 5px;
 
-                font-family: 'Solway', serif;
+                font-family: 'Cooper Black', Arial, sans-serif;
                 font-size: 45px;
                 font-weight: bolder;
                 color: #0DB68F;
@@ -283,16 +285,16 @@ export default {
 }
 
 
-
 .description {
-  font-size: 1em;
-  line-height: 1.6;
-  margin-bottom: 40px;
-  text-align: center;
-              font-family: 'Solway', serif;
-            color: #848484;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #6d8f9d;
+    backdrop-filter: blur(2px);
+    line-height: 1.6;
+    text-align: center;
+    max-width: 80ch;
 }
-
 /* Contenedor responsivo con aspecto 16:9 */
 .video-container {
   position: relative;
