@@ -42,7 +42,7 @@
             
 
 <div class="highlight-phrase">
-    <p>Cada pequeño cambio cuenta y puede marcar la diferencia en su futuro</p>
+    <p>"Cada pequeño cambio cuenta y puede marcar la diferencia en su futuro"</p>
 </div>
         </div>
         
@@ -134,9 +134,9 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 700;
     font-size: 15px;
-    color: #019a86;
+    color: #128af3;
     text-align: center;
-    max-width: 60ch;
+    max-width: 70ch;
     background: rgba(15, 218, 194, 0.1);
     backdrop-filter: blur(4px);
     padding: 15px 20px;
@@ -250,11 +250,11 @@ export default {
             text-align: center;
             font-family: "Work Sans", sans-serif;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 18px;
             color: #6d8f9d;
             max-width: 800ch;
             backdrop-filter: blur(2px);
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             line-height: 1.6;
 
