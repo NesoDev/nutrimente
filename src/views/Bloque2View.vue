@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <main class="main-content">
-      <h1 class="main-title">Bloque 2: ¡Pequeños juegos, grandes mentes!</h1>
+      <h1 class="main-titleb2">Bloque 2: ¡Pequeños juegos, grandes mentes!</h1>
 
 
       <!-- 👇 botones de categorías -->
@@ -265,7 +265,7 @@ export default {
   border-radius: 10px;
 }
 
-.main-title {
+.main-titleb2 {
   margin-bottom: 10px;
   display: inline-block;
   border-radius: 5px;
@@ -361,7 +361,7 @@ export default {
 
   }
 
-  .main-title {
+  .main-titleb2 {
     font-size: 1.8em;
     padding: 4px 10px;
   }
@@ -393,7 +393,7 @@ export default {
 }
 
 @media (max-width: 480px) {
-  .main-title {
+  .main-titleb2 {
     font-size: 1.5em;
   }
 

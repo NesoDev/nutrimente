@@ -11,7 +11,8 @@
             <div class="content">
                 <img class="img-content" src="@/assets/jaguar.svg" alt="">
                 <div class="blocks">
-                    <div class="block" id="block-1">
+<!-- Bloque 1 clickable - now navigates to Bloque1View -->
+                    <div class="block" id="block-1" @click="navigateToBloque(1)">
                         <img class="img-block" src="@/assets/apple.svg" alt="">
                         <div class="text-block">
                             <div class="top-text">
@@ -25,7 +26,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="block" id="block-2">
+                    <div class="block" id="block-2" @click="navigateToBloque(2)">
                         <img class="img-block" src="@/assets/blocks.svg" alt="">
                         <div class="text-block">
                             <div class="top-text">
@@ -39,7 +40,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="block" id="block-3">
+                    <div class="block" id="block-3" @click="navigateToBloque(3)">
                         <img class="img-block" src="@/assets/calculator.svg" alt="">
                         <div class="text-block">
                             <div class="top-text">
@@ -163,6 +164,13 @@
                 align-items: center;
                 padding: 16px;
                 box-sizing: border-box;
+                cursor: pointer;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0px 4px 15px 4px #e9f5f5;
+                }
 
                 .img-block {
                     height: 100%;
@@ -289,3 +297,44 @@
     }
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    scrollToBloque(bloqueNumber) {
+      // Wait a moment to ensure all components are rendered
+      this.$nextTick(() => {
+        setTimeout(() => {
+          let titleElement;
+          
+          if (bloqueNumber === 1) {
+            // For bloque 1, look for the main-title element
+            titleElement = document.querySelector('.main-title');
+          } else if (bloqueNumber === 2) {
+            // For bloque 2, look for the main-title element (assuming it follows the same pattern)
+            titleElement = document.querySelector('.main-titleb2');
+          } else if (bloqueNumber === 3) {
+            // For bloque 3, look for the main-title element (assuming it follows the same pattern)
+            titleElement = document.querySelector('.main-titleb3');
+          }
+          
+          // Alternative: If each bloque has a unique selector, you can use:
+          // titleElement = document.querySelector(`#bloque${bloqueNumber} .main-title`);
+          // or
+          // titleElement = document.querySelector(`[data-bloque="${bloqueNumber}"] .main-title`);
+          
+          if (titleElement) {
+            titleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            console.warn(`Title element for Bloque ${bloqueNumber} not found`);
+          }
+        }, 100);
+      });
+    },
+    // Alias for backward compatibility
+    navigateToBloque(bloqueNumber) {
+      this.scrollToBloque(bloqueNumber);
+    }
+  }
+}
+</script>

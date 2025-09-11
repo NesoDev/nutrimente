@@ -49,7 +49,7 @@
         </div>
       </transition>
 
-      <h1 class="main-title">Bloque 3: Alimentando su futuro</h1>
+      <h1 class="main-titleb3">Bloque 3: Alimentando su futuro</h1>
 
       <p class="description">
         En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños. 
@@ -955,7 +955,7 @@ export default {
   border-radius: 10px;
 }
 
-.main-title {
+.main-titleb3 {
   margin-bottom: 10px;
   display: inline-block;
   border-radius: 5px;
@@ -1145,7 +1145,7 @@ export default {
     padding: 30px;
   }
 
-  .main-title {
+  .main-titleb3 {
     font-size: 1.8em;
     padding: 4px 10px;
   }
@@ -1200,7 +1200,7 @@ export default {
 }
 
 @media (max-width: 480px) {
-  .main-title {
+  .main-titleb3 {
     font-size: 1.5em;
   }
 
