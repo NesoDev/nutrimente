@@ -48,13 +48,14 @@
         
     </div>
 </template>
+ 
 
 <script>
 export default {
     data() {
         return {
             cloudName: 'dlejpox8a',
-            cloudinaryVideoId: 'Video_1_corregido_1_ewlrfy',
+            cloudinaryVideoId: 'VIDEO_PRESENTACI%C3%93N_NUTRIMENTE_1_1_1_pcbzkw',
         }
     },
     computed: {
