@@ -194,17 +194,17 @@ export default {
         { 
           id: "v1756570756/El_cuento_del_bocado_zhbl6o", 
           title: "El cuento del bocado", 
-          cardText: "Una historia divertida que ayuda a los niños a entender la importancia de comer bien y explorar nuevos sabores." 
+          cardText: "Convierte cada bocado en una pequeña historia. Si el bebé está comiendo zanahoria, dile: ‘Esta zanahoria vivía en una granja mágica y quiere darte superpoderes’. Si está comiendo arroz, invéntate algo como: ‘Estos granitos de arroz son copos de nieve que llegaron para una fiesta’. Este tipo de juego no solo hace la comida más atractiva, sino que también estimula la imaginación, el vocabulario y la capacidad de atención del bebé. Al crear una experiencia divertida y creativa, el bebé se sentirá más motivado a probar nuevos sabores y disfrutar de la comida." 
         },
         { 
           id: "v1756570824/Exploradores_del_sabor_1_cgb3en", 
           title: "Exploradores del sabor", 
-          cardText: "Un juego emocionante donde los niños descubren diferentes texturas y sabores de manera divertida." 
+          cardText: "Coloca diferentes alimentos en la bandeja de tu bebé, como zanahoria cocida, mango o palta, y deja que los toque, aplaste y pruebe a su propio ritmo. Puedes preguntarle: ‘¿Está suave o rugoso?’ o ‘¿De qué color es?’. Este tipo de exploración no solo permite que el bebé descubra texturas y sabores nuevos, sino que también fortalece su coordinación motora fina y le enseña a disfrutar de la comida. Al permitirle explorar sin presión, fomentas una relación positiva con la comida que le ayudará a aceptar alimentos variados a medida que crece." 
         },
         { 
           id: "v1756571026/Voces_sabrosas_tthjlz", 
           title: "Voces sabrosas", 
-          cardText: "Actividad interactiva que combina sonidos y sabores para estimular múltiples sentidos durante la alimentación." 
+          cardText: "Mientras tu bebé come, háblale con una voz suave y expresiva, contándole lo que está comiendo, como: “Mmm, esta papilla de plátano es dulce, ¿te gusta?”, o haciendo sonidos divertidos, como si la cuchara fuera un avión aterrizando. Este tipo de interacción no solo hace que la comida sea más divertida, sino que también favorece el desarrollo del lenguaje y la comunicación del bebé, ya que está aprendiendo nuevas palabras y sonidos. Además, cuando la comida se vive como un momento positivo y amoroso, el bebé se siente más seguro y es más probable que disfrute de los nuevos alimentos que pruebe." 
         }
       ],
       regions: [
