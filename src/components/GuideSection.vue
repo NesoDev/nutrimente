@@ -62,25 +62,25 @@
                 <div class="rectangle-item">
                     <img class="rectangle-img" src="@/assets/horse_finger.png" alt="">
                     <div class="rectangle-text">
-                        <p>Al jugar con bloques, el niño se divierte y desarrolla habilidades en exploración, relaciones espaciales, resolución de conflictos y lógica.</p>
+                        <p>Al jugar con bloques, el niño se divierte y desarrolla exploración, relaciones, resolución y lógica.</p>
                     </div>
                 </div>
                 <div class="rectangle-item">
                     <img class="rectangle-img" src="@/assets/animal2_finger.png" alt="">
                     <div class="rectangle-text">
-                        <p>El hierro es vital para el desarrollo cognitivo, pues favorece conexiones cerebrales esenciales que fortalecen el aprendizaje y la memoria.</p>
+                        <p>El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales que ayudan al aprendizaje y la memoria.</p>
                     </div>
                 </div>
                 <div class="rectangle-item">
                     <img class="rectangle-img" src="@/assets/animal3_finger.png" alt="">
                     <div class="rectangle-text">
-                        <p>Los niños que tienen una mala dieta, suelen tener dificultades en la escuela, sobre todo en materias tales como la matemática y el aprendizaje verbal.</p>
+                        <p>Los niños que tienen una mala dieta, suelen tener dificultades en la escuela, en materias como la matemática y el aprendizaje verbal.</p>
                     </div>
                 </div>
                 <div class="rectangle-item">
                     <img class="rectangle-img" src="@/assets/animal4_finger.png" alt="">
                     <div class="rectangle-text">
-                        <p>La obesidad afecta directamente al desarrollo sano de tu hijo, sobre todo generando problemas en la atención.</p>
+                        <p>La obesidad afecta directamente al desarrollo sano de tu hijo, generando problemas en la atención.</p>
                     </div>
                 </div>
             </div>
