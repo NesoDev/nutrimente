@@ -316,7 +316,7 @@
         .rectangle-item {
             width: 100%;
             min-width: unset;
-            min-height: 120px; // Increased minimum height for mobile
+            min-height: 150px; // Increased minimum height for mobile
             height: auto; // Keep auto height
             padding: 15px;
             gap: 15px;
@@ -333,7 +333,7 @@
 
                 p {
                     font-size: 15px; // Slightly reduced for mobile
-                    line-height: 1.4; // Tighter line height for mobile
+                    line-height: 1.2; // Tighter line height for mobile
                 }
             }
         }
