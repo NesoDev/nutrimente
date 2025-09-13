@@ -158,6 +158,8 @@ export default {
     line-height: 1.6;
     text-align: center;
     max-width: 80ch;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 
@@ -166,7 +168,6 @@ export default {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
-  background-color: #f0f0f0;
   border-radius: 15px;
   overflow: hidden;
 }

@@ -294,19 +294,17 @@ export default {
     line-height: 1.6;
     text-align: center;
     max-width: 80ch;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 /* Contenedor responsivo con aspecto 16:9 */
 .video-container {
   position: relative;
-  width: 100%; /* or 400px, 600px, etc. */
-  max-width: 600px;        /* Set a reasonable max width */
-  margin: 0 auto;          /* Center it horizontally */
-  padding-bottom: 38.25%;
-  background-color: #f0f0f0;
-  border-radius: 20px; /* Rounded corners */
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 15px;
   overflow: hidden;
 }
-
 
 /* Video ocupa todo el contenedor, con borde blanco */
 .video-player {

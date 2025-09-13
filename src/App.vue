@@ -1,15 +1,10 @@
 <template>
   <div class="app">
     <div class="head">
-      <div class="logo">
+    <!--   <div class="logo">
         <img src="./assets/logo-nutrimente.png" alt="">
         <h2>Nutrimente</h2>
-      </div>
-      <nav>
-        <router-link to="/" exact-active-class="active">Inicio</router-link>
-        <div class="circle" />
-        <router-link to="/about" exact-active-class="active">Nosotros</router-link>
-      </nav>
+      </div> -->
       <div></div>
     </div>
     <router-view />

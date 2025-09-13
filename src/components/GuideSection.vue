@@ -56,6 +56,34 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- New rectangles section -->
+            <div class="rectangles-section">
+                <div class="rectangle-item">
+                    <img class="rectangle-img" src="@/assets/horse_finger.png" alt="">
+                    <div class="rectangle-text">
+                        <p>Al jugar con bloques, el niño se divierte y desarrolla habilidades en exploración, relaciones espaciales, resolución de conflictos y lógica.</p>
+                    </div>
+                </div>
+                <div class="rectangle-item">
+                    <img class="rectangle-img" src="@/assets/animal2_finger.png" alt="">
+                    <div class="rectangle-text">
+                        <p>El hierro es vital para el desarrollo cognitivo, pues favorece conexiones cerebrales esenciales que fortalecen el aprendizaje y la memoria.</p>
+                    </div>
+                </div>
+                <div class="rectangle-item">
+                    <img class="rectangle-img" src="@/assets/animal3_finger.png" alt="">
+                    <div class="rectangle-text">
+                        <p>Los niños que tienen una mala dieta, suelen tener dificultades en la escuela, sobre todo en materias tales como la matemática y el aprendizaje verbal.</p>
+                    </div>
+                </div>
+                <div class="rectangle-item">
+                    <img class="rectangle-img" src="@/assets/animal4_finger.png" alt="">
+                    <div class="rectangle-text">
+                        <p>La obesidad afecta directamente al desarrollo sano de tu hijo, sobre todo generando problemas en la atención.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -223,6 +251,94 @@
             }
         }
     }
+
+    .rectangles-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    .rectangle-item {
+        width: calc(50% - 10px);
+        min-width: 300px;
+        min-height: 140px; // Increased minimum height
+        height: auto; // Changed from fixed height to auto
+        background: #ffffff;
+        border-radius: 20px;
+        border: 3px solid #ededed;
+        box-shadow: 0px 0px 8px 1px #e9f5f5;
+        display: flex;
+        align-items: flex-start; // Changed from center to flex-start
+        padding: 20px;
+        box-sizing: border-box;
+        gap: 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0px 3px 12px 2px #e9f5f5;
+        }
+
+        .rectangle-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            box-shadow: 0 0 2px 1px #e8edef;
+            object-fit: cover;
+            flex-shrink: 0; // Prevent image from shrinking
+        }
+
+        .rectangle-text {
+            flex: 1;
+            display: flex;
+            align-items: center; // Keep text centered vertically within its container
+            min-height: 80px; // Ensure minimum height matches image
+
+            p {
+                font-family: "Work Sans", sans-serif;
+                font-weight: 600;
+                font-size: 16px; // Slightly reduced from 18px
+                color: #606060;
+                margin: 0;
+                line-height: 1.5; // Improved line height for better readability
+                word-wrap: break-word; // Ensure long words break properly
+                hyphens: auto; // Enable automatic hyphenation
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .rectangles-section {
+        gap: 15px;
+
+        .rectangle-item {
+            width: 100%;
+            min-width: unset;
+            min-height: 120px; // Increased minimum height for mobile
+            height: auto; // Keep auto height
+            padding: 15px;
+            gap: 15px;
+            align-items: flex-start; // Ensure consistent alignment on mobile
+
+            .rectangle-img {
+                width: 70px;
+                height: 70px;
+                flex-shrink: 0; // Prevent shrinking on mobile too
+            }
+
+            .rectangle-text {
+                min-height: 70px; // Match image height
+
+                p {
+                    font-size: 15px; // Slightly reduced for mobile
+                    line-height: 1.4; // Tighter line height for mobile
+                }
+            }
+        }
+    }
+}
 }
 
 @media (max-width: 768px) {
@@ -291,6 +407,27 @@
                             color: #6d8f9d;
                         }
                     }
+                }
+            }
+        }
+
+        .rectangles-section {
+            gap: 15px;
+
+            .rectangle-item {
+                width: 100%;
+                min-width: unset;
+                height: 100px;
+                padding: 15px;
+                gap: 15px;
+
+                .rectangle-img {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .rectangle-text p {
+                    font-size: 16px;
                 }
             }
         }

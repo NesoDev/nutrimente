@@ -59,7 +59,6 @@
 
       <!-- Age group buttons -->
       <div class="age-group-section">
-        <h4>Selecciona el grupo etario:</h4>
         <div class="age-group-buttons">
 
           <button 
@@ -983,6 +982,8 @@ export default {
     line-height: 1.6;
     text-align: center;
     max-width: 80ch;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 /* Map Section Styles */
@@ -1092,11 +1093,8 @@ export default {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-bottom: 38.25%;
-  background-color: #f0f0f0;
-  border-radius: 20px;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 15px;
   overflow: hidden;
 }
 

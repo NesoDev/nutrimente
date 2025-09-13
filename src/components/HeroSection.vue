@@ -132,33 +132,66 @@ export default {
 }
 
 .highlight-phrase {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: #128af3;
-    text-align: center;
-    max-width: 70ch;
-    background: rgba(15, 218, 194, 0.1);
-    backdrop-filter: blur(4px);
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 2px solid rgba(15, 218, 194, 0.2);
-    line-height: 1.5;
-    margin-top: 0px;
-    box-shadow: 0 4px 12px rgba(15, 218, 194, 0.15);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  max-width: 70ch;
 
-    p {
-        margin: 0; /* remove default spacing */
-    }
+  /* Leopard-style animated text */
+  background-image: radial-gradient(circle at 10% 20%, #2c1b0c 10%, #f3dd17 40%),
+                    radial-gradient(circle at 50% 50%, #1c120a 12%, #f3dd17 45%),
+                    radial-gradient(circle at 80% 70%, #3a2a1c 15%, #f3dd17 50%);
+  background-size: 200% 200%; /* makes animation more visible */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: leopardMove 6s ease-in-out infinite alternate;
+
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(15, 218, 194, 0.2);
+  line-height: 1.5;
+  margin-top: 0px;
+  box-shadow: 0 4px 12px rgba(15, 218, 194, 0.15);
 }
 
+@keyframes leopardMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+.highlight-phrase p {
+  margin: 0; /* remove default spacing */
+}
+
+
+/* Mobile adjustments with leopard effect */
 @media (max-width: 768px) {
-    .highlight-phrase {
-        font-size: 16px;
-        max-width: 35ch;
-        padding: 12px 16px;
-        margin-top: 10px;
-    }
+  .highlight-phrase {
+    font-size: 16px;
+    max-width: 35ch;
+    padding: 12px 16px;
+    margin-top: 10px;
+
+    /* keep leopard animation active */
+    background-image: radial-gradient(circle at 10% 20%, #2c1b0c 10%, #f3dd17 40%),
+                      radial-gradient(circle at 50% 50%, #1c120a 12%, #f3dd17 45%),
+                      radial-gradient(circle at 80% 70%, #3a2a1c 15%, #f3dd17 50%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: leopardMove 6s ease-in-out infinite alternate;
+  }
 }
 
 
