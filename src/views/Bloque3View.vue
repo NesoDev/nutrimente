@@ -1010,14 +1010,14 @@ export default {
 
 /* Google Charts Map Container */
 .google-map {
-  width: 100%;
+  max-width: none;
   height: auto;
   aspect-ratio: 1/1;
   border-radius: 10px;
   border: 1px solid #e0e0e0;
   max-width: 100%;
   overflow: hidden;
-  
+  padding-right: 10%;
 }
 
 .region-info {
@@ -1173,11 +1173,18 @@ export default {
     max-width: 100%;
   }
 
-  .google-map {
-    aspect-ratio: 4/5;
-    max-width: 90%;
-    margin: 0 auto;
-  }
+.google-map {
+  aspect-ratio: 4/5;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.google-map > * {
+  width: 150%; /* Make content 1.5x wider */
+  transform: translateX(-18.33%); /* Move left by 1/3 to show right 2/3 */
+}
 
   .region-info {
     text-align: center;
