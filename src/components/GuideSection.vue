@@ -252,8 +252,7 @@
         }
     }
 
-    // Main rectangles section styles
-.rectangles-section {
+    .rectangles-section {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -263,14 +262,14 @@
     .rectangle-item {
         width: calc(50% - 10px);
         min-width: 300px;
-        min-height: 140px;
-        height: auto;
+        min-height: 140px; // Increased minimum height
+        height: auto; // Changed from fixed height to auto
         background: #ffffff;
         border-radius: 20px;
         border: 3px solid #ededed;
         box-shadow: 0px 0px 8px 1px #e9f5f5;
         display: flex;
-        align-items: flex-start;
+        align-items: flex-start; // Changed from center to flex-start
         padding: 20px;
         box-sizing: border-box;
         gap: 20px;
@@ -287,123 +286,54 @@
             border-radius: 12px;
             box-shadow: 0 0 2px 1px #e8edef;
             object-fit: cover;
-            flex-shrink: 0;
+            flex-shrink: 0; // Prevent image from shrinking
         }
 
         .rectangle-text {
             flex: 1;
             display: flex;
-            align-items: center;
-            min-height: 80px;
+            align-items: center; // Keep text centered vertically within its container
+            min-height: 80px; // Ensure minimum height matches image
 
             p {
                 font-family: "Work Sans", sans-serif;
                 font-weight: 600;
-                font-size: 16px;
+                font-size: 16px; // Slightly reduced from 18px
                 color: #606060;
                 margin: 0;
-                line-height: 1.5;
-                word-wrap: break-word;
-                hyphens: auto;
+                line-height: 1.5; // Improved line height for better readability
+                word-wrap: break-word; // Ensure long words break properly
+                hyphens: auto; // Enable automatic hyphenation
             }
         }
     }
 }
 
-// Tablet view (768px to 1024px)
-@media (max-width: 1024px) and (min-width: 769px) {
-    .rectangles-section {
-        gap: 18px;
-
-        .rectangle-item {
-            width: calc(50% - 9px);
-            min-width: 280px;
-            min-height: 130px;
-            padding: 18px;
-            gap: 18px;
-
-            .rectangle-img {
-                width: 75px;
-                height: 75px;
-            }
-
-            .rectangle-text {
-                min-height: 75px;
-
-                p {
-                    font-size: 15px;
-                    line-height: 1.4;
-                }
-            }
-        }
-    }
-}
-
-// Mobile view (768px and below)
 @media (max-width: 768px) {
     .rectangles-section {
         gap: 15px;
-        margin-top: 20px; // Add some top margin for better spacing
 
         .rectangle-item {
             width: 100%;
             min-width: unset;
-            min-height: unset; // Remove min-height constraint
-            height: auto; // Ensure full auto height
-            padding: 16px;
-            gap: 16px;
-            align-items: flex-start;
-            flex-direction: row; // Ensure horizontal layout is maintained
+            min-height: 120px; // Increased minimum height for mobile
+            height: auto; // Keep auto height
+            padding: 15px;
+            gap: 15px;
+            align-items: flex-start; // Ensure consistent alignment on mobile
 
             .rectangle-img {
                 width: 70px;
                 height: 70px;
-                flex-shrink: 0;
-                margin-top: 2px; // Slight top margin to align better with text
+                flex-shrink: 0; // Prevent shrinking on mobile too
             }
 
             .rectangle-text {
-                flex: 1;
-                min-height: unset; // Remove min-height constraint
-                display: flex;
-                align-items: flex-start; // Align text to top
-                padding-top: 2px; // Small padding to align with image
+                min-height: 70px; // Match image height
 
                 p {
-                    font-size: 14px;
-                    line-height: 1.4;
-                    margin: 0;
-                    word-wrap: break-word;
-                    overflow-wrap: break-word; // Better word breaking
-                    hyphens: auto;
-                    width: 100%; // Ensure full width usage
-                }
-            }
-        }
-    }
-}
-
-// Extra small mobile view (480px and below)
-@media (max-width: 480px) {
-    .rectangles-section {
-        gap: 12px;
-
-        .rectangle-item {
-            padding: 14px;
-            gap: 14px;
-            border-radius: 16px; // Slightly smaller border radius
-
-            .rectangle-img {
-                width: 60px;
-                height: 60px;
-            }
-
-            .rectangle-text {
-                padding-top: 1px;
-
-                p {
-                    font-size: 13px;
-                    line-height: 1.35;
+                    font-size: 15px; // Slightly reduced for mobile
+                    line-height: 1.4; // Tighter line height for mobile
                 }
             }
         }
