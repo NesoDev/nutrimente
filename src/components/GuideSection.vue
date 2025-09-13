@@ -68,19 +68,19 @@
                 <div class="rectangle-item">
                     <img class="rectangle-img" src="@/assets/animal2_finger.png" alt="">
                     <div class="rectangle-text">
-                        <p>El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales mejorando el aprendizaje y la memoria.</p>
+                        <p>El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales para el aprendizaje y memoria.</p>
                     </div>
                 </div>
                 <div class="rectangle-item">
                     <img class="rectangle-img" src="@/assets/animal3_finger.png" alt="">
                     <div class="rectangle-text">
-                        <p>Los niños que tienen una mala dieta, tienen dificultades en la escuela, en materias tales como la matemática y el aprendizaje verbal.</p>
+                        <p>Los niños que tienen una mala dieta, tienen dificultades en la escuela, tanto en matemática como en aprendizaje verbal.</p>
                     </div>
                 </div>
                 <div class="rectangle-item">
                     <img class="rectangle-img" src="@/assets/animal4_finger.png" alt="">
                     <div class="rectangle-text">
-                        <p>La obesidad afecta directamente al desarrollo sano de tu hijo, sobre todo generando problemas en la atención.</p>
+                        <p>La obesidad afecta directamente al desarrollo de tu hijo, generando problemas en la atención.</p>
                     </div>
                 </div>
             </div>
