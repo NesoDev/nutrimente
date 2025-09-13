@@ -993,6 +993,8 @@ export default {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding-left: -0px; /* new */
+  overflow: hidden;
 }
 
 .map-container {
@@ -1159,6 +1161,7 @@ export default {
     margin-bottom: 25px;
     text-align: justify;
   }
+  
 
   .map-container {
     flex-direction: column;
@@ -1202,6 +1205,8 @@ export default {
     padding-bottom: 98.25%;
   }
 }
+
+
 
 @media (max-width: 480px) {
   .main-titleb3 {
