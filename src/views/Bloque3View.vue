@@ -993,7 +993,6 @@ export default {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding-left: -0px; /* new */
   overflow: hidden;
 }
 
@@ -1017,6 +1016,8 @@ export default {
   border-radius: 10px;
   border: 1px solid #e0e0e0;
   max-width: 100%;
+  overflow: hidden;
+  
 }
 
 .region-info {
