@@ -1183,7 +1183,7 @@ export default {
 
 .google-map > * {
   width: 150%; /* Make content 1.5x wider */
-  transform: translateX(-18.33%); /* Move left by 1/3 to show right 2/3 */
+  transform: translateX(-18.33%) translateY(-33px); /* Move left by 1/3 to show right 2/3 */
 }
 
   .region-info {
