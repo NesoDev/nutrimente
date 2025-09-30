@@ -891,8 +891,8 @@ export default {
 
 .modal-mascot-container {
   position: absolute;
-  top: 10px;
-  right: 60px;
+  top: 170px;
+  right: 140px;
   width: 80px;
   height: 80px;
   z-index: 10;
