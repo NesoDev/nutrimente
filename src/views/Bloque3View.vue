@@ -1,9 +1,6 @@
 <template>
   <div class="page-container">
     <div class="clouds-background">
-      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-1">
-      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-2">
-      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-3">
     </div>
     <div class="grass-decoration"></div>
 
@@ -882,6 +879,16 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+@font-face {
+    font-family: "BeachDay";
+    src: url("@/assets/fonts/beachday.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
 .modal-mascot-container {
   position: absolute;
   top: 10px;
@@ -1012,64 +1019,18 @@ export default {
   position: relative;
   font-family: Arial, sans-serif;
   background: 
-    radial-gradient(circle, #f4e0dc 4px, transparent 4px),
-    linear-gradient(to bottom, #fdf4e6 0%, #ffffff 100%);
-  background-size: 
-    20px 20px,
-    100% 100%;
+              radial-gradient(circle, #ffb3c6 3px, transparent 1px);
+  background-size: 25px 25px, auto;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  transition: background 1s ease-in-out;
 }
 
-.clouds-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
 
-  .cloud {
-    position: absolute;
-    opacity: 0.35;
-    animation: float-cloud 45s infinite ease-in-out;
-  }
-
-  .cloud-1 {
-    top: 8%;
-    left: 5%;
-    width: 290px;
-    animation-delay: 0s;
-  }
-
-  .cloud-2 {
-    top: 35%;
-    right: 3%;
-    width: 310px;
-    animation-delay: 20s;
-  }
-
-  .cloud-3 {
-    top: 65%;
-    left: -5%;
-    width: 270px;
-    animation-delay: 30s;
-  }
-}
-
-@keyframes float-cloud {
-  0%, 100% {
-    transform: translateX(0) translateY(0);
-  }
-  50% {
-    transform: translateX(20px) translateY(-12px);
-  }
-}
 
 
 .main-content {
@@ -1083,33 +1044,42 @@ export default {
 }
 
 .main-titleb3 {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 35px;
-  font-weight: 700;
-  color: #1976D2;
+  font-family: "Bubblegum Sans", "BeachDay", cursive, sans-serif;
+  font-weight: 400;
+  margin: 0;
   margin-bottom: 20px;
-  line-height: 1.4;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 2px;
 
   .title-part1 {
     display: block;
-    font-size: 28px;
-    color: #FF6B9D;
-    font-weight: 600;
+    font-size: 60px;
+    color: #FFD54F;
+    -webkit-text-stroke: 2px #FF9800;
+    text-shadow: 3px 3px 0px #4DD0E1,
+                 5px 5px 0px #0288D1;
+    transform: rotate(-1deg);
   }
 
   .title-part2 {
     display: block;
-    font-size: 42px;
-    color: #1976D2;
-    font-weight: 800;
+    font-size: 70px;
+    color: #FF6B9D;
+    -webkit-text-stroke: 3px #E91E63;
+    text-shadow: 3px 3px 0px #0FDAC2,
+                 5px 5px 0px #019a86;
+    transform: rotate(2deg);
   }
 
   .title-part3 {
     display: block;
-    font-size: 40px;
-    color: #4CAF50;
-    font-weight: 800;
+    font-size: 70px;
+    color: #FF6B9D;
+    -webkit-text-stroke: 3px #E91E63;
+    text-shadow: 3px 3px 0px #0FDAC2,
+                 5px 5px 0px #019a86;
+    transform: rotate(2deg);
   }
 }
 
@@ -1290,15 +1260,8 @@ export default {
     padding: 60px 20px 35px 20px;
   }
 
-  .clouds-background {
-    .cloud {
-      width: 150px !important;
-    }
-  }
 
-  .grass-decoration {
-    height: 40px;
-  }
+
 
   .main-content {
     width: 100%;
@@ -1306,18 +1269,25 @@ export default {
   }
 
   .main-titleb3 {
-    font-size: 24px;
-
     .title-part1 {
-      font-size: 20px;
+      font-size: 40px;
+      -webkit-text-stroke: 1.5px #FF9800;
+      text-shadow: 2px 2px 0px #4DD0E1,
+                   3px 3px 0px #0288D1;
     }
 
     .title-part2 {
-      font-size: 32px;
+      font-size: 50px;
+      -webkit-text-stroke: 2px #E91E63;
+      text-shadow: 2px 2px 0px #0FDAC2,
+                   3px 3px 0px #019a86;
     }
 
     .title-part3 {
-      font-size: 30px;
+      font-size: 50px;
+      -webkit-text-stroke: 2px #E91E63;
+      text-shadow: 2px 2px 0px #0FDAC2,
+                   3px 3px 0px #019a86;
     }
   }
 

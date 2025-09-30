@@ -77,7 +77,7 @@
 #guide-section {
     width: 100%;
     height: auto;
-    background-color: #f4feff;
+    background-color: #fff6f4;
     background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
     background-size: 20px 20px;
     display: flex;
