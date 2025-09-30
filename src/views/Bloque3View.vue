@@ -1,5 +1,12 @@
 <template>
   <div class="page-container">
+    <div class="clouds-background">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-1">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-2">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-3">
+    </div>
+    <div class="grass-decoration"></div>
+
     <main class="main-content">
       <!-- Modal -->
       <transition name="fade">
@@ -7,6 +14,10 @@
           <div class="modal-content">
             <button class="close-btn" @click="closeModal">✖</button>
             <div v-if="selectedRecipe">
+              <!-- Animal mascot in modal -->
+              <div class="modal-mascot-container">
+                <img src="../assets/animal.png" alt="Mascota NutriMente" class="modal-mascot">
+              </div>
               <div class="modal-header">
                 <h2>{{ selectedRecipe.name }}</h2>
                 <p class="recipe-meta">
@@ -49,11 +60,15 @@
         </div>
       </transition>
 
-      <h1 class="main-titleb3">Bloque 3: Alimentando su futuro</h1>
+      <h1 class="main-titleb3">
+        <span class="title-part1">Bloque 3:</span>
+        <span class="title-part2">Alimentando</span>
+        <span class="title-part3">su futuro</span>
+      </h1>
 
       <p class="description">
-        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños. 
-        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos, 
+        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
+        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos,
         para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
       </p>
 
@@ -61,16 +76,21 @@
       <div class="age-group-section">
         <div class="age-group-buttons">
 
-          <button 
-            v-for="(ageGroup, index) in ageGroups" 
-            :key="index" 
-            class="age-group-button" 
-            :class="{ active: selectedAgeGroup === ageGroup.id }" 
+          <button
+            v-for="(ageGroup, index) in ageGroups"
+            :key="index"
+            class="age-group-button"
+            :class="{ active: selectedAgeGroup === ageGroup.id }"
             @click="selectAgeGroup(ageGroup.id)"
           >
             {{ ageGroup.label }}
           </button>
         </div>
+      </div>
+
+      <!-- Map instruction text -->
+      <div class="map-instruction">
+        <p>🗺️ <strong>Explora las recetas regionales:</strong> Haz clic en una región del mapa (Costa, Sierra o Selva) para descubrir recetas tradicionales y nutritivas adaptadas a cada edad.</p>
       </div>
 
       <!-- Map section -->
@@ -862,6 +882,58 @@ export default {
 </script>
 
 <style scoped>
+.modal-mascot-container {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+
+  .modal-mascot {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+    animation: wiggle 3s ease-in-out infinite;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.05);
+  }
+}
+
+.map-instruction {
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  border-left: 4px solid #4CAF50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  p {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #2E7D32;
+    text-align: center;
+    line-height: 1.5;
+
+    strong {
+      color: #1B5E20;
+    }
+  }
+}
+
 /* Age group buttons */
 .age-group-section {
   margin-bottom: 25px;
@@ -937,18 +1009,72 @@ export default {
 }
 
 .page-container {
+  position: relative;
   font-family: Arial, sans-serif;
-  background-color: #f4feff;
-  background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
-  background-size: 20px 20px;
+  background: 
+    radial-gradient(circle, #f4e0dc 4px, transparent 4px),
+    linear-gradient(to bottom, #fdf4e6 0%, #ffffff 100%);
+  background-size: 
+    20px 20px,
+    100% 100%;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
+.clouds-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+
+  .cloud {
+    position: absolute;
+    opacity: 0.35;
+    animation: float-cloud 45s infinite ease-in-out;
+  }
+
+  .cloud-1 {
+    top: 8%;
+    left: 5%;
+    width: 290px;
+    animation-delay: 0s;
+  }
+
+  .cloud-2 {
+    top: 35%;
+    right: 3%;
+    width: 310px;
+    animation-delay: 20s;
+  }
+
+  .cloud-3 {
+    top: 65%;
+    left: -5%;
+    width: 270px;
+    animation-delay: 30s;
+  }
+}
+
+@keyframes float-cloud {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(20px) translateY(-12px);
+  }
+}
+
+
 .main-content {
+  position: relative;
+  z-index: 10;
   width: 80%;
   max-width: 900px;
   text-align: center;
@@ -957,33 +1083,50 @@ export default {
 }
 
 .main-titleb3 {
-  margin-bottom: 10px;
-  display: inline-block;
-  border-radius: 5px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #1976D2;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 
-                font-family: 'Cooper Black', Arial, sans-serif;
-                font-size: 45px;
-                font-weight: bolder;
-                color: #0DB68F;
-                overflow-wrap: break-word;
-                white-space: normal;
+  .title-part1 {
+    display: block;
+    font-size: 28px;
+    color: #FF6B9D;
+    font-weight: 600;
+  }
 
-  width: fit-content;
-                padding: 0px 10px;
-                box-sizing: border-box;
+  .title-part2 {
+    display: block;
+    font-size: 42px;
+    color: #1976D2;
+    font-weight: 800;
+  }
+
+  .title-part3 {
+    display: block;
+    font-size: 40px;
+    color: #4CAF50;
+    font-weight: 800;
+  }
 }
 
 .description {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #6d8f9d;
-    backdrop-filter: blur(2px);
+    color: #004D40;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px 25px;
     line-height: 1.6;
     text-align: center;
-    max-width: 80ch;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    max-width: 65ch;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Map Section Styles */
@@ -1144,23 +1287,59 @@ export default {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .page-container {
-    padding: 60px 35px 35px 35px; 
+    padding: 60px 20px 35px 20px;
+  }
+
+  .clouds-background {
+    .cloud {
+      width: 150px !important;
+    }
+  }
+
+  .grass-decoration {
+    height: 40px;
   }
 
   .main-content {
     width: 100%;
-    padding: 30px;
+    padding: 20px;
   }
 
   .main-titleb3 {
-    font-size: 1.8em;
-    padding: 4px 10px;
+    font-size: 24px;
+
+    .title-part1 {
+      font-size: 20px;
+    }
+
+    .title-part2 {
+      font-size: 32px;
+    }
+
+    .title-part3 {
+      font-size: 30px;
+    }
   }
 
   .description {
-    font-size: 0.95em;
+    font-size: 15px;
     margin-bottom: 25px;
-    text-align: justify;
+    padding: 15px 18px;
+    max-width: 40ch;
+  }
+
+  .map-instruction {
+    padding: 12px 15px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .modal-mascot-container {
+    right: 45px;
+    width: 60px;
+    height: 60px;
   }
   
 

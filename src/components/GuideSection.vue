@@ -3,7 +3,10 @@
         <div class="extension-bg-img"></div>
         <div class="container">
             <div class="text">
-                <h2 class="main-text">Nutrimente te brinda</h2>
+                <h2 class="main-text">
+                    <span class="title-line1">¡Nutrimente</span>
+                    <span class="title-line2">te brinda!</span>
+                </h2>
                 <p>
                     Juegos interactivos, recetas saludables y herramientas prácticas para acompañar el crecimiento de tu hijo. Todo está organizado por bloques temáticos para que puedas acceder fácil y rápido a lo que necesitas.
                 </p>
@@ -57,33 +60,6 @@
                 </div>
             </div>
             
-            <!-- New rectangles section -->
-            <div class="rectangles-section">
-                <div class="rectangle-item">
-                    <img class="rectangle-img" src="@/assets/horse_finger.png" alt="">
-                    <div class="rectangle-text">
-                        <p>Al jugar con bloques, el niño se divierte y desarrolla exploración, relaciones, resolución y lógica.</p>
-                    </div>
-                </div>
-                <div class="rectangle-item">
-                    <img class="rectangle-img" src="@/assets/animal2_finger.png" alt="">
-                    <div class="rectangle-text">
-                        <p>El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales para el aprendizaje y memoria.</p>
-                    </div>
-                </div>
-                <div class="rectangle-item">
-                    <img class="rectangle-img" src="@/assets/animal3_finger.png" alt="">
-                    <div class="rectangle-text">
-                        <p>Los niños que tienen una mala dieta, tienen dificultades en la escuela, tanto en matemática como en aprendizaje verbal.</p>
-                    </div>
-                </div>
-                <div class="rectangle-item">
-                    <img class="rectangle-img" src="@/assets/animal4_finger.png" alt="">
-                    <div class="rectangle-text">
-                        <p>La obesidad afecta directamente al desarrollo de tu hijo, generando problemas en la atención.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </template>
@@ -134,13 +110,32 @@
         gap: 20px;
 
         h2 {
-            font-family: 'Cooper Black', Arial, sans-serif;
-            font-weight: 200;
-            font-size: 70px;
-            color: #57ABF7;
-            letter-spacing: 4px;
-            -webkit-text-stroke: 2px #106CD5;
+            font-family: "BeachDay", "Cooper Black", cursive;
+            font-weight: 400;
+            margin: 0;
             text-align: center;
+            line-height: 1.2;
+            letter-spacing: 2px;
+
+            .title-line1 {
+                display: block;
+                font-size: 60px;
+                color: #FFD54F;
+                -webkit-text-stroke: 2px #FF9800;
+                text-shadow: 3px 3px 0px #4DD0E1,
+                             5px 5px 0px #0288D1;
+                transform: rotate(-1deg);
+            }
+
+            .title-line2 {
+                display: block;
+                font-size: 70px;
+                color: #FF6B9D;
+                -webkit-text-stroke: 3px #E91E63;
+                text-shadow: 3px 3px 0px #0FDAC2,
+                             5px 5px 0px #019a86;
+                transform: rotate(2deg);
+            }
         }
 
         p {
@@ -151,7 +146,9 @@
             backdrop-filter: blur(2px);
             line-height: 1.6;
             text-align: center;
-            max-width: 80ch;
+            max-width: 65ch;
+            margin: 0 auto;
+            padding: 0 20px;
         }
     }
 
@@ -252,93 +249,6 @@
         }
     }
 
-    .rectangles-section {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-
-    .rectangle-item {
-        width: calc(50% - 10px);
-        min-width: 300px;
-        min-height: 140px; // Increased minimum height
-        height: auto; // Changed from fixed height to auto
-        background: #ffffff;
-        border-radius: 20px;
-        border: 3px solid #ededed;
-        box-shadow: 0px 0px 8px 1px #e9f5f5;
-        display: flex;
-        align-items: flex-start; // Changed from center to flex-start
-        padding: 20px;
-        box-sizing: border-box;
-        gap: 20px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        &:hover {
-            transform: translateY(-1px);
-            box-shadow: 0px 3px 12px 2px #e9f5f5;
-        }
-
-        .rectangle-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            box-shadow: 0 0 2px 1px #e8edef;
-            object-fit: cover;
-            flex-shrink: 0; // Prevent image from shrinking
-        }
-
-        .rectangle-text {
-            flex: 1;
-            display: flex;
-            align-items: center; // Keep text centered vertically within its container
-            min-height: 80px; // Ensure minimum height matches image
-
-            p {
-                font-family: "Work Sans", sans-serif;
-                font-weight: 600;
-                font-size: 16px; // Slightly reduced from 18px
-                color: #606060;
-                margin: 0;
-                line-height: 1.5; // Improved line height for better readability
-                word-wrap: break-word; // Ensure long words break properly
-                hyphens: auto; // Enable automatic hyphenation
-            }
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .rectangles-section {
-        gap: 15px;
-
-        .rectangle-item {
-            width: 100%;
-            min-width: unset;
-            min-height: 150px; // Increased minimum height for mobile
-            height: auto; // Keep auto height
-            padding: 15px;
-            gap: 15px;
-            align-items: flex-start; // Ensure consistent alignment on mobile
-
-            .rectangle-img {
-                width: 70px;
-                height: 70px;
-                flex-shrink: 0; // Prevent shrinking on mobile too
-            }
-
-            .rectangle-text {
-                min-height: 70px; // Match image height
-
-                p {
-                    font-size: 15px; // Slightly reduced for mobile
-                    line-height: 1.2; // Tighter line height for mobile
-                }
-            }
-        }
-    }
-}
 }
 
 @media (max-width: 768px) {
@@ -359,14 +269,26 @@
             gap: 20px;
 
             h2 {
-                font-size: 30px;
-                -webkit-text-stroke: 1px #106CD5;
+                .title-line1 {
+                    font-size: 40px;
+                    -webkit-text-stroke: 1.5px #FF9800;
+                    text-shadow: 2px 2px 0px #4DD0E1,
+                                 3px 3px 0px #0288D1;
+                }
+
+                .title-line2 {
+                    font-size: 50px;
+                    -webkit-text-stroke: 2px #E91E63;
+                    text-shadow: 2px 2px 0px #0FDAC2,
+                                 3px 3px 0px #019a86;
+                }
             }
 
             p {
                 text-align: center;
                 color: #53767e;
                 font-size: 15px;
+                max-width: 40ch;
             }
         }
 
@@ -411,26 +333,6 @@
             }
         }
 
-        .rectangles-section {
-            gap: 15px;
-
-            .rectangle-item {
-                width: 100%;
-                min-width: unset;
-                height: 100px;
-                padding: 15px;
-                gap: 15px;
-
-                .rectangle-img {
-                    width: 70px;
-                    height: 70px;
-                }
-
-                .rectangle-text p {
-                    font-size: 16px;
-                }
-            }
-        }
     }
 }
 </style>

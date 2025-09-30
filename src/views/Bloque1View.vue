@@ -1,8 +1,17 @@
 <template>
   <div class="page-container">
+    <div class="clouds-background">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-1">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-2">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-3">
+    </div>
+    <div class="grass-decoration"></div>
     <main class="main-content">
-      <h1 class="main-title">Bloque 1: Alimentando el futuro
-desde de los primeros años</h1>
+      <h1 class="main-title">
+        <span class="title-part1">Bloque 1:</span>
+        <span class="title-part2">Alimentando el futuro</span>
+        <span class="title-part3">desde los primeros años</span>
+      </h1>
       <p class="description">
         En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
 Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos, para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.  
@@ -39,14 +48,38 @@ Por eso, creamos una plataforma digital con recursos prácticos, confiables y va
         </div>
       </div>
       <transition name="fade">
-        <div v-if="showCard" class="content-card">
-          <p class="card-text">
-            En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños. 
-            Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos, 
-            para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
-          </p>
-          <div class="card-image-container">
-            <img src="../assets/animal.png" alt="Cartoon animal" class="card-image" />
+        <div v-if="showCard" class="content-card-expanded">
+          <!-- Video Description -->
+          <div class="video-description-section">
+            <h3 class="section-subtitle">Sobre este video</h3>
+            <p class="video-desc-text">
+              En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
+              Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos,
+              para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
+            </p>
+          </div>
+
+          <!-- Curious Facts Section -->
+          <div class="curious-facts-section">
+            <h3 class="section-subtitle">¿Sabías que...?</h3>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <img src="../assets/horse_finger.png" alt="Mascota" class="fact-mascot">
+                <p class="fact-text">Al jugar con bloques, el niño se divierte y desarrolla exploración, relaciones, resolución y lógica.</p>
+              </div>
+              <div class="fact-item">
+                <img src="../assets/animal2_finger.png" alt="Mascota" class="fact-mascot">
+                <p class="fact-text">El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales para el aprendizaje y memoria.</p>
+              </div>
+              <div class="fact-item">
+                <img src="../assets/animal3_finger.png" alt="Mascota" class="fact-mascot">
+                <p class="fact-text">Los niños que tienen una mala dieta, tienen dificultades en la escuela, tanto en matemática como en aprendizaje verbal.</p>
+              </div>
+              <div class="fact-item">
+                <img src="../assets/animal4_finger.png" alt="Mascota" class="fact-mascot">
+                <p class="fact-text">La obesidad afecta directamente al desarrollo de tu hijo, generando problemas en la atención.</p>
+              </div>
+            </div>
           </div>
         </div>
       </transition>
@@ -106,19 +139,72 @@ export default {
 
 
 <style scoped>
+
 .page-container {
+  position: relative;
   font-family: Arial, sans-serif;
-  background-color: #f4feff;
-  background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
+  background-color: #fff5e6;
+  background-image: radial-gradient(circle, #ffd9b3 4px, transparent 1px);
   background-size: 20px 20px;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
+.clouds-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+
+  .cloud {
+    position: absolute;
+    opacity: 0.4;
+    animation: float-cloud 40s infinite ease-in-out;
+  }
+
+  .cloud-1 {
+    top: 10%;
+    left: -10%;
+    width: 300px;
+    animation-delay: 0s;
+  }
+
+  .cloud-2 {
+    top: 30%;
+    right: -10%;
+    width: 250px;
+    animation-delay: 15s;
+  }
+
+  .cloud-3 {
+    top: 60%;
+    left: 10%;
+    width: 280px;
+    animation-delay: 25s;
+  }
+}
+
+@keyframes float-cloud {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(30px) translateY(-20px);
+  }
+}
+
+
+
 .main-content {
+  position: relative;
+  z-index: 10;
   width: 80%;
   max-width: 900px;
   text-align: center;
@@ -127,20 +213,34 @@ export default {
 }
 
 .main-title {
-  margin-bottom: 10px;
-  display: inline-block;
-  border-radius: 5px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #2E7D32;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 
-                font-family: 'Cooper Black', Arial, sans-serif;
-                font-size: 45px;
-                font-weight: bolder;
-                color: #0DB68F;
-                overflow-wrap: break-word;
-                white-space: normal;
+  .title-part1 {
+    display: block;
+    font-size: 28px;
+    color: #FF6B9D;
+    font-weight: 600;
+  }
 
-  width: fit-content;
-                padding: 0px 10px;
-                box-sizing: border-box;
+  .title-part2 {
+    display: block;
+    font-size: 42px;
+    color: #0DB68F;
+    font-weight: 800;
+  }
+
+  .title-part3 {
+    display: block;
+    font-size: 30px;
+    color: #2E7D32;
+    font-weight: 600;
+  }
 }
 
 .subtitle {
@@ -153,13 +253,16 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #6d8f9d;
-    backdrop-filter: blur(2px);
+    color: #2C5F2D;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px 25px;
     line-height: 1.6;
     text-align: center;
-    max-width: 80ch;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    max-width: 65ch;
+    margin: 20px auto 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -218,18 +321,38 @@ export default {
 /* 📱 Mobile-friendly adjustments */
 @media (max-width: 768px) {
   .page-container {
-    padding: 60px 35px 35px 35px; 
+    padding: 60px 20px 35px 20px;
+  }
+
+  .clouds-background {
+    .cloud {
+      width: 150px !important;
+    }
+  }
+
+  .grass-decoration {
+    height: 40px;
   }
 
   .main-content {
     width: 100%;
-    padding: 30px;
-
+    padding: 20px;
   }
 
   .main-title {
-    font-size: 1.8em;
-    padding: 4px 10px;
+    font-size: 24px;
+
+    .title-part1 {
+      font-size: 20px;
+    }
+
+    .title-part2 {
+      font-size: 32px;
+    }
+
+    .title-part3 {
+      font-size: 22px;
+    }
   }
 
   .subtitle {
@@ -238,9 +361,50 @@ export default {
   }
 
   .description {
-    font-size: 0.95em;
+    font-size: 15px;
     margin-bottom: 25px;
-    text-align: justify; /* looks better on small screens */
+    padding: 15px 18px;
+    max-width: 40ch;
+  }
+
+  .content-card-expanded {
+    padding: 20px;
+    gap: 20px;
+
+    .video-description-section {
+      .section-subtitle {
+        font-size: 20px;
+      }
+
+      .video-desc-text {
+        font-size: 14px;
+      }
+    }
+
+    .curious-facts-section {
+      .section-subtitle {
+        font-size: 20px;
+      }
+
+      .facts-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .fact-item {
+        padding: 12px;
+        gap: 12px;
+
+        .fact-mascot {
+          width: 60px;
+          height: 60px;
+        }
+
+        .fact-text {
+          font-size: 14px;
+        }
+      }
+    }
   }
 
   /* Video adjustments */
@@ -312,6 +476,8 @@ export default {
   flex-grow: 1;
   text-align: left;
   font-size: 18px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
 }
 
 .info-icon {
@@ -328,38 +494,84 @@ export default {
   border-radius: 2px;
 }
 
-.content-card {
-  background-color: white;
+.content-card-expanded {
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   display: flex;
-  gap: 20px;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.card-text {
-  flex: 1;
-  font-size: 1em;
-  line-height: 1.6;
-  text-align: left;
-  color: #848484;
-  font-family: 'Solway', serif;
+.video-description-section {
+  .section-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0DB68F;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .video-desc-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: left;
+    color: #555;
+  }
 }
 
-.card-image-container {
-  width: 150px;
-  height: 150px;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.curious-facts-section {
+  .section-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FF6B9D;
+    margin-bottom: 20px;
+    text-align: left;
+  }
 
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .fact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 235, 59, 0.15);
+    border-radius: 12px;
+    border: 2px solid #FFD54F;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+    }
+
+    .fact-mascot {
+      width: 70px;
+      height: 70px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    .fact-text {
+      flex: 1;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #424242;
+      margin: 0;
+    }
+  }
 }
 
 .fade-enter-active, .fade-leave-active {

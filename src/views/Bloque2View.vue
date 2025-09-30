@@ -1,30 +1,46 @@
 <template>
   <div class="page-container">
+    <div class="clouds-background">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-1">
+      <img src="@/assets/cloud-bg-desktop.svg" alt="" class="cloud cloud-2">
+    </div>
+    <div class="grass-decoration"></div>
+
     <main class="main-content">
-      <h1 class="main-titleb2">Bloque 2: ¡Pequeños juegos, grandes mentes!</h1>
+      <!-- 1. Título de la sección -->
+      <h1 class="main-titleb2">
+        <span class="title-part1">Bloque 2:</span>
+        <span class="title-part2">¡Pequeños juegos,</span>
+        <span class="title-part3">grandes mentes!</span>
+      </h1>
 
+      <!-- 2. Descripción de la sección -->
+      <p class="description">
+        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
+        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos,
+        para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
+      </p>
 
-      <!-- 👇 botones de categorías -->
-      <div class="video-selector">
-        <button 
+      <!-- 3. Texto de ayuda -->
+      <div class="help-text">
+        <p>👇 Selecciona la edad de tu hijo para ver actividades apropiadas:</p>
+      </div>
+
+      <!-- 4. Botones de edad -->
+      <div class="video-selector age-buttons">
+        <button
           v-for="cat in Object.keys(videos)"
           :key="cat"
-          @click="selectCategory(cat)" 
+          @click="selectCategory(cat)"
           :class="{ active: currentCategory === cat }">
           {{ labels[cat] }}
         </button>
       </div>
 
-      <p class="description">
-        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños. 
-        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos, 
-        para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
-      </p>
-
-      <!-- 👇 botones de videos según la categoría -->
+      <!-- 5. Botones de video -->
       <div class="video-selector sub-selector">
-        <button 
-          v-for="(video, index) in videos[currentCategory]" 
+        <button
+          v-for="(video, index) in videos[currentCategory]"
           :key="index"
           @click="selectVideo(index)"
           :class="{ active: currentVideoIndex === index }"
@@ -32,6 +48,8 @@
           Video {{ index + 1 }}
         </button>
       </div>
+
+      <!-- 6. Video -->
 
       <div class="video-container">
         <video
@@ -190,6 +208,24 @@ export default {
 </script>
 
 <style scoped>
+.help-text {
+  margin: 15px 0;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  border-left: 4px solid #FFAE50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  p {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FF6B00;
+    text-align: center;
+  }
+}
+
 /* Centered category selector */
 .video-selector {
   display: flex;
@@ -199,67 +235,132 @@ export default {
   justify-content: center;
 }
 
+/* Age buttons styling */
+.video-selector.age-buttons button {
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: 3px solid #FFAE50;
+  cursor: pointer;
+  background-color: #FFF8E1;
+  color: #FF6B00;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.video-selector.age-buttons button.active {
+  background-color: #FFAE50;
+  color: white;
+  border-radius: 25px;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.video-selector.age-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 174, 80, 0.4);
+}
+
 /* Sub-selector aligned to the left */
 .video-selector.sub-selector {
   justify-content: flex-start;
-  margin-top: -5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 /* Button styles */
-.video-selector button {
+.video-selector.sub-selector button {
   padding: 10px 14px;
   border-radius: 25px;
-  border: none;
+  border: 2px solid #0DB68F;
   cursor: pointer;
-  background-color: #FFAE50;
-  color: white;
-}
-
-/* Active button style */
-.video-selector button.active {
-  background-color: #FFAE50; /* Orange background */
-  color: white;              /* White text */
-  border-radius: 25px;       /* Rounded corners */
-  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4); /* Dark soft shadow */
-  font-weight: bold;         /* Optional: make the text bold like in the image */
-}
-
-/* Optional title style */
-.video-title {
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.video-selector.sub-selector button {
   background-color: rgba(16, 156, 123, 0.7);
   color: white;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
-
 
 .video-selector.sub-selector button.active {
   background-color: #0DB68F;
   box-shadow: -4px 4px 6px rgb(255, 255, 20);
+  font-weight: bold;
+}
 
+.video-selector.sub-selector button:hover {
+  background-color: #0DB68F;
+  transform: translateY(-2px);
 }
 </style>
 
 
 
 <style scoped>
+
 .page-container {
+  position: relative;
   font-family: Arial, sans-serif;
-  background-color: #f4feff;
-  background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
-  background-size: 20px 20px;
+  background: 
+    radial-gradient(circle, #d8f2df 4px, transparent 4px),
+    linear-gradient(to bottom, #fdf4e6 0%, #ffffff 100%);
+  background-size: 
+    20px 20px,
+    100% 100%;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
+
+.clouds-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+
+  .cloud {
+    position: absolute;
+    opacity: 0.3;
+    animation: float-cloud 35s infinite ease-in-out;
+  }
+
+  .cloud-1 {
+    top: 15%;
+    right: -5%;
+    width: 280px;
+    animation-delay: 0s;
+  }
+
+  .cloud-2 {
+    top: 50%;
+    left: -8%;
+    width: 320px;
+    animation-delay: 18s;
+  }
+}
+
+@keyframes float-cloud {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-25px) translateY(-15px);
+  }
+}
+
+
+
 .main-content {
+  position: relative;
+  z-index: 10;
   width: 80%;
   max-width: 900px;
   text-align: center;
@@ -268,20 +369,34 @@ export default {
 }
 
 .main-titleb2 {
-  margin-bottom: 10px;
-  display: inline-block;
-  border-radius: 5px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #FF6F00;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 
-                font-family: 'Cooper Black', Arial, sans-serif;
-                font-size: 45px;
-                font-weight: bolder;
-                color: #0DB68F;
-                overflow-wrap: break-word;
-                white-space: normal;
+  .title-part1 {
+    display: block;
+    font-size: 28px;
+    color: #FF6B9D;
+    font-weight: 600;
+  }
 
-  width: fit-content;
-                padding: 0px 10px;
-                box-sizing: border-box;
+  .title-part2 {
+    display: block;
+    font-size: 42px;
+    color: #FFAE50;
+    font-weight: 800;
+  }
+
+  .title-part3 {
+    display: block;
+    font-size: 40px;
+    color: #0DB68F;
+    font-weight: 800;
+  }
 }
 
 
@@ -289,13 +404,16 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #6d8f9d;
-    backdrop-filter: blur(2px);
+    color: #5D4037;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px 25px;
     line-height: 1.6;
     text-align: center;
-    max-width: 80ch;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    max-width: 65ch;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 /* Contenedor responsivo con aspecto 16:9 */
 .video-container {
@@ -352,18 +470,56 @@ export default {
 /* 📱 Mobile-friendly adjustments */
 @media (max-width: 768px) {
   .page-container {
-    padding: 60px 35px 35px 35px; 
+    padding: 60px 20px 35px 20px;
+  }
+
+  .clouds-background {
+    .cloud {
+      width: 150px !important;
+    }
+  }
+
+  .grass-decoration {
+    height: 40px;
   }
 
   .main-content {
     width: 100%;
-    padding: 30px;
-
+    padding: 20px;
   }
 
   .main-titleb2 {
-    font-size: 1.8em;
-    padding: 4px 10px;
+    font-size: 24px;
+
+    .title-part1 {
+      font-size: 20px;
+    }
+
+    .title-part2 {
+      font-size: 32px;
+    }
+
+    .title-part3 {
+      font-size: 30px;
+    }
+  }
+
+  .help-text {
+    padding: 12px 15px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .video-selector.age-buttons button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .video-selector.sub-selector button {
+    padding: 8px 12px;
+    font-size: 14px;
   }
 
   
