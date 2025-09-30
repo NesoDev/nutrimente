@@ -1424,6 +1424,8 @@ export default {
   flex-grow: 1;
   text-align: left;
   font-size: 18px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
 }
 
 .info-icon {
@@ -1452,12 +1454,12 @@ export default {
 }
 
 .card-text {
-  flex: 1;
-  font-size: 1em;
-  line-height: 1.6;
-  text-align: left;
-  color: #848484;
-  font-family: 'Solway', serif;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: left;
+    color: #555;
 }
 
 .card-image-container {

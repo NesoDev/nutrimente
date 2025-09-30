@@ -456,7 +456,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Solway', serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 1.2em;
   margin-bottom: 20px;
 }
