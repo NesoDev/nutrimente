@@ -882,7 +882,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
 @font-face {
-    font-family: "BeachDay";
+     font-family: 'Work Sans', sans-serif;
     src: url("@/assets/fonts/beachday.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
@@ -948,7 +948,7 @@ export default {
 
 .age-group-section h4 {
   color: #333;
-  font-family: 'Solway', serif;
+   font-family: 'Work Sans', sans-serif;
   margin-bottom: 15px;
   font-size: 1em;
 }
@@ -1017,7 +1017,7 @@ export default {
 
 .page-container {
   position: relative;
-  font-family: Arial, sans-serif;
+   font-family: 'Work Sans', sans-serif;
   background: 
               radial-gradient(circle, #ffb3c6 3px, transparent 1px);
   background-size: 25px 25px, auto;
@@ -1044,7 +1044,7 @@ export default {
 }
 
 .main-titleb3 {
-  font-family: "Bubblegum Sans", "BeachDay", cursive, sans-serif;
+   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   margin: 0;
   margin-bottom: 20px;
@@ -1140,7 +1140,7 @@ export default {
 
 .region-header h3 {
   color: #F4A261;
-  font-family: 'Solway', serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 1.2em;
   margin-bottom: 10px;
   background-color: #F4A261;
@@ -1152,14 +1152,14 @@ export default {
 
 .region-description {
   color: #848484;
-  font-family: 'Solway', serif;
+  font-family: "Work Sans", sans-serif;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
 .recipes-section h4 {
   color: #333;
-  font-family: 'Solway', serif;
+  font-family: "Work Sans", sans-serif;
   margin-bottom: 15px;
 }
 
@@ -1177,7 +1177,7 @@ export default {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-family: 'Solway', serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 0.9em;
   transition: all 0.3s ease;
 }
@@ -1415,7 +1415,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Solway', serif;
+   font-family: 'Work Sans', sans-serif;
   font-size: 1.2em;
   margin-bottom: 20px;
 }
@@ -1553,7 +1553,7 @@ export default {
   margin: 0;
   font-size: 1.3rem; /* Reduced from 1.6rem */
   color: #0DB68F;
-  font-family: 'Solway', serif;
+   font-family: 'Work Sans', sans-serif;
   line-height: 1.2;
 }
 
@@ -1561,7 +1561,7 @@ export default {
   font-size: 0.8rem; /* Reduced from 0.9rem */
   color: #666;
   margin-top: 3px; /* Reduced from 5px */
-  font-family: 'Solway', serif;
+   font-family: 'Work Sans', sans-serif;
 }
 
 /* Section titles */
@@ -1573,7 +1573,7 @@ export default {
   font-size: 1rem; /* Reduced from 1.2rem */
   color: #333;
   margin-bottom: 0.4rem; /* Reduced from 0.6rem */
-  font-family: 'Solway', serif;
+   font-family: 'Work Sans', sans-serif;
   border-left: 3px solid #38B2AC; /* Thinner border */
   padding-left: 6px; /* Reduced from 8px */
 }
@@ -1591,7 +1591,7 @@ export default {
   color: #444;
   line-height: 1.4; /* Reduced from 1.5 */
   font-size: 0.85rem; /* Reduced from 0.95rem */
-  font-family: 'Solway', serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 /* Nutrition facts in grid - More compact */
@@ -1632,7 +1632,7 @@ export default {
   color: #555;
   font-size: 0.85rem; /* Reduced from 0.95rem */
   line-height: 1.3; /* Reduced from 1.4 */
-  font-family: 'Solway', serif;
+   font-family: 'Work Sans', sans-serif;
 }
 
 /* Close button refinement */
@@ -1660,7 +1660,7 @@ export default {
   color: #666;
   line-height: 1.4;
   margin-bottom: 1rem;
-  font-family: 'Solway', serif;
+   font-family: 'Work Sans', sans-serif;
 }
 
 /* Coming soon section - more compact */
