@@ -14,9 +14,8 @@
 
       <!-- 2. Descripción de la sección -->
       <p class="description">
-        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
-        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos,
-        para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
+        La infancia es fundamental para el desarrollo cerebral y cognitivo de los menores; en este sentido, el juego es esencial para que los niños desarrollen una gran variedad de habilidades para el futuro.
+Por ello, aquí en Nutrimente te presentamos algunos juegos que podría practicar tu pequeño según su edad.
       </p>
 
       <!-- 3. Texto de ayuda -->

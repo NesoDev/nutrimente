@@ -10,8 +10,7 @@
         <span class="title-part3">desde los primeros años</span>
       </h1>
       <p class="description">
-        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
-Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos, para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.  
+        Sabías que... está comprobado científicamente que un niño que se alimenta de manera saludable crece sano, con una mayor capacidad de aprendizaje, mayor capacidad de atención, mejores notas en la escuela, entre más beneficios? 
     </p>
       <div class="video-container">
         <video

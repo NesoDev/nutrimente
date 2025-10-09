@@ -8,11 +8,11 @@
                     <span class="title-line2">te brinda!</span>
                 </h2>
                 <p>
-                    Juegos interactivos, recetas saludables y herramientas prácticas para acompañar el crecimiento de tu hijo. Todo está organizado por bloques temáticos para que puedas acceder fácil y rápido a lo que necesitas.
+                    En NutriMente, te ayudamos a mejorar la alimentación y el aprendizaje de tu hijo de manera fácil y práctica. Aquí encontrarás consejos útiles, juegos que estimulan su desarrollo, recetas nutritivas y herramientas para seguir su crecimiento con recomendaciones personalizadas. Todo está organizado por temas para que accedas rápido a lo que necesitas. ¡Explora y empieza hoy!
                 </p>
             </div>
             <div class="content">
-                <img class="img-content" src="@/assets/jaguar.svg" alt="">
+                <img class="img-content" src="@/assets/jaguar.png" alt="">
                 <div class="blocks">
 <!-- Bloque 1 clickable - now navigates to Bloque1View -->
                     <div class="block" id="block-1" @click="navigateToBloque(1)">
