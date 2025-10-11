@@ -148,8 +148,8 @@ export default {
 .page-container {
   position: relative;
   font-family: Arial, sans-serif;
-  background: 
-              repeating-linear-gradient(45deg, #ffd9b3 0 8px, transparent 8px 20px);
+  background:
+              repeating-linear-gradient(45deg, #f6faf1 0 8px, transparent 8px 20px);
   background-size: 20px 20px, auto;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
@@ -194,32 +194,36 @@ export default {
   letter-spacing: 2px;
 
   .title-part1 {
-    display: block;
+    display: inline-block;
     font-size: 60px;
-    color: #FFD54F;
-    -webkit-text-stroke: 2px #FF9800;
-    text-shadow: 3px 3px 0px #4DD0E1,
-                 5px 5px 0px #0288D1;
+    color: white;
+    background-color: #f1b33f;
+    padding: 8px 20px;
+    border-radius: 12px;
+    -webkit-text-stroke: 0px;
+    text-shadow: none;
     transform: rotate(-1deg);
+    box-shadow: 0 4px 12px rgba(241, 179, 63, 0.3);
+    margin-bottom: 10px;
   }
 
   .title-part2 {
     display: block;
     font-size: 70px;
-    color: #FF6B9D;
-    -webkit-text-stroke: 3px #E91E63;
-    text-shadow: 3px 3px 0px #0FDAC2,
-                 5px 5px 0px #019a86;
+    color: #8dba3f;
+    -webkit-text-stroke: 3px #8dbb39;
+    text-shadow: 3px 3px 0px #70cdba,
+                 5px 5px 0px #70cdba;
     transform: rotate(2deg);
   }
 
   .title-part3 {
     display: block;
     font-size: 60px;
-    color: #FFD54F;
-    -webkit-text-stroke: 2px #FF9800;
-    text-shadow: 3px 3px 0px #4DD0E1,
-                 5px 5px 0px #0288D1;
+    color: #f1b33f;
+    -webkit-text-stroke: 2px #f1b33f;
+    text-shadow: 3px 3px 0px #8dba3f,
+                 5px 5px 0px #8dbb39;
     transform: rotate(-1deg);
   }
 }
@@ -234,7 +238,7 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #2C5F2D;
+    color: #333333;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
     border-radius: 15px;
@@ -323,23 +327,22 @@ export default {
   .main-title {
     .title-part1 {
       font-size: 40px;
-      -webkit-text-stroke: 1.5px #FF9800;
-      text-shadow: 2px 2px 0px #4DD0E1,
-                   3px 3px 0px #0288D1;
+      padding: 6px 16px;
+      border-radius: 10px;
     }
 
     .title-part2 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #E91E63;
-      text-shadow: 2px 2px 0px #0FDAC2,
-                   3px 3px 0px #019a86;
+      -webkit-text-stroke: 2px #8dbb39;
+      text-shadow: 2px 2px 0px #70cdba,
+                   3px 3px 0px #70cdba;
     }
 
     .title-part3 {
       font-size: 40px;
-      -webkit-text-stroke: 1.5px #FF9800;
-      text-shadow: 2px 2px 0px #4DD0E1,
-                   3px 3px 0px #0288D1;
+      -webkit-text-stroke: 1.5px #f1b33f;
+      text-shadow: 2px 2px 0px #8dba3f,
+                   3px 3px 0px #8dbb39;
     }
   }
 
@@ -448,7 +451,7 @@ export default {
 }
 
 .info-bar {
-  background-color: #38b2ac; /* Greenish-teal color from the image */
+  background-color: #70cdba;
   color: white;
   padding: 15px 25px;
   border-radius: 10px;
@@ -497,7 +500,7 @@ export default {
     font-family: 'Work Sans', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #0DB68F;
+    color: #70cdba;
     margin-bottom: 15px;
     text-align: left;
   }
@@ -508,7 +511,7 @@ export default {
     font-weight: 500;
     line-height: 1.6;
     text-align: left;
-    color: #555;
+    color: #333333;
   }
 }
 
@@ -517,7 +520,7 @@ export default {
     font-family: 'Work Sans', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #FF6B9D;
+    color: #8dba3f;
     margin-bottom: 20px;
     text-align: left;
   }
@@ -533,9 +536,9 @@ export default {
     align-items: flex-start;
     gap: 15px;
     padding: 15px;
-    background: rgba(255, 235, 59, 0.15);
+    background: rgba(246, 250, 241, 0.15);
     border-radius: 12px;
-    border: 2px solid #FFD54F;
+    border: 2px solid #f1b33f;
     transition: transform 0.2s ease;
 
     &:hover {

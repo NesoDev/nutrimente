@@ -953,7 +953,7 @@ export default {
   padding: 15px 20px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  border-left: 4px solid #4CAF50;
+  border-left: 4px solid #8dba3f;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   p {
@@ -961,12 +961,12 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 16px;
-    color: #2E7D32;
+    color: #8dbb39;
     text-align: center;
     line-height: 1.5;
 
     strong {
-      color: #1B5E20;
+      color: #8dbb39;
     }
   }
 }
@@ -996,16 +996,16 @@ export default {
     border-radius: 25px;
     border: none;
     cursor: pointer;
-    background-color: #FFAE50;
+    background-color: #f1b33f;
     color: white;
 }
 
 .age-group-button:hover {
-  background-color: #FFAE50;
+  background-color: #f1b33f;
 }
 
 .age-group-button.active {
-    background-color: #FFAE50;
+    background-color: #f1b33f;
     color: white;
     border-radius: 25px;
     box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4);
@@ -1034,22 +1034,22 @@ export default {
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  background-color: rgba(16, 156, 123, 0.7);
+  background-color: rgba(112, 205, 186, 0.7);
   color: white;
 }
 
 /* Active button style */
 .video-selector button.active {
-  background-color: #0DB68F;
-  box-shadow: -4px 4px 6px rgb(255, 255, 20);
+  background-color: #70cdba;
+  box-shadow: -4px 4px 6px rgb(241, 179, 63);
   font-weight: bold;
 }
 
 .page-container {
   position: relative;
    font-family: 'Work Sans', sans-serif;
-  background: 
-              radial-gradient(circle, #ffb3c6 3px, transparent 1px);
+  background:
+              radial-gradient(circle, #f6faf1 3px, transparent 1px);
   background-size: 25px 25px, auto;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
@@ -1074,7 +1074,7 @@ export default {
 }
 
 .main-titleb3 {
-   font-family: 'Work Sans', sans-serif;
+  font-family: "Bubblegum Sans", "BeachDay", cursive, sans-serif;
   font-weight: 400;
   margin: 0;
   margin-bottom: 20px;
@@ -1083,32 +1083,36 @@ export default {
   letter-spacing: 2px;
 
   .title-part1 {
-    display: block;
+    display: inline-block;
     font-size: 60px;
-    color: #FFD54F;
-    -webkit-text-stroke: 2px #FF9800;
-    text-shadow: 3px 3px 0px #4DD0E1,
-                 5px 5px 0px #0288D1;
+    color: white;
+    background-color: #f1b33f;
+    padding: 8px 20px;
+    border-radius: 12px;
+    -webkit-text-stroke: 0px;
+    text-shadow: none;
     transform: rotate(-1deg);
+    box-shadow: 0 4px 12px rgba(241, 179, 63, 0.3);
+    margin-bottom: 10px;
   }
 
   .title-part2 {
     display: block;
     font-size: 70px;
-    color: #FF6B9D;
-    -webkit-text-stroke: 3px #E91E63;
-    text-shadow: 3px 3px 0px #0FDAC2,
-                 5px 5px 0px #019a86;
+    color: #8dba3f;
+    -webkit-text-stroke: 3px #8dbb39;
+    text-shadow: 3px 3px 0px #70cdba,
+                 5px 5px 0px #70cdba;
     transform: rotate(2deg);
   }
 
   .title-part3 {
     display: block;
     font-size: 70px;
-    color: #FF6B9D;
-    -webkit-text-stroke: 3px #E91E63;
-    text-shadow: 3px 3px 0px #0FDAC2,
-                 5px 5px 0px #019a86;
+    color: #8dba3f;
+    -webkit-text-stroke: 3px #8dbb39;
+    text-shadow: 3px 3px 0px #70cdba,
+                 5px 5px 0px #70cdba;
     transform: rotate(2deg);
   }
 }
@@ -1117,7 +1121,7 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #004D40;
+    color: #333333;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(5px);
     border-radius: 15px;
@@ -1169,11 +1173,11 @@ export default {
 }
 
 .region-header h3 {
-  color: #F4A261;
+  color: #f1b33f;
   font-family: "Work Sans", sans-serif;
   font-size: 1.2em;
   margin-bottom: 10px;
-  background-color: #F4A261;
+  background-color: #f1b33f;
   color: white;
   padding: 10px 15px;
   border-radius: 8px;
@@ -1181,7 +1185,7 @@ export default {
 }
 
 .region-description {
-  color: #848484;
+  color: #333333;
   font-family: "Work Sans", sans-serif;
   line-height: 1.5;
   margin-bottom: 20px;
@@ -1213,12 +1217,12 @@ export default {
 }
 
 .recipe-button.available {
-  background-color: #38B2AC;
+  background-color: #70cdba;
   color: white;
 }
 
 .recipe-button.available:hover {
-  background-color: #2C9A93;
+  background-color: #70cdba;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1301,23 +1305,22 @@ export default {
   .main-titleb3 {
     .title-part1 {
       font-size: 40px;
-      -webkit-text-stroke: 1.5px #FF9800;
-      text-shadow: 2px 2px 0px #4DD0E1,
-                   3px 3px 0px #0288D1;
+      padding: 6px 16px;
+      border-radius: 10px;
     }
 
     .title-part2 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #E91E63;
-      text-shadow: 2px 2px 0px #0FDAC2,
-                   3px 3px 0px #019a86;
+      -webkit-text-stroke: 2px #8dbb39;
+      text-shadow: 2px 2px 0px #70cdba,
+                   3px 3px 0px #70cdba;
     }
 
     .title-part3 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #E91E63;
-      text-shadow: 2px 2px 0px #0FDAC2,
-                   3px 3px 0px #019a86;
+      -webkit-text-stroke: 2px #8dbb39;
+      text-shadow: 2px 2px 0px #70cdba,
+                   3px 3px 0px #70cdba;
     }
   }
 
@@ -1438,7 +1441,7 @@ export default {
 }
 
 .info-bar {
-  background-color: #38b2ac;
+  background-color: #70cdba;
   color: white;
   padding: 15px 25px;
   border-radius: 10px;
@@ -1493,7 +1496,7 @@ export default {
     font-weight: 500;
     line-height: 1.6;
     text-align: left;
-    color: #555;
+    color: #333333;
 }
 
 .card-image-container {
@@ -1586,7 +1589,7 @@ export default {
 .modal-header h2 {
   margin: 0;
   font-size: 1.3rem; /* Reduced from 1.6rem */
-  color: #0DB68F;
+  color: #70cdba;
    font-family: 'Work Sans', sans-serif;
   line-height: 1.2;
 }
@@ -1608,7 +1611,7 @@ export default {
   color: #333;
   margin-bottom: 0.4rem; /* Reduced from 0.6rem */
    font-family: 'Work Sans', sans-serif;
-  border-left: 3px solid #38B2AC; /* Thinner border */
+  border-left: 3px solid #70cdba; /* Thinner border */
   padding-left: 6px; /* Reduced from 8px */
 }
 
@@ -1646,7 +1649,7 @@ export default {
 
 .nutrition-item strong {
   display: block;
-  color: #0DB68F;
+  color: #70cdba;
   font-size: 0.8rem; /* Reduced from 0.9rem */
 }
 

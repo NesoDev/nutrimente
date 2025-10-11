@@ -77,8 +77,8 @@
 #guide-section {
     width: 100%;
     height: auto;
-    background-color: #fff6f4;
-    background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
+    background-color: #f9f9ef;
+    background-image: radial-gradient(circle, #f6faf1 4px, transparent 1px);
     background-size: 20px 20px;
     display: flex;
     flex-direction: column;
@@ -90,7 +90,7 @@
 .extension-bg-img {
     width: 100%;
     height: 60px;
-    background: #0FDAC2;
+    background: #70cdba;
     border-radius: 0px 0px 20px 20px;
 }
 
@@ -120,20 +120,20 @@
             .title-line1 {
                 display: block;
                 font-size: 60px;
-                color: #FFD54F;
-                -webkit-text-stroke: 2px #FF9800;
-                text-shadow: 3px 3px 0px #4DD0E1,
-                             5px 5px 0px #0288D1;
+                color: #f1b33f;
+                -webkit-text-stroke: 2px #f1b33f;
+                text-shadow: 3px 3px 0px #8dba3f,
+                             5px 5px 0px #8dbb39;
                 transform: rotate(-1deg);
             }
 
             .title-line2 {
                 display: block;
                 font-size: 70px;
-                color: #FF6B9D;
-                -webkit-text-stroke: 3px #E91E63;
-                text-shadow: 3px 3px 0px #0FDAC2,
-                             5px 5px 0px #019a86;
+                color: #8dba3f;
+                -webkit-text-stroke: 3px #8dbb39;
+                text-shadow: 3px 3px 0px #70cdba,
+                             5px 5px 0px #70cdba;
                 transform: rotate(2deg);
             }
         }
@@ -142,7 +142,7 @@
             font-family: "Work Sans", sans-serif;
             font-weight: 600;
             font-size: 18px;
-            color: #6d8f9d;
+            color: #333333;
             backdrop-filter: blur(2px);
             line-height: 1.6;
             text-align: center;
@@ -271,22 +271,22 @@
             h2 {
                 .title-line1 {
                     font-size: 40px;
-                    -webkit-text-stroke: 1.5px #FF9800;
-                    text-shadow: 2px 2px 0px #4DD0E1,
-                                 3px 3px 0px #0288D1;
+                    -webkit-text-stroke: 1.5px #f1b33f;
+                    text-shadow: 2px 2px 0px #8dba3f,
+                                 3px 3px 0px #8dbb39;
                 }
 
                 .title-line2 {
                     font-size: 50px;
-                    -webkit-text-stroke: 2px #E91E63;
-                    text-shadow: 2px 2px 0px #0FDAC2,
-                                 3px 3px 0px #019a86;
+                    -webkit-text-stroke: 2px #8dbb39;
+                    text-shadow: 2px 2px 0px #70cdba,
+                                 3px 3px 0px #70cdba;
                 }
             }
 
             p {
                 text-align: center;
-                color: #53767e;
+                color: #333333;
                 font-size: 15px;
                 max-width: 40ch;
             }
@@ -326,7 +326,7 @@
                             font-family: "Work Sans", sans-serif;
                             font-weight: 500;
                             font-size: 15px;
-                            color: #6d8f9d;
+                            color: #333333;
                         }
                     }
                 }

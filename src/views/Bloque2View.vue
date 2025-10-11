@@ -251,7 +251,7 @@ export default {
   padding: 15px 20px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  border-left: 4px solid #FFAE50;
+  border-left: 4px solid #f1b33f;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   p {
@@ -259,7 +259,7 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 16px;
-    color: #FF6B00;
+    color: #8dba3f;
     text-align: center;
   }
 }
@@ -277,10 +277,10 @@ export default {
 .video-selector.age-buttons button {
   padding: 12px 18px;
   border-radius: 25px;
-  border: 3px solid #FFAE50;
+  border: 3px solid #f1b33f;
   cursor: pointer;
-  background-color: #FFF8E1;
-  color: #FF6B00;
+  background-color: #f6faf1;
+  color: #8dba3f;
   font-family: "Work Sans", sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -288,7 +288,7 @@ export default {
 }
 
 .video-selector.age-buttons button.active {
-  background-color: #FFAE50;
+  background-color: #f1b33f;
   color: white;
   border-radius: 25px;
   box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4);
@@ -298,7 +298,7 @@ export default {
 
 .video-selector.age-buttons button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 174, 80, 0.4);
+  box-shadow: 0 4px 12px rgba(241, 179, 63, 0.4);
 }
 
 /* Sub-selector aligned to the left */
@@ -312,9 +312,9 @@ export default {
 .video-selector.sub-selector button {
   padding: 10px 14px;
   border-radius: 25px;
-  border: 2px solid #0DB68F;
+  border: 2px solid #70cdba;
   cursor: pointer;
-  background-color: rgba(16, 156, 123, 0.7);
+  background-color: rgba(112, 205, 186, 0.7);
   color: white;
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
@@ -322,13 +322,13 @@ export default {
 }
 
 .video-selector.sub-selector button.active {
-  background-color: #0DB68F;
-  box-shadow: -4px 4px 6px rgb(255, 255, 20);
+  background-color: #70cdba;
+  box-shadow: -4px 4px 6px rgb(241, 179, 63);
   font-weight: bold;
 }
 
 .video-selector.sub-selector button:hover {
-  background-color: #0DB68F;
+  background-color: #70cdba;
   transform: translateY(-2px);
 }
 </style>
@@ -340,8 +340,8 @@ export default {
 .page-container {
   position: relative;
   font-family: Arial, sans-serif;
-  background: 
-              repeating-linear-gradient(60deg, #fff0b3 0 10px, transparent 10px 20px);
+  background:
+              repeating-linear-gradient(60deg, #f6faf1 0 10px, transparent 10px 20px);
   background-size: 25px 25px, auto;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
@@ -377,32 +377,36 @@ export default {
   letter-spacing: 2px;
 
   .title-part1 {
-    display: block;
+    display: inline-block;
     font-size: 60px;
-    color: #FFD54F;
-    -webkit-text-stroke: 2px #FF9800;
-    text-shadow: 3px 3px 0px #4DD0E1,
-                 5px 5px 0px #0288D1;
+    color: white;
+    background-color: #f1b33f;
+    padding: 8px 20px;
+    border-radius: 12px;
+    -webkit-text-stroke: 0px;
+    text-shadow: none;
     transform: rotate(-1deg);
+    box-shadow: 0 4px 12px rgba(241, 179, 63, 0.3);
+    margin-bottom: 10px;
   }
 
   .title-part2 {
     display: block;
     font-size: 70px;
-    color: #FF6B9D;
-    -webkit-text-stroke: 3px #E91E63;
-    text-shadow: 3px 3px 0px #0FDAC2,
-                 5px 5px 0px #019a86;
+    color: #8dba3f;
+    -webkit-text-stroke: 3px #8dbb39;
+    text-shadow: 3px 3px 0px #70cdba,
+                 5px 5px 0px #70cdba;
     transform: rotate(2deg);
   }
 
   .title-part3 {
     display: block;
     font-size: 70px;
-    color: #FF6B9D;
-    -webkit-text-stroke: 3px #E91E63;
-    text-shadow: 3px 3px 0px #0FDAC2,
-                 5px 5px 0px #019a86;
+    color: #8dba3f;
+    -webkit-text-stroke: 3px #8dbb39;
+    text-shadow: 3px 3px 0px #70cdba,
+                 5px 5px 0px #70cdba;
     transform: rotate(2deg);
   }
 }
@@ -412,7 +416,7 @@ export default {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #5D4037;
+    color: #333333;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(5px);
     border-radius: 15px;
@@ -494,23 +498,22 @@ export default {
   .main-titleb2 {
     .title-part1 {
       font-size: 40px;
-      -webkit-text-stroke: 1.5px #FF9800;
-      text-shadow: 2px 2px 0px #4DD0E1,
-                   3px 3px 0px #0288D1;
+      padding: 6px 16px;
+      border-radius: 10px;
     }
 
     .title-part2 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #E91E63;
-      text-shadow: 2px 2px 0px #0FDAC2,
-                   3px 3px 0px #019a86;
+      -webkit-text-stroke: 2px #8dbb39;
+      text-shadow: 2px 2px 0px #70cdba,
+                   3px 3px 0px #70cdba;
     }
 
     .title-part3 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #E91E63;
-      text-shadow: 2px 2px 0px #0FDAC2,
-                   3px 3px 0px #019a86;
+      -webkit-text-stroke: 2px #8dbb39;
+      text-shadow: 2px 2px 0px #70cdba,
+                   3px 3px 0px #70cdba;
     }
   }
 
@@ -588,7 +591,7 @@ export default {
 }
 
 .info-bar {
-  background-color: #38b2ac; /* Greenish-teal color from the image */
+  background-color: #70cdba;
   color: white;
   padding: 15px 25px;
   border-radius: 10px;
@@ -642,7 +645,7 @@ export default {
     font-weight: 500;
     line-height: 1.6;
     text-align: left;
-    color: #555;
+    color: #333333;
 }
 
 .card-image-container {
@@ -687,7 +690,7 @@ export default {
 }
 
 .info-bar {
-  background-color: #38b2ac;
+  background-color: #70cdba;
   color: white;
   padding: 15px 25px;
   border-radius: 10px;
@@ -734,7 +737,7 @@ export default {
   font-size: 1em;
   line-height: 1.6;
   text-align: left;
-  color: #848484;
+  color: #333333;
   font-family: "Work Sans", sans-serif;
 }
 

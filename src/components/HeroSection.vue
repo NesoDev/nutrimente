@@ -96,8 +96,8 @@ export default {
     width: 100%;
     min-height: 100vh;
     height: auto;
-    background-color: #f4feff;
-    background-image: radial-gradient(circle, #e5f6f8 4px, transparent 1px);
+    background-color: #f9f9ef;
+    background-image: radial-gradient(circle, #f6faf1 4px, transparent 1px);
     background-size: 20px 20px;
     overflow: hidden;
     padding: 40px 0;
@@ -138,7 +138,7 @@ export default {
         width: 100%;
         height: auto;
         display: block;
-        filter: drop-shadow(0 -4px 12px rgba(6, 181, 142, 0.15));
+        filter: drop-shadow(0 -4px 12px rgba(141, 186, 63, 0.15));
         transform-origin: bottom center;
     }
 
@@ -151,9 +151,9 @@ export default {
 .highlight-phrase {
     padding: 20px 24px;
     border-radius: 20px;
-    background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
-    border: 3px solid #FF9800;
-    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+    background: linear-gradient(135deg, #f6faf1 0%, #f9f9ef 100%);
+    border: 3px solid #f1b33f;
+    box-shadow: 0 6px 20px rgba(241, 179, 63, 0.3);
     max-width: 700px;
     margin: 0 auto;
     width: 100%;
@@ -179,7 +179,7 @@ export default {
             text-align: left;
             margin: 0;
             line-height: 1.5;
-            background-image: linear-gradient(135deg, #FF6B9D 0%, #FF9800 50%, #0FDAC2 100%);
+            background-image: linear-gradient(135deg, #8dba3f 0%, #f1b33f 50%, #70cdba 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -282,10 +282,10 @@ export default {
                     display: block;
                     white-space: nowrap;
                     font-size: 50px;
-                    color: #FF6B9D;
-                    -webkit-text-stroke: 2px #E91E63;
-                    text-shadow: 3px 3px 0px #FFD54F,
-                                 5px 5px 0px #FF9800;
+                    color: #8dba3f;
+                    -webkit-text-stroke: 2px #8dbb39;
+                    text-shadow: 3px 3px 0px #f1b33f,
+                                 5px 5px 0px #f1b33f;
                     transform: rotate(-2deg);
                 }
 
@@ -293,10 +293,10 @@ export default {
                     display: block;
                     white-space: nowrap;
                     font-size: 68px;
-                    color: #0FDAC2;
-                    -webkit-text-stroke: 3px #019a86;
-                    text-shadow: 3px 3px 0px #4DD0E1,
-                                 5px 5px 0px #0288D1;
+                    color: #70cdba;
+                    -webkit-text-stroke: 3px #70cdba;
+                    text-shadow: 3px 3px 0px #8dba3f,
+                                 5px 5px 0px #8dbb39;
                     transform: rotate(1deg);
                 }
             }
@@ -307,7 +307,7 @@ export default {
             font-family: "Work Sans", sans-serif;
             font-weight: 600;
             font-size: 17px;
-            color: #6d8f9d;
+            color: #333333;
             max-width: 850px;
             backdrop-filter: blur(2px);
             padding: 12px 20px;
@@ -317,12 +317,12 @@ export default {
 
             #p-1 {
                 font-weight: bold;
-                color: #0E8AF7
+                color: #8dba3f
             }
 
             #p-2 {
                 font-weight: bold;
-                color: #0FDAC2
+                color: #70cdba
             }
         }
     }
@@ -585,12 +585,12 @@ export default {
                 h1 {
                     #line-1 {
                         font-size: 38px;
-                        -webkit-text-stroke: 1.8px #E91E63;
+                        -webkit-text-stroke: 1.8px #8dbb39;
                     }
 
                     #line-2 {
                         font-size: 52px;
-                        -webkit-text-stroke: 2.5px #019a86;
+                        -webkit-text-stroke: 2.5px #70cdba;
                     }
                 }
             }
@@ -651,7 +651,7 @@ export default {
             display: block;
             width: 100%;
             height: 20vh;
-            background: #0FDAC2;
+            background: #70cdba;
         }
     }
 
@@ -694,22 +694,22 @@ export default {
                 h1 {
                     #line-1 {
                         font-size: 34px;
-                        -webkit-text-stroke: 1.6px #E91E63;
-                        text-shadow: 2px 2px 0px #FFD54F,
-                                     3px 3px 0px #FF9800;
+                        -webkit-text-stroke: 1.6px #8dbb39;
+                        text-shadow: 2px 2px 0px #f1b33f,
+                                     3px 3px 0px #f1b33f;
                     }
 
                     #line-2 {
                         font-size: 46px;
-                        -webkit-text-stroke: 2.2px #019a86;
-                        text-shadow: 2px 2px 0px #4DD0E1,
-                                     3px 3px 0px #0288D1;
+                        -webkit-text-stroke: 2.2px #70cdba;
+                        text-shadow: 2px 2px 0px #8dba3f,
+                                     3px 3px 0px #8dbb39;
                     }
                 }
             }
 
             p {
-                color: #53767e;
+                color: #333333;
                 font-size: 14px;
                 max-width: 95%;
                 padding: 12px 16px;
@@ -763,12 +763,12 @@ export default {
                 h1 {
                     #line-1 {
                         font-size: 30px;
-                        -webkit-text-stroke: 1.4px #E91E63;
+                        -webkit-text-stroke: 1.4px #8dbb39;
                     }
 
                     #line-2 {
                         font-size: 40px;
-                        -webkit-text-stroke: 2px #019a86;
+                        -webkit-text-stroke: 2px #70cdba;
                     }
                 }
             }
