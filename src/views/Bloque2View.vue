@@ -343,13 +343,16 @@ export default {
   background:
               repeating-linear-gradient(60deg, #f6faf1 0 10px, transparent 10px 20px);
   background-size: 25px 25px, auto;
+  width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
   transition: background 1s ease-in-out;
+  box-sizing: border-box;
 }
 
 

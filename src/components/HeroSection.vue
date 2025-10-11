@@ -94,16 +94,18 @@ export default {
 #hero-section {
     position: relative;
     width: 100%;
+    max-width: 100vw;
     min-height: 100vh;
     height: auto;
     background-color: #f9f9ef;
     background-image: radial-gradient(circle, #f6faf1 4px, transparent 1px);
     background-size: 20px 20px;
-    overflow: hidden;
+    overflow-x: hidden;
     padding: 40px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .cloud-bg-img {

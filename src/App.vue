@@ -11,17 +11,38 @@
   </div>
 </template>
 
+<style>
+/* Global styles to prevent horizontal overflow */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-y: auto;
+}
+</style>
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .app {
   position: relative;
   width: 100%;
+  max-width: 100vw;
   height: 100%;
   background: #F3F1EA;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .head {

@@ -76,6 +76,7 @@
 
 #guide-section {
     width: 100%;
+    max-width: 100vw;
     height: auto;
     background-color: #f9f9ef;
     background-image: radial-gradient(circle, #f6faf1 4px, transparent 1px);
@@ -85,6 +86,8 @@
     align-items: center;
     gap: 120px;
     padding-bottom: 80px;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .extension-bg-img {

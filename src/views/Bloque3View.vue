@@ -1051,13 +1051,16 @@ export default {
   background:
               radial-gradient(circle, #f6faf1 3px, transparent 1px);
   background-size: 25px 25px, auto;
+  width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   padding: 100px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
   transition: background 1s ease-in-out;
+  box-sizing: border-box;
 }
 
 
