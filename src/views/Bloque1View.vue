@@ -68,7 +68,7 @@
                 <p class="fact-text">El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales para el aprendizaje y memoria.</p>
               </div>
               <div class="fact-item">
-                <img src="../assets/animal3_finger.png" alt="Mascota" class="fact-mascot">
+                <img src="../assets/jaguar.png" alt="Mascota" class="fact-mascot">
                 <p class="fact-text">Los niños que tienen una mala dieta, tienen dificultades en la escuela, tanto en matemática como en aprendizaje verbal.</p>
               </div>
               <div class="fact-item">

@@ -82,12 +82,12 @@ Por ello, aquí en Nutrimente te presentamos algunos juegos que podría practica
         </div>
       </div>
       <transition name="fade">
-        <div v-if="showCard" class="content-card">
+        <div v-if="showCard" class="content-card" :class="{ 'reverse-layout': isImageLeft }">
           <p class="card-text">
             {{ videos[currentCategory][currentVideoIndex].cardText }}
           </p>
           <div class="card-image-container">
-            <img src="../assets/animal.png" alt="Cartoon animal" class="card-image" />
+            <img :src="currentAnimalImage" alt="Cartoon animal" class="card-image" />
           </div>
         </div>
       </transition>
@@ -105,6 +105,18 @@ export default {
       currentVideoIndex: 0,     // ✅ video por defecto
       showPlayButton: true,
       showCard: false,
+      isImageLeft: false,       // Controla si la imagen está a la izquierda
+      currentAnimalImage: null, // Ruta de la imagen seleccionada
+      animalImagesLeft: [
+        require('@/assets/animals_to_left/animal2_finger.png'),
+        require('@/assets/animals_to_left/animal4_finger.png'),
+        require('@/assets/animals_to_left/jaguar.png')
+      ],
+      animalImagesRight: [
+        require('@/assets/animals_to_right/animal_2.png'),
+        require('@/assets/animals_to_right/animal1.png'),
+        require('@/assets/animals_to_right/animal3_finger.png')
+      ],
       labels: {
         "4-6": "4 a 6 meses",
         "7-9": "7 a 9 meses",
@@ -177,12 +189,29 @@ export default {
       this.currentCategory = category;
       this.currentVideoIndex = 0;
       this.showCard = false;
+      this.randomizeImageAndLayout();
       this.resetVideo();
     },
     selectVideo(index) {
       this.currentVideoIndex = index;
       this.showCard = false;
+      this.randomizeImageAndLayout();
       this.resetVideo();
+    },
+    randomizeImageAndLayout() {
+      // Decidir aleatoriamente si la imagen va a la izquierda o derecha
+      this.isImageLeft = Math.random() < 0.5;
+
+      // Seleccionar imagen aleatoria de la carpeta correspondiente
+      if (this.isImageLeft) {
+        // Texto a la derecha, imagen a la izquierda -> usar animals_to_left
+        const randomIndex = Math.floor(Math.random() * this.animalImagesLeft.length);
+        this.currentAnimalImage = this.animalImagesLeft[randomIndex];
+      } else {
+        // Texto a la izquierda, imagen a la derecha -> usar animals_to_right
+        const randomIndex = Math.floor(Math.random() * this.animalImagesRight.length);
+        this.currentAnimalImage = this.animalImagesRight[randomIndex];
+      }
     },
     resetVideo() {
       this.showPlayButton = true;
@@ -200,6 +229,8 @@ export default {
         this.showPlayButton = true;
       }
     });
+    // Inicializar imagen y layout aleatorio al montar el componente
+    this.randomizeImageAndLayout();
   },
 };
 </script>
@@ -599,6 +630,10 @@ export default {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.content-card.reverse-layout {
+  flex-direction: row-reverse;
 }
 
 .card-text {
