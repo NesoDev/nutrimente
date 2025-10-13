@@ -470,7 +470,7 @@ export default {
 
   .fact-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 15px;
     padding: 15px;
     background: rgba(246, 250, 241, 0.15);
