@@ -1,5 +1,9 @@
 <template>
     <div id="hero-section">
+        <div class="header-logo">
+            <img src="@/assets/logo-header.png" alt="NutriMente Logo">
+        </div>
+
         <img class="cloud-bg-img" id="cloud-bg-mobile" src="@/assets/cloud-bg-mobile.svg" alt="">
         <img class="cloud-bg-img" id="cloud-bg-desktop" src="@/assets/cloud-bg-desktop.svg" alt="">
         <div id="wave-bg-img">
@@ -107,6 +111,24 @@ export default {
     box-sizing: border-box;
 }
 
+.header-logo {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 100;
+
+    img {
+        width: 132px;
+        height: auto;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
 .cloud-bg-img {
     position: absolute;
     top: 0;
@@ -205,7 +227,7 @@ export default {
 
 #container {
     position: relative;
-    width: 90%;
+    width: 63%;
     max-width: 1300px;
     z-index: 99;
     display: flex;
@@ -401,6 +423,7 @@ export default {
 /* Large desktop (1440px+) */
 @media (min-width: 1441px) {
     #container {
+        width: 63%;
         max-width: 1400px;
 
         .decorations {
@@ -435,7 +458,7 @@ export default {
 /* Standard laptop (1024px - 1440px) */
 @media (max-width: 1440px) {
     #container {
-        width: 88%;
+        width: 61%;
         gap: 32px;
 
         .decorations {
@@ -502,7 +525,7 @@ export default {
 /* Small laptop (1024px - 1280px) */
 @media (max-width: 1280px) {
     #container {
-        width: 90%;
+        width: 63%;
         gap: 28px;
 
         .decorations {
@@ -643,6 +666,15 @@ export default {
         padding: 20px 0;
     }
 
+    .header-logo {
+        top: 20px;
+        left: 25px;
+
+        img {
+            width: 99px;
+        }
+    }
+
     #cloud-bg-desktop {
         display: none;
     }
@@ -759,6 +791,15 @@ export default {
 
 /* Small mobile */
 @media (max-width: 480px) {
+    .header-logo {
+        top: 15px;
+        left: 20px;
+
+        img {
+            width: 83px;
+        }
+    }
+
     #container {
         width: 92%;
         gap: 18px;
