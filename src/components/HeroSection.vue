@@ -52,8 +52,7 @@
 
             <div class="highlight-phrase">
                 <div class="phrase-content">
-                    <img src="@/assets/animal4_finger.png" alt="Mascota" class="phrase-mascot">
-                    <p>"Cada pequeño cambio cuenta y puede marcar la diferencia en su futuro"</p>
+                    <p>Cada pequeño cambio cuenta y puede marcar la diferencia en su futuro</p>
                 </div>
             </div>
         </div>
@@ -158,7 +157,7 @@ export default {
     background: linear-gradient(135deg, #f6faf1 0%, #f9f9ef 100%);
     border: 3px solid #f1b33f;
     box-shadow: 0 6px 20px rgba(241, 179, 63, 0.3);
-    max-width: 700px;
+    max-width: 100%;
     margin: 0 auto;
     width: 100%;
 
@@ -183,10 +182,8 @@ export default {
             text-align: left;
             margin: 0;
             line-height: 1.5;
-            background-image: linear-gradient(135deg, #8dba3f 0%, #f1b33f 50%, #70cdba 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #333333;
+            white-space: nowrap;
         }
     }
 }
