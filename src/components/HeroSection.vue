@@ -38,7 +38,7 @@
 
             <div class="video-with-mascots">
                 <!-- Mascota izquierda -->
-                <img src="@/assets/animal2_finger.png" alt="Mascota" class="mascot-left desktop-only">
+                <img src="@/assets/two_animals_right.png" alt="Mascota" class="mascot-left desktop-only">
 
                 <div class="video">
                     <div class="video-wrapper">
@@ -50,7 +50,7 @@
                 </div>
 
                 <!-- Mascota derecha -->
-                <img src="@/assets/animal3_finger.png" alt="Mascota" class="mascot-right desktop-only">
+                <img src="@/assets/two_animals_left.png" alt="Mascota" class="mascot-right desktop-only">
             </div>
 
 
