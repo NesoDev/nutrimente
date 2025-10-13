@@ -40,12 +40,17 @@
                 <!-- Mascota izquierda -->
                 <img src="@/assets/two_animals_right.png" alt="Mascota" class="mascot-left desktop-only">
 
-                <div class="video">
-                    <div class="video-wrapper">
-                        <video controls width="100%" height="auto" :poster="cloudinaryThumbnailUrl">
-                            <source :src="cloudinaryVideoUrl" type="video/mp4">
-                            Tu navegador no soporta el elemento de video.
-                        </video>
+                <div class="video-container">
+                    <div class="jaguar-navigation" @click="scrollToGuideSection">
+                        <img src="@/assets/jaguar_vamos.png" alt="Ir a Guía" class="jaguar-img">
+                    </div>
+                    <div class="video">
+                        <div class="video-wrapper">
+                            <video controls width="100%" height="auto" :poster="cloudinaryThumbnailUrl">
+                                <source :src="cloudinaryVideoUrl" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
                     </div>
                 </div>
 
@@ -60,7 +65,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </template>
  
@@ -79,6 +84,14 @@ export default {
         },
         cloudinaryThumbnailUrl() {
             return `https://res.cloudinary.com/${this.cloudName}/video/upload/f_jpg,q_auto,w_800/${this.cloudinaryVideoId}.jpg`;
+        }
+    },
+    methods: {
+        scrollToGuideSection() {
+            const guideSection = document.getElementById('guide-section');
+            if (guideSection) {
+                guideSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
     }
 }
@@ -283,7 +296,7 @@ export default {
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        margin-top: 20px;
+        margin-top: -20px;
 
         .main-text {
             position: relative;
@@ -380,10 +393,19 @@ export default {
         }
     }
 
-    .video {
+    .video-container {
         flex: 1;
         width: 100%;
         max-width: 750px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 56px;
+    }
+
+    .video {
+        width: 100%;
         aspect-ratio: 16/9;
         background: #ffffff;
         display: flex;
@@ -401,6 +423,8 @@ export default {
             object-fit: fill;
             overflow: hidden;
             border-radius: 30px;
+            position: relative;
+            z-index: 5;
 
             video {
                 width: 100%;
@@ -417,6 +441,32 @@ export default {
         50% {
             transform: translateY(-15px);
         }
+    }
+
+}
+
+.jaguar-navigation {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    z-index: 20;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+
+    .jaguar-img {
+        width: 120px;
+        height: auto;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        animation: bounce 2s ease-in-out infinite;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    &:hover {
+        transform: translateX(-50%) translateY(-100%) scale(1.15);
     }
 }
 
@@ -449,8 +499,9 @@ export default {
             }
         }
 
-        .video {
+        .video-container {
             max-width: 800px;
+            margin-top: 60px;
         }
     }
 }
@@ -501,8 +552,9 @@ export default {
             }
         }
 
-        .video {
+        .video-container {
             max-width: 700px;
+            margin-top: 50px;
         }
     }
 
@@ -568,8 +620,9 @@ export default {
             }
         }
 
-        .video {
+        .video-container {
             max-width: 650px;
+            margin-top: 45px;
         }
     }
 
@@ -638,8 +691,9 @@ export default {
             }
         }
 
-        .video {
+        .video-container {
             max-width: 600px;
+            margin-top: 40px;
         }
     }
 
@@ -723,7 +777,7 @@ export default {
 
         .text {
             gap: 12px;
-            margin-top: 10px;
+            margin-top: -10px;
 
             .main-text {
                 margin-bottom: -5px;
@@ -771,6 +825,10 @@ export default {
         }
     }
 
+    .jaguar-navigation {
+        display: none;
+    }
+
     .highlight-phrase {
         max-width: 90%;
         padding: 15px 18px;
@@ -787,6 +845,7 @@ export default {
             }
         }
     }
+
 }
 
 /* Small mobile */
@@ -850,5 +909,6 @@ export default {
             }
         }
     }
+
 }
 </style>
