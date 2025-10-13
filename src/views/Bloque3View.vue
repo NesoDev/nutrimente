@@ -158,9 +158,16 @@
           {{ videos[currentVideoIndex].title }}
         </div>
         <div class="info-icon" @click="toggleCard">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <svg
+            :class="{ 'rotated': showCard }"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
       </div>
       <transition name="fade">
@@ -1403,17 +1410,26 @@ export default {
 
 .info-icon {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 4px;
   cursor: pointer;
-}
+  transition: transform 0.3s ease;
 
-.info-icon .line {
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  svg.rotated {
+    transform: rotate(180deg);
+  }
+
+  &:hover svg {
+    transform: scale(1.1);
+  }
+
+  &:hover svg.rotated {
+    transform: rotate(180deg) scale(1.1);
+  }
 }
 
 .content-card {
