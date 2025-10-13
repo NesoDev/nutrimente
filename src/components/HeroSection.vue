@@ -659,7 +659,7 @@ export default {
             display: block;
             width: 100%;
             height: 20vh;
-            background: #70cdba;
+            background: #8dbb39;
         }
     }
 
