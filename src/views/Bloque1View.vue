@@ -16,20 +16,13 @@
         <video
           ref="videoPlayer"
           class="video-player"
+          controls
           :src="cloudinaryVideoUrl"
           :poster="cloudinaryThumbnailUrl"
           preload="metadata"
-          @play="handlePlay"
-          @pause="handlePause"
-          @click="togglePlay"
         >
           Your browser does not support the video tag.
         </video>
-        <div v-if="showPlayButton" class="play-button-overlay" @click="togglePlay">
-          <svg class="play-icon" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
       </div>
     </main>
     <section class="bottom-section">
@@ -91,7 +84,6 @@ export default {
     return {
       cloudName: 'dlejpox8a',
       cloudinaryVideoId: 'Video_1_corregido_1_ewlrfy',
-      showPlayButton: true,
       showCard: false,
     };
   },
@@ -104,31 +96,9 @@ export default {
     },
   },
   methods: {
-    togglePlay() {
-      const video = this.$refs.videoPlayer;
-      if (video.paused || video.ended) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    },
-    handlePlay() {
-      this.showPlayButton = false;
-    },
-    handlePause() {
-      this.showPlayButton = true;
-    },
     toggleCard() {
-      this.showCard = !this.showCard; // 🔥 toggles white block
+      this.showCard = !this.showCard;
     }
-  },
-  mounted() {
-    const video = this.$refs.videoPlayer;
-    video.addEventListener('loadedmetadata', () => {
-      if (video.paused) {
-        this.showPlayButton = true;
-      }
-    });
   }
 };
 </script>
@@ -214,7 +184,9 @@ export default {
     display: block;
     font-size: 70px;
     color: #8dba3f;
-    -webkit-text-stroke: 3px #8dbb39;
+    -webkit-text-stroke: 4px white;
+    text-stroke: 4px white;
+    paint-order: stroke fill;
     text-shadow: 3px 3px 0px #70cdba,
                  5px 5px 0px #70cdba;
     transform: rotate(2deg);
@@ -224,7 +196,9 @@ export default {
     display: block;
     font-size: 60px;
     color: #f1b33f;
-    -webkit-text-stroke: 2px #f1b33f;
+    -webkit-text-stroke: 3px white;
+    text-stroke: 3px white;
+    paint-order: stroke fill;
     text-shadow: 3px 3px 0px #8dba3f,
                  5px 5px 0px #8dbb39;
     transform: rotate(-1deg);
@@ -261,6 +235,7 @@ export default {
   padding-bottom: 56.25%; /* 16:9 */
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* Video ocupa todo el contenedor, con borde blanco */
@@ -270,38 +245,10 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 20px solid white; /* Adjust border thickness here */
-  border-radius: 80px; /* Make it more rounded to match the image */
+  border: 10px solid #ffffff;
+  border-radius: 40px;
   box-sizing: border-box;
-  object-fit: cover; /* Ensures the video covers the area without distortion */
-}
-
-/* Play button overlay */
-.play-button-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px; /* Adjust size as needed */
-  height: 80px; /* Adjust size as needed */
-  background-color: #7673FF; /* Blue background with transparency */
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10; /* Ensure it's above the video */
-  transition: background-color 0.3s ease;
-}
-
-.play-button-overlay:hover {
-  background-color: #2925f5; /* Darker on hover */
-}
-
-.play-icon {
-  fill: white;
-  width: 40px; /* Size of the play icon */
-  height: 40px; /* Size of the play icon */
+  object-fit: cover;
 }
 
 /* Existing styles remain the same... */
@@ -336,14 +283,16 @@ export default {
 
     .title-part2 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #8dbb39;
+      -webkit-text-stroke: 2.5px white;
+      text-stroke: 2.5px white;
       text-shadow: 2px 2px 0px #70cdba,
                    3px 3px 0px #70cdba;
     }
 
     .title-part3 {
       font-size: 40px;
-      -webkit-text-stroke: 1.5px #f1b33f;
+      -webkit-text-stroke: 2px white;
+      text-stroke: 2px white;
       text-shadow: 2px 2px 0px #8dba3f,
                    3px 3px 0px #8dbb39;
     }
@@ -407,18 +356,8 @@ export default {
   }
 
   .video-player {
-    border: 8px solid white; /* thinner border on small screens */
-    border-radius: 20px; /* less rounded for mobile */
-  }
-
-  .play-button-overlay {
-    width: 60px;
-    height: 60px;
-  }
-
-  .play-icon {
-    width: 28px;
-    height: 28px;
+    border: 10px solid #ffffff;
+    border-radius: 32px;
   }
 }
 
@@ -435,14 +374,9 @@ export default {
     font-size: 0.9em;
   }
 
-  .play-button-overlay {
-    width: 50px;
-    height: 50px;
-  }
-
-  .play-icon {
-    width: 24px;
-    height: 24px;
+  .video-player {
+    border: 8px solid #ffffff;
+    border-radius: 28px;
   }
 }
 

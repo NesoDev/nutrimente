@@ -84,8 +84,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 120px;
+    gap: 0;
+    padding-top: 0;
     padding-bottom: 80px;
+    margin-top: 0;
     overflow-x: hidden;
     box-sizing: border-box;
 }
@@ -93,8 +95,11 @@
 .extension-bg-img {
     width: 100%;
     height: 60px;
-    background: #70cdba;
+    background: #8dbb39;
     border-radius: 0px 0px 20px 20px;
+    margin-top: 0;
+    margin-bottom: 120px;
+    flex-shrink: 0;
 }
 
 .container {
@@ -124,7 +129,9 @@
                 display: block;
                 font-size: 60px;
                 color: #f1b33f;
-                -webkit-text-stroke: 2px #f1b33f;
+                -webkit-text-stroke: 3px white;
+                text-stroke: 3px white;
+                paint-order: stroke fill;
                 text-shadow: 3px 3px 0px #8dba3f,
                              5px 5px 0px #8dbb39;
                 transform: rotate(-1deg);
@@ -134,7 +141,9 @@
                 display: block;
                 font-size: 70px;
                 color: #8dba3f;
-                -webkit-text-stroke: 3px #8dbb39;
+                -webkit-text-stroke: 4px white;
+                text-stroke: 4px white;
+                paint-order: stroke fill;
                 text-shadow: 3px 3px 0px #70cdba,
                              5px 5px 0px #70cdba;
                 transform: rotate(2deg);
@@ -274,14 +283,16 @@
             h2 {
                 .title-line1 {
                     font-size: 40px;
-                    -webkit-text-stroke: 1.5px #f1b33f;
+                    -webkit-text-stroke: 2px white;
+                    text-stroke: 2px white;
                     text-shadow: 2px 2px 0px #8dba3f,
                                  3px 3px 0px #8dbb39;
                 }
 
                 .title-line2 {
                     font-size: 50px;
-                    -webkit-text-stroke: 2px #8dbb39;
+                    -webkit-text-stroke: 2.5px white;
+                    text-stroke: 2.5px white;
                     text-shadow: 2px 2px 0px #70cdba,
                                  3px 3px 0px #70cdba;
                 }

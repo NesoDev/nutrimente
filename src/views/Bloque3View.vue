@@ -141,20 +141,13 @@
         <video
           ref="videoPlayer"
           class="video-player"
+          controls
           :src="cloudinaryVideoUrl"
           :poster="cloudinaryThumbnailUrl"
           preload="metadata"
-          @play="handlePlay"
-          @pause="handlePause"
-          @click="togglePlay"
         >
           Your browser does not support the video tag.
         </video>
-        <div v-if="showPlayButton" class="play-button-overlay" @click="togglePlay">
-          <svg class="play-icon" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
       </div>
     </main>
 
@@ -193,7 +186,6 @@ export default {
       selectedRecipe: null,
       cloudName: "dlejpox8a",
       currentVideoIndex: 0,
-      showPlayButton: true,
       showCard: false,
       isImageLeft: false,       // Controla si la imagen está a la izquierda
       currentAnimalImage: null, // Ruta de la imagen seleccionada
@@ -752,20 +744,6 @@ export default {
     selectAgeGroup(ageGroupId) {
       this.selectedAgeGroup = ageGroupId;
     },
-    togglePlay() {
-      const video = this.$refs.videoPlayer;
-      if (video.paused || video.ended) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    },
-    handlePlay() {
-      this.showPlayButton = false;
-    },
-    handlePause() {
-      this.showPlayButton = true;
-    },
     toggleCard() {
       this.showCard = !this.showCard;
     },
@@ -791,7 +769,6 @@ export default {
       }
     },
     resetVideo() {
-      this.showPlayButton = true;
       this.$nextTick(() => {
         const video = this.$refs.videoPlayer;
         if (video) {
@@ -893,14 +870,6 @@ export default {
     }
   },
   mounted() {
-    const video = this.$refs.videoPlayer;
-    if (video) {
-      video.addEventListener("loadedmetadata", () => {
-        if (video.paused) {
-          this.showPlayButton = true;
-        }
-      });
-    }
     // Inicializar imagen y layout aleatorio al montar el componente
     this.randomizeImageAndLayout();
     this.loadGoogleCharts();
@@ -1103,7 +1072,9 @@ export default {
     display: block;
     font-size: 70px;
     color: #8dba3f;
-    -webkit-text-stroke: 3px #8dbb39;
+    -webkit-text-stroke: 4px white;
+    text-stroke: 4px white;
+    paint-order: stroke fill;
     text-shadow: 3px 3px 0px #70cdba,
                  5px 5px 0px #70cdba;
     transform: rotate(2deg);
@@ -1113,7 +1084,9 @@ export default {
     display: block;
     font-size: 70px;
     color: #8dba3f;
-    -webkit-text-stroke: 3px #8dbb39;
+    -webkit-text-stroke: 4px white;
+    text-stroke: 4px white;
+    paint-order: stroke fill;
     text-shadow: 3px 3px 0px #70cdba,
                  5px 5px 0px #70cdba;
     transform: rotate(2deg);
@@ -1249,6 +1222,7 @@ export default {
   padding-bottom: 56.25%; /* 16:9 */
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .video-player {
@@ -1257,38 +1231,10 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 15px solid white;
+  border: 10px solid #ffffff;
   border-radius: 40px;
   box-sizing: border-box;
   object-fit: cover;
-}
-
-/* Play button overlay */
-.play-button-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background-color: #7673FF;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.3s ease;
-}
-
-.play-button-overlay:hover {
-  background-color: #2925f5;
-}
-
-.play-icon {
-  fill: white;
-  width: 40px;
-  height: 40px;
 }
 
 /* Mobile adjustments */
@@ -1314,14 +1260,16 @@ export default {
 
     .title-part2 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #8dbb39;
+      -webkit-text-stroke: 2.5px white;
+      text-stroke: 2.5px white;
       text-shadow: 2px 2px 0px #70cdba,
                    3px 3px 0px #70cdba;
     }
 
     .title-part3 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #8dbb39;
+      -webkit-text-stroke: 2.5px white;
+      text-stroke: 2.5px white;
       text-shadow: 2px 2px 0px #70cdba,
                    3px 3px 0px #70cdba;
     }
@@ -1379,19 +1327,13 @@ export default {
     justify-content: center;
   }
 
+  .video-container {
+    border-radius: 10px;
+  }
+
   .video-player {
-    border: 8px solid white;
-    border-radius: 20px;
-  }
-
-  .play-button-overlay {
-    width: 60px;
-    height: 60px;
-  }
-
-  .play-icon {
-    width: 28px;
-    height: 28px;
+    border: 10px solid #ffffff;
+    border-radius: 32px;
   }
 
   .video-container {
@@ -1410,14 +1352,9 @@ export default {
     font-size: 0.9em;
   }
 
-  .play-button-overlay {
-    width: 50px;
-    height: 50px;
-  }
-
-  .play-icon {
-    width: 24px;
-    height: 24px;
+  .video-player {
+    border: 8px solid #ffffff;
+    border-radius: 28px;
   }
 
   .recipe-button {

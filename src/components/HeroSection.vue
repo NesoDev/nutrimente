@@ -140,7 +140,9 @@ export default {
         width: 100%;
         height: auto;
         display: block;
-        filter: drop-shadow(0 -4px 12px rgba(141, 186, 63, 0.15));
+        filter: drop-shadow(0 -4px 12px rgba(141, 186, 63, 0.15))
+                brightness(0) saturate(100%)
+                invert(66%) sepia(35%) saturate(654%) hue-rotate(43deg) brightness(96%) contrast(85%);
         transform-origin: bottom center;
     }
 
@@ -285,7 +287,9 @@ export default {
                     white-space: nowrap;
                     font-size: 50px;
                     color: #8dba3f;
-                    -webkit-text-stroke: 2px #8dbb39;
+                    -webkit-text-stroke: 3px white;
+                    text-stroke: 3px white;
+                    paint-order: stroke fill;
                     text-shadow: 3px 3px 0px #f1b33f,
                                  5px 5px 0px #f1b33f;
                     transform: rotate(-2deg);
@@ -296,7 +300,9 @@ export default {
                     white-space: nowrap;
                     font-size: 68px;
                     color: #70cdba;
-                    -webkit-text-stroke: 3px #70cdba;
+                    -webkit-text-stroke: 4px white;
+                    text-stroke: 4px white;
+                    paint-order: stroke fill;
                     text-shadow: 3px 3px 0px #8dba3f,
                                  5px 5px 0px #8dbb39;
                     transform: rotate(1deg);
