@@ -124,7 +124,7 @@ export default {
   width: 100%;
   max-width: 100vw;
   min-height: 100vh;
-  padding: 100px 20px 20px 20px;
+  padding: 50px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
