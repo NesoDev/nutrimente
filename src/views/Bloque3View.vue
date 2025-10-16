@@ -1401,11 +1401,9 @@ export default {
     font-size: 14px;
   }
 
-  /* Modal mascot */
+  /* Modal mascot - hide on mobile */
   .modal-mascot-container {
-    right: 45px;
-    width: 60px;
-    height: 60px;
+    display: none;
   }
 
   /* Map section */
