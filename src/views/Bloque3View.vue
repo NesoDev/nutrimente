@@ -195,7 +195,7 @@
       <transition name="fade">
         <div v-if="showCard" class="content-card" :class="{ 'reverse-layout': isImageLeft }">
           <p class="card-text">
-            {{ videos[currentVideoIndex].cardText }}
+            {{ displayCardText }}
           </p>
           <div class="card-image-container">
             <img :src="currentAnimalImage" alt="Cartoon animal" class="card-image" />
@@ -757,6 +757,23 @@ export default {
         return this.currentRegion.recipes;
       }
       return this.currentRegion.recipes.filter(recipe => recipe.ageGroup === this.selectedAgeGroup);
+    },
+    displayCardText() {
+      // Check if window width is mobile (768px or less)
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+        const fullText = this.videos[this.currentVideoIndex].cardText;
+        // Find the position of the second period
+        const firstPeriod = fullText.indexOf('.');
+        if (firstPeriod === -1) return fullText; // No period found, return full text
+
+        const secondPeriod = fullText.indexOf('.', firstPeriod + 1);
+        if (secondPeriod === -1) return fullText; // Only one period, return full text
+
+        // Return text up to and including the second period
+        return fullText.substring(0, secondPeriod + 1);
+      }
+      // For desktop, return full text
+      return this.videos[this.currentVideoIndex].cardText;
     }
   },
   methods: {
