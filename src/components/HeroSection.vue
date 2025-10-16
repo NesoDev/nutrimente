@@ -835,6 +835,7 @@ export default {
 
         .phrase-content {
             gap: 12px;
+            justify-content: center;
 
             .phrase-mascot {
                 width: 45px;
@@ -842,6 +843,8 @@ export default {
 
             p {
                 font-size: 15px;
+                text-align: center;
+                white-space: normal;
             }
         }
     }
@@ -899,6 +902,7 @@ export default {
 
         .phrase-content {
             gap: 10px;
+            justify-content: center;
 
             .phrase-mascot {
                 width: 40px;
@@ -906,6 +910,8 @@ export default {
 
             p {
                 font-size: 14px;
+                text-align: center;
+                white-space: normal;
             }
         }
     }
