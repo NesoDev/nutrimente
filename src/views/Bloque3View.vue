@@ -891,7 +891,9 @@ export default {
           datalessRegionColor: '#f5f5f5',
           defaultColor: '#f5f5f5',
           legend: 'none',
-          tooltip: { trigger: 'selection' }
+          tooltip: { trigger: 'selection' },
+          keepAspectRatio: true,
+          displayMode: 'regions'
         };
 
         this.googleChart.draw(this.chartDataTable, options);
@@ -1115,6 +1117,7 @@ export default {
   border-radius: 10px;
 }
 
+
 .main-titleb3 {
   font-family: "Bubblegum Sans", "BeachDay", cursive, sans-serif;
   font-weight: 400;
@@ -1203,14 +1206,22 @@ export default {
 
 /* Google Charts Map Container */
 .google-map {
-  max-width: none;
-  height: auto;
-  aspect-ratio: 1/1;
+  width: 350px;
+  height: 400px;
   border-radius: 10px;
   border: 1px solid #e0e0e0;
-  max-width: 100%;
-  overflow: hidden;
-  padding-right: 10%;
+  overflow: visible;
+  position: relative;
+}
+
+.google-map > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.google-map svg {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .region-info {
@@ -1307,7 +1318,11 @@ export default {
   object-fit: cover;
 }
 
-/* 💻 Tablet adjustments */
+/* =================================================================
+   RESPONSIVE STYLES - TABLET & MOBILE
+   ================================================================= */
+
+/* 💻 Tablet adjustments (max-width: 1200px) */
 @media (max-width: 1200px) {
   .content-wrapper {
     grid-template-columns: 150px 1fr 150px;
@@ -1323,13 +1338,18 @@ export default {
   }
 }
 
-/* Mobile adjustments */
+/* ====================================================== */
+/* ====================================================== */
+/* ====================================================== */
+
+/* 📱 Mobile adjustments (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Page container */
   .page-container {
     padding: 60px 20px 35px 20px;
   }
 
-  /* Stack layout on mobile - hide side images */
+  /* Content layout - stack and hide side images */
   .content-wrapper {
     grid-template-columns: 1fr;
     gap: 0;
@@ -1341,33 +1361,31 @@ export default {
 
   .main-content {
     width: 100%;
-    padding: 20px;
+    padding: 0px;
   }
 
+  /* Title styles */
   .main-titleb3 {
     .title-part1 {
       font-size: 40px;
       padding: 6px 16px;
       border-radius: 10px;
     }
-
     .title-part2 {
       font-size: 50px;
-      -webkit-text-stroke: 2.5px white;
-      text-stroke: 2.5px white;
+      -webkit-text-stroke: 2px #8dbb39;
       text-shadow: 2px 2px 0px #70cdba,
                    3px 3px 0px #70cdba;
     }
-
     .title-part3 {
       font-size: 50px;
-      -webkit-text-stroke: 2.5px white;
-      text-stroke: 2.5px white;
+      -webkit-text-stroke: 2px #8dbb39;
       text-shadow: 2px 2px 0px #70cdba,
                    3px 3px 0px #70cdba;
     }
   }
 
+  /* Description text */
   .description {
     font-size: 15px;
     margin-bottom: 25px;
@@ -1375,21 +1393,22 @@ export default {
     max-width: 40ch;
   }
 
+  /* Map instruction */
   .map-instruction {
-    padding: 12px 15px;
-
-    p {
-      font-size: 14px;
-    }
+    padding: 12px 10px;
+  }
+  .map-instruction p {
+    font-size: 14px;
   }
 
+  /* Modal mascot */
   .modal-mascot-container {
     right: 45px;
     width: 60px;
     height: 60px;
   }
-  
 
+  /* Map section */
   .map-container {
     flex-direction: column;
     gap: 20px;
@@ -1397,45 +1416,170 @@ export default {
 
   .map-wrapper {
     max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-.google-map {
-  aspect-ratio: 4/5;
-  max-width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
+  .google-map {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.google-map > * {
-  width: 150%; /* Make content 1.5x wider */
-  transform: translateX(-18.33%) translateY(-33px); /* Move left by 1/3 to show right 2/3 */
-}
+  .google-map > * {
+    width: 100% !important;
+    height: 100% !important;
+    transform: none;
+    margin: 0 auto;
+  }
 
   .region-info {
     text-align: center;
+    width: 100%;
   }
 
+  /* Age group buttons */
   .age-group-buttons {
     justify-content: center;
   }
 
-  .video-container {
-    border-radius: 10px;
+  /* Video player */
+  .video-player {
+    border: 8px solid white;
+    border-radius: 20px;
   }
 
-  .video-player {
-    border: 10px solid #ffffff;
-    border-radius: 32px;
+  .play-button-overlay {
+    width: 60px;
+    height: 60px;
+  }
+
+  .play-icon {
+    width: 28px;
+    height: 28px;
   }
 
   .video-container {
     padding-bottom: 98.25%;
   }
+
+  /* Bottom section (info bar and content card) */
+  .bottom-section {
+    width: 90%;
+    margin-top: 15px;
+  }
+
+  .card-image-container {
+    display: none;
+  }
+
+  .info-bar {
+    font-size: 1em;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .content-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .info-text {
+    font-size: 14px;
+    padding: 0;
+    text-align: center;
+  }
+
+  /* Recipe buttons */
+  .recipe-button {
+    padding: 10px 14px;
+    font-size: 0.85em;
+  }
+
+  /* Map section spacing */
+  .map-section {
+    margin: 25px 0;
+    padding: 15px;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    max-width: 92%;
+    width: 92%;
+    padding: 0.9rem;
+    max-height: 80vh;
+  }
+
+  .modal-header {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .recipe-meta {
+    font-size: 0.75rem;
+  }
+
+  .modal-section {
+    margin-bottom: 0.8rem;
+  }
+
+  .modal-section h3 {
+    font-size: 0.9rem;
+    padding-left: 5px;
+  }
+
+  .modal-section ul li,
+  .modal-section ol li {
+    font-size: 0.78rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.35;
+  }
+
+  .nutrition-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 10px;
+  }
+
+  .nutrition-item {
+    padding: 6px;
+  }
+
+  .nutrition-item strong {
+    font-size: 0.75rem;
+  }
+
+  .nutrition-item span {
+    font-size: 0.7rem;
+  }
+
+  .close-btn {
+    top: 8px;
+    right: 10px;
+    font-size: 1.4rem;
+  }
 }
 
-
-
+/* 📱 Extra small mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .main-titleb3 {
     font-size: 1.5em;
@@ -1456,8 +1600,15 @@ export default {
   }
 
   .google-map {
-    aspect-ratio: 3/4;
-    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
+    height: 350px;
+  }
+
+  .google-map > * {
+    width: 100% !important;
+    height: 100% !important;
+    transform: none;
   }
 
   .age-group-button {
@@ -1466,7 +1617,9 @@ export default {
   }
 }
 
-/* Bottom section styles */
+/* =================================================================
+   BOTTOM SECTION STYLES (Info bar & Content card)
+   ================================================================= */
 .bottom-section {
   width: 80%;
   max-width: 900px;
@@ -1563,39 +1716,14 @@ export default {
   opacity: 0;
 }
 
-/* Mobile adjustments for bottom section */
-@media (max-width: 768px) {
-  .card-image-container {
-    display: none;
-  }
+/* ====================================================== */
+/* ====================================================== */
+/* ====================================================== */
 
-  .info-bar {
-    font-size: 1em;
-    padding: 12px 18px;
-  }
 
-  .content-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .info-text {
-    font-size: 14px;
-    padding: 2px;
-  }
-
-  .map-wrapper {
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-}
-
-/* Modal styles */
-/* Modal styles */
+/* =================================================================
+   MODAL STYLES
+   ================================================================= */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1613,127 +1741,121 @@ export default {
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
-  max-width: 800px; /* Reduced from 750px */
-  width: 95%; /* Reduced from 95% */
+  max-width: 800px;
+  width: 95%;
   text-align: left;
   position: relative;
-  max-height: 65vh; /* Reduced from 90vh */
+  max-height: 65vh;
   overflow-y: auto;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 .modal-header {
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
-  border-bottom: 1px solid #e0e0e0; /* Thinner border */
-  padding-bottom: 0.6rem; /* Reduced from 0.8rem */
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.6rem;
 }
 
 .modal-header h2 {
   margin: 0;
-  font-size: 1.3rem; /* Reduced from 1.6rem */
+  font-size: 1.3rem;
   color: #70cdba;
    font-family: 'Work Sans', sans-serif;
   line-height: 1.2;
 }
 
 .recipe-meta {
-  font-size: 0.8rem; /* Reduced from 0.9rem */
+  font-size: 0.8rem;
   color: #666;
-  margin-top: 3px; /* Reduced from 5px */
+  margin-top: 3px;
    font-family: 'Work Sans', sans-serif;
 }
 
-/* Section titles */
 .modal-section {
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  margin-bottom: 1rem;
 }
 
 .modal-section h3 {
-  font-size: 1rem; /* Reduced from 1.2rem */
+  font-size: 1rem;
   color: #333;
-  margin-bottom: 0.4rem; /* Reduced from 0.6rem */
+  margin-bottom: 0.4rem;
    font-family: 'Work Sans', sans-serif;
-  border-left: 3px solid #70cdba; /* Thinner border */
-  padding-left: 6px; /* Reduced from 8px */
+  border-left: 3px solid #70cdba;
+  padding-left: 6px;
 }
 
-/* Ingredient & preparation lists */
 .modal-section ul,
 .modal-section ol {
-  padding-left: 1rem; /* Reduced from 1.2rem */
+  padding-left: 1rem;
   margin: 0;
 }
 
 .modal-section ul li,
 .modal-section ol li {
-  margin-bottom: 0.3rem; /* Reduced from 0.4rem */
+  margin-bottom: 0.3rem;
   color: #444;
-  line-height: 1.4; /* Reduced from 1.5 */
-  font-size: 0.85rem; /* Reduced from 0.95rem */
+  line-height: 1.4;
+  font-size: 0.85rem;
   font-family: 'Work Sans', sans-serif;
 }
 
-/* Nutrition facts in grid - More compact */
 .nutrition-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Reduced from 120px */
-  gap: 8px 12px; /* Reduced gaps */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px 12px;
   margin-top: 0.4rem;
 }
 
 .nutrition-item {
   background: #f8fdfd;
   border: 1px solid #e0f2f1;
-  padding: 8px; /* Reduced from 10px */
-  border-radius: 6px; /* Smaller radius */
+  padding: 8px;
+  border-radius: 6px;
   text-align: center;
 }
 
 .nutrition-item strong {
   display: block;
   color: #70cdba;
-  font-size: 0.8rem; /* Reduced from 0.9rem */
+  font-size: 0.8rem;
 }
 
 .nutrition-item span {
-  font-size: 0.75rem; /* Reduced from 0.85rem */
+  font-size: 0.75rem;
   color: #555;
 }
 
-/* Recommendations list */
 .recommendations-list {
   list-style: disc;
   padding-left: 1.2rem;
 }
 
 .recommendations-list li {
-  margin-bottom: 0.4rem; /* Reduced from 0.5rem */
+  margin-bottom: 0.4rem;
   color: #555;
-  font-size: 0.85rem; /* Reduced from 0.95rem */
-  line-height: 1.3; /* Reduced from 1.4 */
+  font-size: 0.85rem;
+  line-height: 1.3;
    font-family: 'Work Sans', sans-serif;
 }
 
-/* Close button refinement */
 .close-btn {
   position: absolute;
-  top: 10px; /* Reduced from 14px */
-  right: 12px; /* Reduced from 16px */
+  top: 10px;
+  right: 12px;
   background: none;
   border: none;
-  font-size: 1.5rem; /* Reduced from 1.8rem */
+  font-size: 1.5rem;
   font-weight: bold;
   color: #999;
   cursor: pointer;
   transition: color 0.2s ease;
-  padding: 4px; /* Added padding for better click area */
+  padding: 4px;
 }
 
 .close-btn:hover {
   color: #333;
 }
 
-/* Description paragraph - more compact */
 .recipe-description {
   font-size: 0.9rem;
   color: #666;
@@ -1742,10 +1864,9 @@ export default {
    font-family: 'Work Sans', sans-serif;
 }
 
-/* Coming soon section - more compact */
 .coming-soon {
   text-align: center;
-  padding: 1rem; /* Reduced padding */
+  padding: 1rem;
   background: #f9f9f9;
   border-radius: 8px;
 }
@@ -1762,9 +1883,8 @@ export default {
   color: #666;
 }
 
-/* Scrollbar for overflowing content */
 .modal-content::-webkit-scrollbar {
-  width: 6px; /* Thinner scrollbar */
+  width: 6px;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
@@ -1774,33 +1894,6 @@ export default {
 
 .modal-content::-webkit-scrollbar-thumb:hover {
   background: #999;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .modal-content {
-    max-width: 95%;
-    width: 95%;
-    padding: 1rem;
-    max-height: 85vh;
-  }
-  
-  .modal-header h2 {
-    font-size: 1.1rem;
-  }
-  
-  .nutrition-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .modal-section h3 {
-    font-size: 0.95rem;
-  }
-  
-  .modal-section ul li,
-  .modal-section ol li {
-    font-size: 0.8rem;
-  }
 }
 
 </style>
