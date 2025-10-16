@@ -757,21 +757,15 @@ export default {
             }
 
             .mobile-only {
-                display: block;
+                display: none;
             }
 
             #bear {
-                position: absolute;
-                top: -10px;
-                left: 5px;
-                width: 45px;
+                display: none;
             }
 
             #watermelon {
-                position: absolute;
-                top: -10px;
-                right: 5px;
-                width: 45px;
+                display: none;
             }
         }
 
