@@ -1009,25 +1009,30 @@ export default {
 }
 
 .age-group-button {
-    padding: 10px 14px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    background-color: #f1b33f;
-    color: white;
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: 3px solid #f1b33f;
+  cursor: pointer;
+  background-color: #f6faf1;
+  color: #8dba3f;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 
 .age-group-button:hover {
-  background-color: #f1b33f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(241, 179, 63, 0.4);
 }
 
 .age-group-button.active {
-    background-color: #f1b33f;
-    color: white;
-    border-radius: 25px;
-    box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4);
-    font-weight: bold;
-
+  background-color: #f1b33f;
+  color: white;
+  border-radius: 25px;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  transform: scale(1.05);
 }
 
 /* Centered category selector */
@@ -1049,10 +1054,18 @@ export default {
 .video-selector button {
   padding: 10px 14px;
   border-radius: 25px;
-  border: none;
+  border: 2px solid #70cdba;
   cursor: pointer;
   background-color: rgba(112, 205, 186, 0.7);
   color: white;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.video-selector button:hover {
+  background-color: #70cdba;
+  transform: translateY(-2px);
 }
 
 /* Active button style */
@@ -1492,15 +1505,16 @@ export default {
     margin-top: 15px;
   }
 
-  .card-image-container {
-    display: none;
-  }
-
   .info-bar {
     font-size: 1em;
     padding: 12px 16px;
     border-radius: 8px;
     margin-bottom: 15px;
+  }
+
+  /* Hide animal image on mobile */
+  .card-image-container {
+    display: none !important;
   }
 
   .content-card {
