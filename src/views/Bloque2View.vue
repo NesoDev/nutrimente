@@ -4,63 +4,85 @@
     </div>
     <div class="grass-decoration"></div>
 
-    <main class="main-content">
-      <!-- 1. Título de la sección -->
-      <h1 class="main-titleb2">
-        <span class="title-part1">Bloque 2:</span>
-        <span class="title-part2">¡Pequeños juegos,</span>
-        <span class="title-part3">grandes mentes!</span>
-      </h1>
-
-      <!-- 2. Descripción de la sección -->
-      <p class="description">
-        La infancia es fundamental para el desarrollo cerebral y cognitivo de los menores; en este sentido, el juego es esencial para que los niños desarrollen una gran variedad de habilidades para el futuro.
-Por ello, aquí en Nutrimente te presentamos algunos juegos que podría practicar tu pequeño según su edad.
-      </p>
-
-      <!-- 3. Texto de ayuda -->
-      <div class="help-text">
-        <p>👇 Selecciona la edad de tu hijo para ver actividades apropiadas:</p>
+    <!-- Content wrapper with side images -->
+    <div class="content-wrapper">
+      <!-- Left side images -->
+      <div class="side-images left-images">
+        <img src="@/assets/bloque2/image1.png" alt="Decorative image 1" class="side-image">
+        <img src="@/assets/bloque2/image2.png" alt="Decorative image 2" class="side-image">
+        <img src="@/assets/bloque2/image3.png" alt="Decorative image 3" class="side-image">
+        <img src="@/assets/bloque2/image4.png" alt="Decorative image 4" class="side-image">
+        <img src="@/assets/bloque2/image5.png" alt="Decorative image 5" class="side-image">
       </div>
 
-      <!-- 4. Botones de edad -->
-      <div class="video-selector age-buttons">
-        <button
-          v-for="cat in Object.keys(videos)"
-          :key="cat"
-          @click="selectCategory(cat)"
-          :class="{ active: currentCategory === cat }">
-          {{ labels[cat] }}
-        </button>
-      </div>
+      <!-- Main content -->
+      <main class="main-content">
+        <!-- 1. Título de la sección -->
+        <h1 class="main-titleb2">
+          <span class="title-part1">Bloque 2:</span>
+          <span class="title-part2">¡Pequeños juegos,</span>
+          <span class="title-part3">grandes mentes!</span>
+        </h1>
 
-      <!-- 5. Botones de video -->
-      <div class="video-selector sub-selector">
-        <button
-          v-for="(video, index) in videos[currentCategory]"
-          :key="index"
-          @click="selectVideo(index)"
-          :class="{ active: currentVideoIndex === index }"
-        >
-          Video {{ index + 1 }}
-        </button>
-      </div>
+        <!-- 2. Descripción de la sección -->
+        <p class="description">
+          La infancia es fundamental para el desarrollo cerebral y cognitivo de los menores; en este sentido, el juego es esencial para que los niños desarrollen una gran variedad de habilidades para el futuro.
+  Por ello, aquí en Nutrimente te presentamos algunos juegos que podría practicar tu pequeño según su edad.
+        </p>
 
-      <!-- 6. Video -->
+        <!-- 3. Texto de ayuda -->
+        <div class="help-text">
+          <p>👇 Selecciona la edad de tu hijo para ver actividades apropiadas:</p>
+        </div>
 
-      <div class="video-container">
-        <video
-          ref="videoPlayer"
-          class="video-player"
-          controls
-          :src="cloudinaryVideoUrl"
-          :poster="cloudinaryThumbnailUrl"
-          preload="metadata"
-        >
-          Your browser does not support the video tag.
-        </video>
+        <!-- 4. Botones de edad -->
+        <div class="video-selector age-buttons">
+          <button
+            v-for="cat in Object.keys(videos)"
+            :key="cat"
+            @click="selectCategory(cat)"
+            :class="{ active: currentCategory === cat }">
+            {{ labels[cat] }}
+          </button>
+        </div>
+
+        <!-- 5. Botones de video -->
+        <div class="video-selector sub-selector">
+          <button
+            v-for="(video, index) in videos[currentCategory]"
+            :key="index"
+            @click="selectVideo(index)"
+            :class="{ active: currentVideoIndex === index }"
+          >
+            Video {{ index + 1 }}
+          </button>
+        </div>
+
+        <!-- 6. Video -->
+
+        <div class="video-container">
+          <video
+            ref="videoPlayer"
+            class="video-player"
+            controls
+            :src="cloudinaryVideoUrl"
+            :poster="cloudinaryThumbnailUrl"
+            preload="metadata"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </main>
+
+      <!-- Right side images -->
+      <div class="side-images right-images">
+        <img src="@/assets/bloque2/image6.png" alt="Decorative image 6" class="side-image">
+        <img src="@/assets/bloque2/image7.png" alt="Decorative image 7" class="side-image">
+        <img src="@/assets/bloque2/image8.png" alt="Decorative image 8" class="side-image">
+        <img src="@/assets/bloque2/image9.png" alt="Decorative image 9" class="side-image">
+        <img src="@/assets/bloque2/image10.png" alt="Decorative image 10" class="side-image">
       </div>
-    </main>
+    </div>
 
     <!-- ✅ Green + White Sections -->
     <section class="bottom-section">
@@ -335,15 +357,54 @@ export default {
   box-sizing: border-box;
 }
 
+/* Content wrapper with Grid layout */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 30px;
+  align-items: start;
+  margin-bottom: 40px;
+}
 
+/* Side images containers */
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 0;
+}
 
+.side-image {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
 
+.side-image:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
 
+.left-images {
+  justify-content: flex-start;
+}
+
+.right-images {
+  justify-content: flex-start;
+}
 
 .main-content {
   position: relative;
   z-index: 10;
-  width: 80%;
+  width: 100%;
   max-width: 900px;
   text-align: center;
   padding: 40px;
@@ -439,6 +500,22 @@ export default {
 
 /* Existing styles remain the same... */
 
+/* 💻 Tablet adjustments */
+@media (max-width: 1200px) {
+  .content-wrapper {
+    grid-template-columns: 150px 1fr 150px;
+    gap: 20px;
+  }
+
+  .side-image {
+    max-width: 130px;
+  }
+
+  .side-images {
+    gap: 20px;
+  }
+}
+
 /* 📱 Mobile-friendly adjustments */
 @media (max-width: 768px) {
   .page-container {
@@ -448,6 +525,16 @@ export default {
 
   .grass-decoration {
     height: 40px;
+  }
+
+  /* Stack layout on mobile - hide side images */
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .side-images {
+    display: none;
   }
 
   .main-content {

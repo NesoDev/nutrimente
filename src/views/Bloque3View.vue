@@ -4,8 +4,20 @@
     </div>
     <div class="grass-decoration"></div>
 
-    <main class="main-content">
-      <!-- Modal -->
+    <!-- Content wrapper with side images -->
+    <div class="content-wrapper">
+      <!-- Left side images -->
+      <div class="side-images left-images">
+        <img src="@/assets/bloque3/image1.png" alt="Decorative image 1" class="side-image">
+        <img src="@/assets/bloque3/image2.png" alt="Decorative image 2" class="side-image">
+        <img src="@/assets/bloque3/image3.png" alt="Decorative image 3" class="side-image">
+        <img src="@/assets/bloque3/image4.png" alt="Decorative image 4" class="side-image">
+        <img src="@/assets/bloque3/image5.png" alt="Decorative image 5" class="side-image">
+      </div>
+
+      <!-- Main content -->
+      <main class="main-content">
+        <!-- Modal -->
       <transition name="fade">
         <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
           <div class="modal-content">
@@ -150,6 +162,16 @@
         </video>
       </div>
     </main>
+
+    <!-- Right side images -->
+    <div class="side-images right-images">
+      <img src="@/assets/bloque3/image6.png" alt="Decorative image 6" class="side-image">
+      <img src="@/assets/bloque3/image7.png" alt="Decorative image 7" class="side-image">
+      <img src="@/assets/bloque3/image8.png" alt="Decorative image 8" class="side-image">
+      <img src="@/assets/bloque3/image9.png" alt="Decorative image 9" class="side-image">
+      <img src="@/assets/bloque3/image10.png" alt="Decorative image 10" class="side-image">
+    </div>
+  </div>
 
     <!-- Green + White Sections -->
     <section class="bottom-section">
@@ -1039,13 +1061,54 @@ export default {
   box-sizing: border-box;
 }
 
+/* Content wrapper with Grid layout */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 30px;
+  align-items: start;
+  margin-bottom: 40px;
+}
 
+/* Side images containers */
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 0;
+}
 
+.side-image {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.side-image:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.left-images {
+  justify-content: flex-start;
+}
+
+.right-images {
+  justify-content: flex-start;
+}
 
 .main-content {
   position: relative;
   z-index: 10;
-  width: 80%;
+  width: 100%;
   max-width: 900px;
   text-align: center;
   padding: 40px;
@@ -1244,14 +1307,37 @@ export default {
   object-fit: cover;
 }
 
+/* 💻 Tablet adjustments */
+@media (max-width: 1200px) {
+  .content-wrapper {
+    grid-template-columns: 150px 1fr 150px;
+    gap: 20px;
+  }
+
+  .side-image {
+    max-width: 130px;
+  }
+
+  .side-images {
+    gap: 20px;
+  }
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .page-container {
     padding: 60px 20px 35px 20px;
   }
 
+  /* Stack layout on mobile - hide side images */
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 
-
+  .side-images {
+    display: none;
+  }
 
   .main-content {
     width: 100%;
