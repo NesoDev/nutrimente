@@ -24,9 +24,9 @@
             <button class="close-btn" @click="closeModal">✖</button>
             <div v-if="selectedRecipe">
               <!-- Animal mascot in modal -->
-              <div class="modal-mascot-container">
+              <!-- <div class="modal-mascot-container">
                 <img src="../assets/animal.png" alt="Mascota NutriMente" class="modal-mascot">
-              </div>
+              </div> -->
               <div class="modal-header">
                 <h2>{{ selectedRecipe.name }}</h2>
                 <p class="recipe-meta">
@@ -37,7 +37,7 @@
 
               <div class="modal-section" v-if="selectedRecipe.ingredients && selectedRecipe.ingredients.length">
                 <h3>Ingredientes</h3>
-                <ul>
+                <ul class="ingredients-grid">
                   <li v-for="(ingredient, index) in selectedRecipe.ingredients" :key="index">{{ ingredient }}</li>
                 </ul>
               </div>
@@ -1606,6 +1606,12 @@ export default {
     right: 10px;
     font-size: 1.4rem;
   }
+
+  /* Ingredients grid - single column on mobile */
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
 }
 
 /* 📱 Extra small mobile (max-width: 480px) */
@@ -1821,6 +1827,23 @@ export default {
 
 .modal-section ul li,
 .modal-section ol li {
+  margin-bottom: 0.3rem;
+  color: #444;
+  line-height: 1.4;
+  font-size: 0.85rem;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* Ingredients grid - two columns */
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem 1rem;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.ingredients-grid li {
   margin-bottom: 0.3rem;
   color: #444;
   line-height: 1.4;
