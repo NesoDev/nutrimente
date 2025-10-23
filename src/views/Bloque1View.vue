@@ -23,7 +23,7 @@
           <span class="title-part3">desde los primeros años</span>
         </h1>
         <p class="description">
-          Sabías que... está comprobado científicamente que un niño que se alimenta de manera saludable crece sano, con una mayor capacidad de aprendizaje, mayor capacidad de atención, mejores notas en la escuela, entre más beneficios?
+          ¿Sabías que está comprobado científicamente que un niño que <span class="highlight-1">se alimenta de manera saludable</span> crece sano, con una <span class="highlight-2">mayor capacidad de aprendizaje, mayor capacidad de atención, mejores notas en la escuela</span>, entre más beneficios?
       </p>
         <div class="video-container">
           <video
@@ -259,21 +259,21 @@ export default {
     -webkit-text-stroke: 4px white;
     text-stroke: 4px white;
     paint-order: stroke fill;
-    text-shadow: 3px 3px 0px #70cdba,
-                 5px 5px 0px #70cdba;
-    transform: rotate(2deg);
+    text-shadow: 3px 3px 0px #f1b33f,
+                 5px 5px 0px #f1b33f;
+    transform: rotate(-2deg);
   }
 
   .title-part3 {
     display: block;
     font-size: 60px;
-    color: #f1b33f;
+    color: #70cdba;
     -webkit-text-stroke: 3px white;
     text-stroke: 3px white;
     paint-order: stroke fill;
     text-shadow: 3px 3px 0px #8dba3f,
                  5px 5px 0px #8dbb39;
-    transform: rotate(-1deg);
+    transform: rotate(1deg);
   }
 }
 
@@ -297,6 +297,16 @@ export default {
     max-width: 65ch;
     margin: 20px auto 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    .highlight-1 {
+        font-weight: bold;
+        color: #8dba3f;
+    }
+
+    .highlight-2 {
+        font-weight: bold;
+        color: #70cdba;
+    }
 }
 
 
@@ -383,8 +393,8 @@ export default {
       font-size: 50px;
       -webkit-text-stroke: 2.5px white;
       text-stroke: 2.5px white;
-      text-shadow: 2px 2px 0px #70cdba,
-                   3px 3px 0px #70cdba;
+      text-shadow: 2px 2px 0px #f1b33f,
+                   3px 3px 0px #f1b33f;
     }
 
     .title-part3 {
@@ -406,6 +416,16 @@ export default {
     margin-bottom: 25px;
     padding: 15px 18px;
     max-width: 40ch;
+
+    .highlight-1 {
+        font-weight: bold;
+        color: #8dba3f;
+    }
+
+    .highlight-2 {
+        font-weight: bold;
+        color: #70cdba;
+    }
   }
 
   .content-card-expanded {

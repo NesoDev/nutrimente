@@ -8,7 +8,7 @@
                     <span class="title-line2">te brinda!</span>
                 </h2>
                 <p>
-                    En NutriMente, te ayudamos a mejorar la alimentación y el aprendizaje de tu hijo de manera fácil y práctica. Aquí encontrarás consejos útiles, juegos que estimulan su desarrollo, recetas nutritivas y herramientas para seguir su crecimiento con recomendaciones personalizadas. Todo está organizado por temas para que accedas rápido a lo que necesitas. ¡Explora y empieza hoy!
+                    En NutriMente, te ayudamos a mejorar la alimentación y el aprendizaje de tu hijo de manera fácil y práctica. Aquí encontrarás <span id="p-1">consejos útiles, juegos que estimulan su desarrollo, recetas nutritivas</span> y herramientas para seguir su crecimiento con <span id="p-2">recomendaciones personalizadas</span>. Todo está organizado por temas para que accedas rápido a lo que necesitas. ¡Explora y empieza hoy!
                 </p>
             </div>
             <div class="content">
@@ -96,7 +96,7 @@
     width: 100%;
     height: 60px;
     background: #8dbb39;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 0px 0px;
     margin-top: 0;
     margin-bottom: 120px;
     flex-shrink: 0;
@@ -128,25 +128,25 @@
             .title-line1 {
                 display: block;
                 font-size: 60px;
-                color: #f1b33f;
+                color: #8dba3f;
                 -webkit-text-stroke: 3px white;
                 text-stroke: 3px white;
                 paint-order: stroke fill;
-                text-shadow: 3px 3px 0px #8dba3f,
-                             5px 5px 0px #8dbb39;
-                transform: rotate(-1deg);
+                text-shadow: 3px 3px 0px #f1b33f,
+                             5px 5px 0px #f1b33f;
+                transform: rotate(-2deg);
             }
 
             .title-line2 {
                 display: block;
                 font-size: 70px;
-                color: #8dba3f;
+                color: #70cdba;
                 -webkit-text-stroke: 4px white;
                 text-stroke: 4px white;
                 paint-order: stroke fill;
-                text-shadow: 3px 3px 0px #70cdba,
-                             5px 5px 0px #70cdba;
-                transform: rotate(2deg);
+                text-shadow: 3px 3px 0px #8dba3f,
+                             5px 5px 0px #8dbb39;
+                transform: rotate(1deg);
             }
         }
 
@@ -161,6 +161,16 @@
             max-width: 65ch;
             margin: 0 auto;
             padding: 0 20px;
+
+            #p-1 {
+                font-weight: bold;
+                color: #8dba3f
+            }
+
+            #p-2 {
+                font-weight: bold;
+                color: #70cdba
+            }
         }
     }
 
@@ -285,16 +295,16 @@
                     font-size: 40px;
                     -webkit-text-stroke: 2px white;
                     text-stroke: 2px white;
-                    text-shadow: 2px 2px 0px #8dba3f,
-                                 3px 3px 0px #8dbb39;
+                    text-shadow: 2px 2px 0px #f1b33f,
+                                 3px 3px 0px #f1b33f;
                 }
 
                 .title-line2 {
                     font-size: 50px;
                     -webkit-text-stroke: 2.5px white;
                     text-stroke: 2.5px white;
-                    text-shadow: 2px 2px 0px #70cdba,
-                                 3px 3px 0px #70cdba;
+                    text-shadow: 2px 2px 0px #8dba3f,
+                                 3px 3px 0px #8dbb39;
                 }
             }
 
@@ -303,6 +313,16 @@
                 color: #333333;
                 font-size: 15px;
                 max-width: 40ch;
+
+                #p-1 {
+                    font-weight: bold;
+                    color: #8dba3f
+                }
+
+                #p-2 {
+                    font-weight: bold;
+                    color: #70cdba
+                }
             }
         }
 

@@ -26,7 +26,7 @@
 
         <!-- 2. Descripción de la sección -->
         <p class="description">
-          La infancia es fundamental para el desarrollo cerebral y cognitivo de los menores; en este sentido, el juego es esencial para que los niños desarrollen una gran variedad de habilidades para el futuro.
+          La infancia es fundamental para el <span class="highlight-1">desarrollo cerebral y cognitivo</span> de los menores; en este sentido, el <span class="highlight-2">juego es esencial para que los niños desarrollen una gran variedad de habilidades</span> para el futuro.
   Por ello, aquí en Nutrimente te presentamos algunos juegos que podría practicar tu pequeño según su edad.
         </p>
 
@@ -458,21 +458,21 @@ export default {
     -webkit-text-stroke: 4px white;
     text-stroke: 4px white;
     paint-order: stroke fill;
-    text-shadow: 3px 3px 0px #70cdba,
-                 5px 5px 0px #70cdba;
-    transform: rotate(2deg);
+    text-shadow: 3px 3px 0px #f1b33f,
+                 5px 5px 0px #f1b33f;
+    transform: rotate(-2deg);
   }
 
   .title-part3 {
     display: block;
     font-size: 70px;
-    color: #8dba3f;
+    color: #70cdba;
     -webkit-text-stroke: 4px white;
     text-stroke: 4px white;
     paint-order: stroke fill;
-    text-shadow: 3px 3px 0px #70cdba,
-                 5px 5px 0px #70cdba;
-    transform: rotate(2deg);
+    text-shadow: 3px 3px 0px #8dba3f,
+                 5px 5px 0px #8dbb39;
+    transform: rotate(1deg);
   }
 }
 
@@ -491,6 +491,16 @@ export default {
     max-width: 65ch;
     margin: 20px auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    .highlight-1 {
+        font-weight: bold;
+        color: #8dba3f;
+    }
+
+    .highlight-2 {
+        font-weight: bold;
+        color: #70cdba;
+    }
 }
 /* Contenedor responsivo con aspecto 16:9 */
 .video-container {
@@ -570,16 +580,16 @@ export default {
       font-size: 50px;
       -webkit-text-stroke: 2.5px white;
       text-stroke: 2.5px white;
-      text-shadow: 2px 2px 0px #70cdba,
-                   3px 3px 0px #70cdba;
+      text-shadow: 2px 2px 0px #f1b33f,
+                   3px 3px 0px #f1b33f;
     }
 
     .title-part3 {
       font-size: 50px;
       -webkit-text-stroke: 2.5px white;
       text-stroke: 2.5px white;
-      text-shadow: 2px 2px 0px #70cdba,
-                   3px 3px 0px #70cdba;
+      text-shadow: 2px 2px 0px #8dba3f,
+                   3px 3px 0px #8dbb39;
     }
   }
 
@@ -607,6 +617,16 @@ export default {
     font-size: 0.95em;
     margin-bottom: 25px;
     text-align: justify; /* looks better on small screens */
+
+    .highlight-1 {
+        font-weight: bold;
+        color: #8dba3f;
+    }
+
+    .highlight-2 {
+        font-weight: bold;
+        color: #70cdba;
+    }
   }
 
  

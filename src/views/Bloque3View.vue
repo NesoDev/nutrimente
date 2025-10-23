@@ -76,8 +76,8 @@
       </h1>
 
       <p class="description">
-        En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
-        Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos,
+        En NutriMente, sabemos que una <span class="highlight-1">buena alimentación y el juego son clave para el desarrollo</span> de los niños.
+        Por eso, creamos una plataforma digital con <span class="highlight-2">recursos prácticos, confiables y validados por expertos</span>,
         para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
       </p>
 
@@ -900,7 +900,7 @@ export default {
           width: 350,
           height: 400,
           colorAxis: {
-            colors: ['#8B4513', '#FFD700', '#90EE90'],
+            colors: ['#FFD700', '#8B4513', '#90EE90'],
             minValue: 1,
             maxValue: 3
           },
@@ -1178,21 +1178,21 @@ export default {
     -webkit-text-stroke: 4px white;
     text-stroke: 4px white;
     paint-order: stroke fill;
-    text-shadow: 3px 3px 0px #70cdba,
-                 5px 5px 0px #70cdba;
-    transform: rotate(2deg);
+    text-shadow: 3px 3px 0px #f1b33f,
+                 5px 5px 0px #f1b33f;
+    transform: rotate(-2deg);
   }
 
   .title-part3 {
     display: block;
     font-size: 70px;
-    color: #8dba3f;
+    color: #70cdba;
     -webkit-text-stroke: 4px white;
     text-stroke: 4px white;
     paint-order: stroke fill;
-    text-shadow: 3px 3px 0px #70cdba,
-                 5px 5px 0px #70cdba;
-    transform: rotate(2deg);
+    text-shadow: 3px 3px 0px #8dba3f,
+                 5px 5px 0px #8dbb39;
+    transform: rotate(1deg);
   }
 }
 
@@ -1210,6 +1210,16 @@ export default {
     max-width: 65ch;
     margin: 20px auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    .highlight-1 {
+        font-weight: bold;
+        color: #8dba3f;
+    }
+
+    .highlight-2 {
+        font-weight: bold;
+        color: #70cdba;
+    }
 }
 
 /* Map Section Styles */
@@ -1403,15 +1413,17 @@ export default {
     }
     .title-part2 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #8dbb39;
-      text-shadow: 2px 2px 0px #70cdba,
-                   3px 3px 0px #70cdba;
+      -webkit-text-stroke: 2.5px white;
+      text-stroke: 2.5px white;
+      text-shadow: 2px 2px 0px #f1b33f,
+                   3px 3px 0px #f1b33f;
     }
     .title-part3 {
       font-size: 50px;
-      -webkit-text-stroke: 2px #8dbb39;
-      text-shadow: 2px 2px 0px #70cdba,
-                   3px 3px 0px #70cdba;
+      -webkit-text-stroke: 2.5px white;
+      text-stroke: 2.5px white;
+      text-shadow: 2px 2px 0px #8dba3f,
+                   3px 3px 0px #8dbb39;
     }
   }
 
@@ -1421,6 +1433,16 @@ export default {
     margin-bottom: 25px;
     padding: 15px 18px;
     max-width: 40ch;
+
+    .highlight-1 {
+        font-weight: bold;
+        color: #8dba3f;
+    }
+
+    .highlight-2 {
+        font-weight: bold;
+        color: #70cdba;
+    }
   }
 
   /* Map instruction */
