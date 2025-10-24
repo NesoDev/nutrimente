@@ -276,10 +276,12 @@
 @media (max-width: 768px) {
     #guide-section {
         gap: 60px;
+        padding-bottom: 40px;
     }
 
     .extension-bg-img {
-        height: 20px;
+        height: 10px;
+        margin-bottom: 40px;
     }
 
     .container {

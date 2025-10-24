@@ -546,7 +546,7 @@ export default {
 /* 📱 Mobile-friendly adjustments */
 @media (max-width: 768px) {
   .page-container {
-    padding: 60px 20px 35px 20px;
+    padding: 30px 20px 35px 20px;
   }
 
 

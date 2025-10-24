@@ -262,7 +262,7 @@ export default {
           name: 'REGIÓN COSTA',
           className: 'region-costa',
           description: 'Rica tradición culinaria costera con ingredientes marinos frescos y productos de tierras fértiles.',
-          departments: ['PE-LAL', 'PE-LAM', 'PE-PIU', 'PE-TUM', 'PE-CAL', 'PE-LIM', 'PE-LMA', 'PE-ICA', 'PE-ARE', 'PE-MOQ', 'PE-TAC'],
+          departments: ['PE-LAL', 'PE-LAM', 'PE-PIU', 'PE-TUM', 'PE-CAL', 'PE-LIM', 'PE-LMA', 'PE-ICA', 'PE-ARE', 'PE-MOQ', 'PE-TAC', 'PE-ANC'],
           recipes: [
   { 
     name: 'Papilla de camote con pollo y espinaca', 
@@ -423,7 +423,7 @@ export default {
           name: 'REGIÓN SIERRA',
           className: 'region-sierra',
           description: 'Herencia andina con granos, tubérculos y tradiciones milenarias de la cordillera.',
-          departments: ['PE-CUS', 'PE-APU', 'PE-HUV', 'PE-AYA', 'PE-JUN', 'PE-PAS', 'PE-HUC', 'PE-ANC', 'PE-CAJ', 'PE-PUN'],
+          departments: ['PE-CUS', 'PE-APU', 'PE-HUV', 'PE-AYA', 'PE-JUN', 'PE-PAS', 'PE-HUC', 'PE-CAJ', 'PE-PUN'],
           recipes: [
 { 
   name: 'Papilla de quinua con zapallo y sangrecita', 
@@ -847,12 +847,12 @@ export default {
       this.chartDataTable = google.visualization.arrayToDataTable([
         ['Department', 'Region', 'Opacity'],
         // Costa
-        ['PE-LAL', 1, 1], ['PE-LAM', 1, 1], ['PE-PIU', 1, 1], ['PE-TUM', 1, 1], 
-        ['PE-CAL', 1, 1], ['PE-LIM', 1, 1], ['PE-LMA', 1, 1], ['PE-ICA', 1, 1], 
-        ['PE-ARE', 1, 1], ['PE-MOQ', 1, 1], ['PE-TAC', 1, 1],
+        ['PE-LAL', 1, 1], ['PE-LAM', 1, 1], ['PE-PIU', 1, 1], ['PE-TUM', 1, 1],
+        ['PE-CAL', 1, 1], ['PE-LIM', 1, 1], ['PE-LMA', 1, 1], ['PE-ICA', 1, 1],
+        ['PE-ARE', 1, 1], ['PE-MOQ', 1, 1], ['PE-TAC', 1, 1], ['PE-ANC', 1, 1],
         // Sierra
-        ['PE-CUS', 2, 0.2], ['PE-APU', 2, 0.2], ['PE-HUV', 2, 0.2], ['PE-AYA', 2, 0.2], 
-        ['PE-JUN', 2, 0.2], ['PE-PAS', 2, 0.2], ['PE-HUC', 2, 0.2], ['PE-ANC', 2, 0.2], 
+        ['PE-CUS', 2, 0.2], ['PE-APU', 2, 0.2], ['PE-HUV', 2, 0.2], ['PE-AYA', 2, 0.2],
+        ['PE-JUN', 2, 0.2], ['PE-PAS', 2, 0.2], ['PE-HUC', 2, 0.2],
         ['PE-CAJ', 2, 0.2], ['PE-PUN', 2, 0.2],
         // Selva
         ['PE-LOR', 3, 0.2], ['PE-UCA', 3, 0.2], ['PE-MDD', 3, 0.2], ['PE-SAM', 3, 0.2], ['PE-AMA', 3, 0.2]
