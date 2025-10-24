@@ -333,13 +333,239 @@ export default {
   object-fit: cover;
 }
 
-/* Existing styles remain the same... */
+/* =================================================================
+   RESPONSIVE DESIGN - MODERN BREAKPOINTS
+   ================================================================= */
 
-/* 💻 Tablet adjustments */
-@media (max-width: 1200px) {
+/* 🖥️ Pantallas ultrawide (1920px o más) */
+@media (min-width: 1920px) {
+  .page-container {
+    padding: 80px 120px 40px 120px;
+  }
+
   .content-wrapper {
-    grid-template-columns: 150px 1fr 150px;
-    gap: 20px;
+    max-width: 1800px;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 50px;
+  }
+
+  .side-image {
+    max-width: 220px;
+  }
+
+  .main-content {
+    max-width: 1200px;
+    padding: 60px;
+  }
+
+  .main-title {
+    .title-part1 {
+      font-size: 75px;
+      padding: 12px 28px;
+    }
+
+    .title-part2 {
+      font-size: 90px;
+    }
+
+    .title-part3 {
+      font-size: 75px;
+    }
+  }
+
+  .description {
+    font-size: 22px;
+    padding: 28px 35px;
+    max-width: 75ch;
+  }
+
+  .bottom-section {
+    width: 70%;
+    max-width: 1400px;
+  }
+
+  .info-bar {
+    padding: 20px 35px;
+    font-size: 1.4em;
+  }
+
+  .info-text {
+    font-size: 22px;
+  }
+
+  .content-card-expanded {
+    padding: 45px;
+    gap: 40px;
+  }
+
+  .section-subtitle {
+    font-size: 30px !important;
+  }
+
+  .video-desc-text {
+    font-size: 20px !important;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  .fact-mascot {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  .fact-text {
+    font-size: 18px !important;
+  }
+}
+
+/* 🖥️ Monitores grandes (1440–1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .page-container {
+    padding: 70px 80px 30px 80px;
+  }
+
+  .content-wrapper {
+    max-width: 1600px;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 40px;
+  }
+
+  .side-image {
+    max-width: 200px;
+  }
+
+  .main-content {
+    max-width: 1000px;
+    padding: 50px;
+  }
+
+  .main-title {
+    .title-part1 {
+      font-size: 68px;
+      padding: 10px 24px;
+    }
+
+    .title-part2 {
+      font-size: 80px;
+    }
+
+    .title-part3 {
+      font-size: 68px;
+    }
+  }
+
+  .description {
+    font-size: 20px;
+    padding: 24px 30px;
+    max-width: 70ch;
+  }
+
+  .bottom-section {
+    width: 75%;
+    max-width: 1200px;
+  }
+
+  .info-text {
+    font-size: 20px;
+  }
+
+  .content-card-expanded {
+    padding: 35px;
+  }
+
+  .section-subtitle {
+    font-size: 26px !important;
+  }
+
+  .video-desc-text {
+    font-size: 18px !important;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .fact-mascot {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .fact-text {
+    font-size: 16px !important;
+  }
+}
+
+/* 💻 Laptops (1024–1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .page-container {
+    padding: 60px 40px 25px 40px;
+  }
+
+  .content-wrapper {
+    max-width: 1400px;
+    grid-template-columns: 180px 1fr 180px;
+    gap: 35px;
+  }
+
+  .side-image {
+    max-width: 160px;
+  }
+
+  .side-images {
+    gap: 25px;
+  }
+
+  .main-content {
+    max-width: 900px;
+    padding: 40px;
+  }
+
+  .main-title {
+    .title-part1 {
+      font-size: 58px;
+      padding: 8px 20px;
+    }
+
+    .title-part2 {
+      font-size: 68px;
+    }
+
+    .title-part3 {
+      font-size: 58px;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    padding: 20px 25px;
+    max-width: 65ch;
+  }
+
+  .bottom-section {
+    width: 80%;
+  }
+
+  .content-card-expanded {
+    padding: 30px;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* 📱 Tabletas (768–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .page-container {
+    padding: 50px 30px 20px 30px;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 140px 1fr 140px;
+    gap: 25px;
   }
 
   .side-image {
@@ -349,25 +575,91 @@ export default {
   .side-images {
     gap: 20px;
   }
-}
 
-/* 📱 Mobile-friendly adjustments */
-@media (max-width: 768px) {
-  .page-container {
-    padding: 60px 20px 18px 20px;
+  .main-content {
+    padding: 30px;
   }
 
-  .clouds-background {
-    .cloud {
-      width: 150px !important;
+  .main-title {
+    .title-part1 {
+      font-size: 48px;
+      padding: 7px 18px;
+      border-radius: 10px;
+    }
+
+    .title-part2 {
+      font-size: 58px;
+      -webkit-text-stroke: 3.5px white;
+    }
+
+    .title-part3 {
+      font-size: 48px;
+      -webkit-text-stroke: 2.5px white;
     }
   }
 
-  .grass-decoration {
-    height: 40px;
+  .description {
+    font-size: 17px;
+    padding: 18px 22px;
+    max-width: 55ch;
   }
 
-  /* Stack layout on mobile - hide side images */
+  .bottom-section {
+    width: 85%;
+  }
+
+  .info-bar {
+    padding: 14px 22px;
+    font-size: 1.1em;
+  }
+
+  .info-text {
+    font-size: 17px;
+  }
+
+  .content-card-expanded {
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .section-subtitle {
+    font-size: 22px !important;
+  }
+
+  .video-desc-text {
+    font-size: 15px !important;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .fact-item {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .fact-mascot {
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  .fact-text {
+    font-size: 14px !important;
+  }
+}
+
+/* 📱 Móviles grandes (481–767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .page-container {
+    padding: 40px 20px 18px 20px;
+  }
+
+  .grass-decoration {
+    height: 35px;
+  }
+
   .content-wrapper {
     grid-template-columns: 1fr;
     gap: 0;
@@ -379,122 +671,228 @@ export default {
 
   .main-content {
     width: 100%;
-    padding: 20px;
+    padding: 25px 20px;
   }
 
   .main-title {
+    margin-bottom: 18px;
+
     .title-part1 {
-      font-size: 40px;
-      padding: 6px 16px;
+      font-size: 42px;
+      padding: 7px 17px;
       border-radius: 10px;
+      margin-bottom: 8px;
     }
 
     .title-part2 {
-      font-size: 50px;
-      -webkit-text-stroke: 2.5px white;
-      text-stroke: 2.5px white;
+      font-size: 52px;
+      -webkit-text-stroke: 2.8px white;
+      text-shadow: 2.5px 2.5px 0px #f1b33f,
+                   3.5px 3.5px 0px #f1b33f;
+    }
+
+    .title-part3 {
+      font-size: 42px;
+      -webkit-text-stroke: 2.2px white;
+      text-shadow: 2.5px 2.5px 0px #8dba3f,
+                   3.5px 3.5px 0px #8dbb39;
+    }
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 25px;
+    padding: 16px 20px;
+    max-width: 45ch;
+    line-height: 1.65;
+  }
+
+  .video-container {
+    border-radius: 12px;
+  }
+
+  .video-player {
+    border: 9px solid #ffffff;
+    border-radius: 30px;
+  }
+
+  .bottom-section {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  .info-bar {
+    padding: 13px 18px;
+    font-size: 1em;
+    border-radius: 9px;
+  }
+
+  .info-text {
+    font-size: 16px;
+  }
+
+  .content-card-expanded {
+    padding: 22px;
+    gap: 22px;
+    border-radius: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 21px !important;
+    margin-bottom: 13px !important;
+  }
+
+  .video-desc-text {
+    font-size: 15px !important;
+    line-height: 1.6;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .fact-item {
+    padding: 13px;
+    gap: 13px;
+    border-radius: 11px;
+  }
+
+  .fact-mascot {
+    width: 62px !important;
+    height: 62px !important;
+  }
+
+  .fact-text {
+    font-size: 15px !important;
+    line-height: 1.55;
+  }
+}
+
+/* 📱 Móviles pequeños (<480px) */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 35px 16px 15px 16px;
+  }
+
+  .grass-decoration {
+    height: 30px;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .side-images {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 18px 15px;
+  }
+
+  .main-title {
+    margin-bottom: 16px;
+
+    .title-part1 {
+      font-size: 34px;
+      padding: 6px 14px;
+      border-radius: 9px;
+      margin-bottom: 7px;
+    }
+
+    .title-part2 {
+      font-size: 44px;
+      -webkit-text-stroke: 2.3px white;
       text-shadow: 2px 2px 0px #f1b33f,
                    3px 3px 0px #f1b33f;
     }
 
     .title-part3 {
-      font-size: 40px;
-      -webkit-text-stroke: 2px white;
-      text-stroke: 2px white;
+      font-size: 34px;
+      -webkit-text-stroke: 1.8px white;
       text-shadow: 2px 2px 0px #8dba3f,
                    3px 3px 0px #8dbb39;
     }
   }
 
-  .subtitle {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
-
   .description {
-    font-size: 15px;
-    margin-bottom: 25px;
-    padding: 15px 18px;
-    max-width: 40ch;
-
-    .highlight-1 {
-        font-weight: bold;
-        color: #8dba3f;
-    }
-
-    .highlight-2 {
-        font-weight: bold;
-        color: #70cdba;
-    }
+    font-size: 14px;
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    max-width: 38ch;
+    line-height: 1.6;
   }
 
-  .content-card-expanded {
-    padding: 20px;
-    gap: 20px;
-
-    .video-description-section {
-      .section-subtitle {
-        font-size: 20px;
-      }
-
-      .video-desc-text {
-        font-size: 14px;
-      }
-    }
-
-    .curious-facts-section {
-      .section-subtitle {
-        font-size: 20px;
-      }
-
-      .facts-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .fact-item {
-        padding: 12px;
-        gap: 12px;
-
-        .fact-mascot {
-          width: 60px;
-          height: 60px;
-        }
-
-        .fact-text {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-
-  /* Video adjustments */
   .video-container {
     border-radius: 10px;
   }
 
   .video-player {
-    border: 10px solid #ffffff;
-    border-radius: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 1.5em;
+    border: 7px solid #ffffff;
+    border-radius: 26px;
   }
 
-  .subtitle {
-    font-size: 1em;
+  .bottom-section {
+    width: 92%;
+    margin-top: 8px;
   }
 
-  .description {
-    font-size: 0.9em;
+  .info-bar {
+    padding: 11px 15px;
+    font-size: 0.95em;
+    border-radius: 8px;
+    margin-bottom: 16px;
   }
 
-  .video-player {
-    border: 8px solid #ffffff;
-    border-radius: 28px;
+  .info-text {
+    font-size: 14px;
+  }
+
+  .info-icon {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .content-card-expanded {
+    padding: 18px;
+    gap: 20px;
+    border-radius: 14px;
+  }
+
+  .section-subtitle {
+    font-size: 19px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .video-desc-text {
+    font-size: 13px !important;
+    line-height: 1.55;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .fact-item {
+    padding: 11px;
+    gap: 11px;
+    border-radius: 10px;
+  }
+
+  .fact-mascot {
+    width: 55px !important;
+    height: 55px !important;
+  }
+
+  .fact-text {
+    font-size: 13px !important;
+    line-height: 1.5;
   }
 }
 

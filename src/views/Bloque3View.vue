@@ -1638,28 +1638,71 @@ export default {
 
 /* 📱 Extra small mobile (max-width: 480px) */
 @media (max-width: 480px) {
+  .page-container {
+    padding: 30px 10px 15px 10px;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 15px 8px;
+  }
+
   .main-titleb3 {
-    font-size: 1.5em;
+    margin-bottom: 14px;
+
+    .title-part1 {
+      font-size: 30px;
+      padding: 5px 12px;
+    }
+
+    .title-part2 {
+      font-size: 38px;
+    }
+
+    .title-part3 {
+      font-size: 38px;
+    }
   }
 
   .description {
-    font-size: 0.9em;
+    font-size: 13px;
+    padding: 12px 14px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .video-player {
-    border: 8px solid #ffffff;
-    border-radius: 28px;
+  .map-instruction {
+    padding: 10px;
+    margin: 10px 5px;
   }
 
-  .recipe-button {
-    padding: 10px 15px;
-    font-size: 0.8em;
+  .map-instruction p {
+    font-size: 12px;
+  }
+
+  .map-section {
+    margin: 18px 5px;
+    padding: 12px 8px;
+  }
+
+  .map-container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 5px;
+  }
+
+  .map-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
   }
 
   .google-map {
-    width: 100%;
-    max-width: 300px;
-    height: 350px;
+    width: 95%;
+    max-width: 280px;
+    height: 330px;
+    margin: 0 auto;
   }
 
   .google-map > * {
@@ -1668,9 +1711,195 @@ export default {
     transform: none;
   }
 
+  .region-info {
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .region-header h3 {
+    font-size: 0.95em;
+    padding: 6px 10px;
+  }
+
+  .region-description {
+    font-size: 12px;
+  }
+
+  .recipe-button {
+    padding: 8px 11px;
+    font-size: 0.78em;
+  }
+
+  .age-group-buttons {
+    justify-content: center;
+    gap: 6px;
+    padding: 0 5px;
+  }
+
   .age-group-button {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+
+  .video-selector {
+    gap: 6px;
+    padding: 0 5px;
+  }
+
+  .video-selector button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .video-container {
+    margin: 0 5px;
+  }
+
+  .video-player {
+    border: 6px solid #ffffff;
+    border-radius: 24px;
+  }
+
+  .bottom-section {
+    width: 95%;
+    margin-top: 8px;
+  }
+
+  .info-bar {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  .info-text {
+    font-size: 13px;
+  }
+
+  .content-card {
+    padding: 16px 12px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+
+  .modal-content {
+    max-width: 96%;
+    width: 96%;
+    padding: 0.75rem;
+  }
+
+  .modal-header h2 {
+    font-size: 0.95rem;
+  }
+
+  .modal-section h3 {
+    font-size: 0.85rem;
+  }
+
+  .modal-section ul li,
+  .modal-section ol li {
+    font-size: 0.72rem;
+  }
+}
+
+/* 📱 Extra extra small mobile (max-width: 360px) - Para pantallas de 320px */
+@media (max-width: 360px) {
+  .page-container {
+    padding: 25px 8px 12px 8px;
+  }
+
+  .main-content {
+    padding: 12px 6px;
+  }
+
+  .main-titleb3 {
+    .title-part1 {
+      font-size: 28px;
+      padding: 4px 10px;
+    }
+
+    .title-part2 {
+      font-size: 34px;
+    }
+
+    .title-part3 {
+      font-size: 34px;
+    }
+  }
+
+  .description {
+    font-size: 12px;
+    padding: 10px 12px;
+    max-width: 95%;
+  }
+
+  .map-instruction {
+    padding: 8px;
+    margin: 8px 3px;
+  }
+
+  .map-instruction p {
+    font-size: 11px;
+  }
+
+  .map-section {
+    margin: 15px 3px;
+    padding: 10px 6px;
+  }
+
+  .map-container {
+    padding: 0 3px;
+  }
+
+  .google-map {
+    width: 98%;
+    max-width: 260px;
+    height: 300px;
+  }
+
+  .region-info {
+    padding: 0 8px;
+  }
+
+  .region-header h3 {
+    font-size: 0.9em;
+    padding: 5px 8px;
+  }
+
+  .region-description {
+    font-size: 11px;
+  }
+
+  .recipe-button {
+    padding: 7px 9px;
     font-size: 0.75em;
-    padding: 6px 12px;
+  }
+
+  .age-group-button {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+
+  .video-selector button {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .video-container {
+    margin: 0 3px;
+  }
+
+  .bottom-section {
+    width: 98%;
+  }
+
+  .info-text {
+    font-size: 12px;
+  }
+
+  .card-text {
+    font-size: 11px;
   }
 }
 
