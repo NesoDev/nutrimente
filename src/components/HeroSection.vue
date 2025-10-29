@@ -259,7 +259,7 @@ export default {
     .decorations {
         position: absolute;
         top: -20px;
-        width: 100%;
+        width: 90%;
         max-width: 1500px;
         left: 50%;
         transform: translateX(-50%);
