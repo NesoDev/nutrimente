@@ -36,32 +36,33 @@
                 </p>
             </div>
 
-            <div class="video-with-mascots">
-                <!-- Mascota izquierda -->
-                <img src="@/assets/two_animals_right.png" alt="Mascota" class="mascot-left desktop-only">
-
-                <div class="video-container">
-                    <div class="jaguar-navigation" @click="scrollToGuideSection">
-                        <img src="@/assets/jaguar_vamos.png" alt="Ir a Guía" class="jaguar-img">
-                    </div>
-                    <div class="video">
-                        <div class="video-wrapper">
-                            <video controls width="100%" height="auto" :poster="cloudinaryThumbnailUrl">
-                                <source :src="cloudinaryVideoUrl" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
-                        </div>
+            <div class="content-with-video">
+                <div class="highlight-phrase">
+                    <div class="phrase-content">
+                        <img src="@/assets/frase.png" alt="Cada pequeño cambio cuenta y puede marcar la diferencia en su futuro" class="phrase-image">
                     </div>
                 </div>
 
-                <!-- Mascota derecha -->
-                <img src="@/assets/two_animals_left.png" alt="Mascota" class="mascot-right desktop-only">
-            </div>
+                <div class="video-with-mascots">
+                    <!-- Mascota izquierda -->
+                    <!-- <img src="@/assets/two_animals_right.png" alt="Mascota" class="mascot-left desktop-only"> -->
 
+                    <div class="video-container">
+                        <!-- <div class="jaguar-navigation" @click="scrollToGuideSection">
+                            <img src="@/assets/jaguar_vamos.png" alt="Ir a Guía" class="jaguar-img">
+                        </div> -->
+                        <div class="video">
+                            <div class="video-wrapper">
+                                <video controls width="100%" height="auto" :poster="cloudinaryThumbnailUrl">
+                                    <source :src="cloudinaryVideoUrl" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="highlight-phrase">
-                <div class="phrase-content">
-                    <p>Cada pequeño cambio cuenta y puede marcar la diferencia en su futuro</p>
+                    <!-- Mascota derecha -->
+                    <!-- <img src="@/assets/two_animals_left.png" alt="Mascota" class="mascot-right desktop-only"> -->
                 </div>
             </div>
         </div>
@@ -187,14 +188,10 @@ export default {
 }
 
 .highlight-phrase {
-    padding: 20px 24px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #f6faf1 0%, #f9f9ef 100%);
-    border: 3px solid #f1b33f;
-    box-shadow: 0 6px 20px rgba(241, 179, 63, 0.3);
-    max-width: 100%;
-    margin: 0 auto;
-    width: 100%;
+    padding: 0;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 520px;
 
     .phrase-content {
         display: flex;
@@ -220,6 +217,14 @@ export default {
             color: #333333;
             white-space: nowrap;
         }
+
+        .phrase-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        }
     }
 }
 
@@ -240,8 +245,8 @@ export default {
 
 #container {
     position: relative;
-    width: 63%;
-    max-width: 1300px;
+    width: 85%;
+    max-width: 1650px;
     z-index: 99;
     display: flex;
     flex-direction: column;
@@ -367,17 +372,26 @@ export default {
         }
     }
 
+    .content-with-video {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        max-width: 1565px;
+        justify-content: space-between;
+    }
+
     .video-with-mascots {
         display: flex;
         align-items: center;
         gap: 60px;
-        width: 100%;
-        max-width: 1200px;
+        flex: 1;
+        max-width: 1063px;
         justify-content: center;
 
         .mascot-left,
         .mascot-right {
-            width: 100px;
+            width: 102px;
             height: auto;
             flex-shrink: 0;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
@@ -396,7 +410,7 @@ export default {
     .video-container {
         flex: 1;
         width: 100%;
-        max-width: 750px;
+        max-width: 1020px;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -412,8 +426,8 @@ export default {
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        border: 10px solid #ffffff;
-        border-radius: 40px;
+        border: 14px solid #ffffff;
+        border-radius: 43px;
         position: relative;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 
@@ -422,7 +436,7 @@ export default {
             height: 100%;
             object-fit: fill;
             overflow: hidden;
-            border-radius: 30px;
+            border-radius: 34px;
             position: relative;
             z-index: 5;
 
@@ -456,7 +470,7 @@ export default {
     margin-bottom: 0;
 
     .jaguar-img {
-        width: 120px;
+        width: 153px;
         height: auto;
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         animation: bounce 2s ease-in-out infinite;
@@ -473,8 +487,8 @@ export default {
 /* Large desktop (1440px+) */
 @media (min-width: 1441px) {
     #container {
-        width: 63%;
-        max-width: 1400px;
+        width: 85%;
+        max-width: 1750px;
 
         .decorations {
             max-width: 1600px;
@@ -490,17 +504,27 @@ export default {
             }
         }
 
+        .content-with-video {
+            max-width: 1665px;
+            gap: 50px;
+        }
+
+        .highlight-phrase {
+            max-width: 585px;
+        }
+
         .video-with-mascots {
             gap: 80px;
+            max-width: 1105px;
 
             .mascot-left,
             .mascot-right {
-                width: 110px;
+                width: 111px;
             }
         }
 
         .video-container {
-            max-width: 800px;
+            max-width: 1105px;
             margin-top: 60px;
         }
     }
@@ -509,7 +533,7 @@ export default {
 /* Standard laptop (1024px - 1440px) */
 @media (max-width: 1440px) {
     #container {
-        width: 61%;
+        width: 85%;
         gap: 32px;
 
         .decorations {
@@ -543,33 +567,28 @@ export default {
             }
         }
 
+        .content-with-video {
+            max-width: 1474px;
+            gap: 40px;
+        }
+
+        .highlight-phrase {
+            max-width: 494px;
+        }
+
         .video-with-mascots {
             gap: 50px;
+            max-width: 978px;
 
             .mascot-left,
             .mascot-right {
-                width: 90px;
+                width: 94px;
             }
         }
 
         .video-container {
-            max-width: 700px;
+            max-width: 935px;
             margin-top: 50px;
-        }
-    }
-
-    .highlight-phrase {
-        max-width: 650px;
-        padding: 18px 22px;
-
-        .phrase-content {
-            .phrase-mascot {
-                width: 55px;
-            }
-
-            p {
-                font-size: 17px;
-            }
         }
     }
 }
@@ -577,7 +596,7 @@ export default {
 /* Small laptop (1024px - 1280px) */
 @media (max-width: 1280px) {
     #container {
-        width: 63%;
+        width: 85%;
         gap: 28px;
 
         .decorations {
@@ -611,33 +630,28 @@ export default {
             }
         }
 
+        .content-with-video {
+            max-width: 1295px;
+            gap: 35px;
+        }
+
+        .highlight-phrase {
+            max-width: 455px;
+        }
+
         .video-with-mascots {
             gap: 45px;
+            max-width: 850px;
 
             .mascot-left,
             .mascot-right {
-                width: 80px;
+                width: 85px;
             }
         }
 
         .video-container {
-            max-width: 650px;
+            max-width: 808px;
             margin-top: 45px;
-        }
-    }
-
-    .highlight-phrase {
-        max-width: 600px;
-        padding: 16px 20px;
-
-        .phrase-content {
-            .phrase-mascot {
-                width: 50px;
-            }
-
-            p {
-                font-size: 16px;
-            }
         }
     }
 }
@@ -682,33 +696,30 @@ export default {
             }
         }
 
+        .content-with-video {
+            flex-direction: column;
+            gap: 30px;
+            max-width: 100%;
+        }
+
+        .highlight-phrase {
+            max-width: 585px;
+            width: 100%;
+        }
+
         .video-with-mascots {
             gap: 35px;
+            max-width: 100%;
 
             .mascot-left,
             .mascot-right {
-                width: 70px;
+                width: 77px;
             }
         }
 
         .video-container {
-            max-width: 600px;
+            max-width: 723px;
             margin-top: 40px;
-        }
-    }
-
-    .highlight-phrase {
-        max-width: 550px;
-        padding: 16px 18px;
-
-        .phrase-content {
-            .phrase-mascot {
-                width: 48px;
-            }
-
-            p {
-                font-size: 16px;
-            }
         }
     }
 }
@@ -801,6 +812,15 @@ export default {
             }
         }
 
+        .content-with-video {
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .highlight-phrase {
+            display: none;
+        }
+
         .video-with-mascots {
             flex-direction: column;
             gap: 0;
@@ -812,35 +832,23 @@ export default {
             }
         }
 
+        .video-container {
+            max-width: 595px;
+        }
+
         .video {
-            border: 10px solid #ffffff;
-            border-radius: 32px;
+            border: 12px solid #ffffff;
+            border-radius: 34px;
             max-width: 100%;
+
+            .video-wrapper {
+                border-radius: 27px;
+            }
         }
     }
 
     .jaguar-navigation {
         display: none;
-    }
-
-    .highlight-phrase {
-        max-width: 90%;
-        padding: 15px 18px;
-
-        .phrase-content {
-            gap: 12px;
-            justify-content: center;
-
-            .phrase-mascot {
-                width: 45px;
-            }
-
-            p {
-                font-size: 15px;
-                text-align: center;
-                white-space: normal;
-            }
-        }
     }
 
 }
@@ -881,31 +889,24 @@ export default {
             }
         }
 
+        .content-with-video {
+            gap: 20px;
+        }
+
+        .highlight-phrase {
+            display: none;
+        }
+
+        .video-container {
+            max-width: 468px;
+        }
+
         .video {
-            border: 8px solid #ffffff;
-            border-radius: 28px;
+            border: 10px solid #ffffff;
+            border-radius: 30px;
 
             .video-wrapper {
-                border-radius: 20px;
-            }
-        }
-    }
-
-    .highlight-phrase {
-        padding: 14px 16px;
-
-        .phrase-content {
-            gap: 10px;
-            justify-content: center;
-
-            .phrase-mascot {
-                width: 40px;
-            }
-
-            p {
-                font-size: 14px;
-                text-align: center;
-                white-space: normal;
+                border-radius: 24px;
             }
         }
     }
