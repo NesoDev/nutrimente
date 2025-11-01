@@ -76,9 +76,7 @@
       </h1>
 
       <p class="description">
-        En NutriMente, sabemos que una <span class="highlight-1">buena alimentación y el juego son clave para el desarrollo</span> de los niños.
-        Por eso, creamos una plataforma digital con <span class="highlight-2">recursos prácticos, confiables y validados por expertos</span>,
-        para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
+        La alimentación diaria es esencial para el desarrollo infantil. En NutriMente ofrecemos <span class="highlight-1">menús simples y económicos según edad y región (costa, sierra y selva)</span>, junto con <span class="highlight-2">juegos para la mesa que fortalecen el lenguaje, la atención y el vínculo familiar</span>, haciendo de la comida un momento lúdico y afectivo que fomenta hábitos saludables y la aceptación de nuevos alimentos.
       </p>
 
       <!-- Age group buttons -->

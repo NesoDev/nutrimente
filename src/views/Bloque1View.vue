@@ -51,7 +51,7 @@
     <section class="bottom-section">
       <div class="info-bar">
         <div class="info-text">
-          NutriMente pone a disposición juegos que estimulan el desarrollo de los niños.
+          Comiendo bien, crecerás mejor
         </div>
         <div class="info-icon" @click="toggleCard">
           <svg
@@ -72,9 +72,7 @@
           <div class="video-description-section">
             <h3 class="section-subtitle">Sobre este video</h3>
             <p class="video-desc-text">
-              En NutriMente, sabemos que una buena alimentación y el juego son clave para el desarrollo de los niños.
-              Por eso, creamos una plataforma digital con recursos prácticos, confiables y validados por expertos,
-              para ayudar a padres y cuidadores a mejorar la alimentación y el aprendizaje de sus hijos.
+              La alimentación en los primeros años moldea el cerebro y el aprendizaje, por eso aquí se explica qué nutrientes clave sostienen la atención y la memoria. Además, veremos cómo la anemia, saltarse el desayuno o abusar de ultraprocesados restan energía y rendimiento. Proponemos cambios simple, por ejemplo, qué incluir en el plato y cómo organizar las comidas. Esto con el fin de impulsar el ánimo, la concentración y el aprendizaje de tu hijo.
             </p>
           </div>
 
