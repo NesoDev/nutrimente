@@ -358,7 +358,7 @@ export default {
             padding: 12px 20px;
             border-radius: 8px;
             line-height: 1.7;
-            margin: 0 auto;
+            margin: 20px auto;
 
             #p-1 {
                 font-weight: bold;
@@ -415,7 +415,6 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 56px;
     }
 
     .video {
@@ -534,7 +533,6 @@ export default {
 
         .video-container {
             max-width: 805px;
-            margin-top: 30px;
         }
 
         .text {
@@ -553,7 +551,7 @@ export default {
             p {
                 font-size: 22px;
                 max-width: 1200px;
-                margin-top: 30px;
+                margin: 30px auto;
             }
         }
 
@@ -623,7 +621,6 @@ export default {
 
         .video-container {
             max-width: 935px;
-            margin-top: 50px;
         }
     }
 }
@@ -686,7 +683,6 @@ export default {
 
         .video-container {
             max-width: 808px;
-            margin-top: 45px;
         }
     }
 }
@@ -754,7 +750,6 @@ export default {
 
         .video-container {
             max-width: 723px;
-            margin-top: 40px;
         }
     }
 }
