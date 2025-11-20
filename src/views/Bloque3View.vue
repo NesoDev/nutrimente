@@ -1078,7 +1078,7 @@ export default {
    font-family: 'Work Sans', sans-serif;
   background:
               radial-gradient(circle, #f6faf1 3px, transparent 1px);
-  background-size: 25px 25px, auto;
+  background-size: 12px 12px, auto;
   width: 100%;
   max-width: 100vw;
   min-height: 100vh;
