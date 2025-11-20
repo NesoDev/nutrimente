@@ -833,17 +833,7 @@ export default {
     border-radius: 26px;
   }
 
-  .bottom-section {
-    width: 92%;
-    margin-top: 8px;
-  }
 
-  .info-bar {
-    padding: 11px 15px;
-    font-size: 0.95em;
-    border-radius: 8px;
-    margin-bottom: 16px;
-  }
 
   .info-text {
     font-size: 14px;
@@ -912,6 +902,7 @@ export default {
   font-family: "Work Sans", sans-serif;
   font-size: 1.2em;
   margin-bottom: 20px;
+  width: 90%;
 }
 
 .info-text {
@@ -920,6 +911,7 @@ export default {
   font-size: 18px;
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
+  width: 90%;
 }
 
 .info-icon {
@@ -954,6 +946,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 90%;
 }
 
 .video-description-section {

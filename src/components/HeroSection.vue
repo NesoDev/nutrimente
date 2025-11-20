@@ -132,7 +132,7 @@ export default {
     z-index: 100;
 
     img {
-        width: 132px;
+        width: 152px;
         height: auto;
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
         transition: transform 0.3s ease;
@@ -486,6 +486,13 @@ export default {
 
 /* Large desktop (1440px+) */
 @media (min-width: 1441px) {
+
+    .header-logo img {
+        width: 207px;
+    }
+
+    
+
     #container {
         width: 85%;
         max-width: 1750px;
@@ -503,6 +510,8 @@ export default {
                 width: 160px;
             }
         }
+
+        
 
         .content-with-video {
             max-width: 1665px;
@@ -524,10 +533,36 @@ export default {
         }
 
         .video-container {
-            max-width: 1105px;
-            margin-top: 60px;
+            max-width: 805px;
+            margin-top: 30px;
         }
+
+        .text {
+            .main-text {
+                h1 {
+                    #line-1 {
+                        font-size: 65px;
+                    }
+
+                    #line-2 {
+                        font-size: 89px;
+                    }
+                }
+            }
+
+            p {
+                font-size: 22px;
+                max-width: 1200px;
+                margin-top: 30px;
+            }
+        }
+
+        
     }
+
+    
+
+    
 }
 
 /* Standard laptop (1024px - 1440px) */
