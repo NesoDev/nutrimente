@@ -37,6 +37,61 @@
             Your browser does not support the video tag.
           </video>
         </div>
+
+        <!-- Info bar integrado en el contenido principal -->
+        <section class="bottom-section">
+          <div class="info-bar">
+            <div class="info-text">
+              Comiendo bien, crecerás mejor
+            </div>
+            <div class="info-icon" @click="toggleCard">
+              <svg
+                :class="{ 'rotated': showCard }"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <transition name="fade">
+            <div v-if="showCard" class="content-card-expanded">
+              <!-- Video Description -->
+              <div class="video-description-section">
+                <h3 class="section-subtitle">Sobre este video</h3>
+                <p class="video-desc-text">
+                  La alimentación en los primeros años moldea el cerebro y el aprendizaje, por eso aquí se explica qué nutrientes clave sostienen la atención y la memoria. Además, veremos cómo la anemia, saltarse el desayuno o abusar de ultraprocesados restan energía y rendimiento. Proponemos cambios simple, por ejemplo, qué incluir en el plato y cómo organizar las comidas. Esto con el fin de impulsar el ánimo, la concentración y el aprendizaje de tu hijo.
+                </p>
+              </div>
+
+              <!-- Curious Facts Section -->
+              <div class="curious-facts-section">
+                <h3 class="section-subtitle">¿Sabías que...?</h3>
+                <div class="facts-grid">
+                  <div class="fact-item">
+                    <img src="../assets/horse_finger.png" alt="Mascota" class="fact-mascot">
+                    <p class="fact-text">Al jugar con bloques, el niño se divierte y desarrolla exploración, relaciones, resolución y lógica.</p>
+                  </div>
+                  <div class="fact-item">
+                    <img src="../assets/animal2_finger.png" alt="Mascota" class="fact-mascot">
+                    <p class="fact-text">El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales para el aprendizaje y memoria.</p>
+                  </div>
+                  <div class="fact-item">
+                    <img src="../assets/jaguar.png" alt="Mascota" class="fact-mascot">
+                    <p class="fact-text">Los niños que tienen una mala dieta, tienen dificultades en la escuela, tanto en matemática como en aprendizaje verbal.</p>
+                  </div>
+                  <div class="fact-item">
+                    <img src="../assets/animal4_finger.png" alt="Mascota" class="fact-mascot">
+                    <p class="fact-text">La obesidad afecta directamente al desarrollo de tu hijo, generando problemas en la atención.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </section>
       </main>
 
       <!-- Right side images -->
@@ -48,60 +103,6 @@
         <img src="@/assets/bloque1/image10.png" alt="Decorative image 10" class="side-image">
       </div>
     </div>
-    <section class="bottom-section">
-      <div class="info-bar">
-        <div class="info-text">
-          Comiendo bien, crecerás mejor
-        </div>
-        <div class="info-icon" @click="toggleCard">
-          <svg
-            :class="{ 'rotated': showCard }"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-      <transition name="fade">
-        <div v-if="showCard" class="content-card-expanded">
-          <!-- Video Description -->
-          <div class="video-description-section">
-            <h3 class="section-subtitle">Sobre este video</h3>
-            <p class="video-desc-text">
-              La alimentación en los primeros años moldea el cerebro y el aprendizaje, por eso aquí se explica qué nutrientes clave sostienen la atención y la memoria. Además, veremos cómo la anemia, saltarse el desayuno o abusar de ultraprocesados restan energía y rendimiento. Proponemos cambios simple, por ejemplo, qué incluir en el plato y cómo organizar las comidas. Esto con el fin de impulsar el ánimo, la concentración y el aprendizaje de tu hijo.
-            </p>
-          </div>
-
-          <!-- Curious Facts Section -->
-          <div class="curious-facts-section">
-            <h3 class="section-subtitle">¿Sabías que...?</h3>
-            <div class="facts-grid">
-              <div class="fact-item">
-                <img src="../assets/horse_finger.png" alt="Mascota" class="fact-mascot">
-                <p class="fact-text">Al jugar con bloques, el niño se divierte y desarrolla exploración, relaciones, resolución y lógica.</p>
-              </div>
-              <div class="fact-item">
-                <img src="../assets/animal2_finger.png" alt="Mascota" class="fact-mascot">
-                <p class="fact-text">El hierro es vital para el desarrollo cognitivo, favorece conexiones cerebrales para el aprendizaje y memoria.</p>
-              </div>
-              <div class="fact-item">
-                <img src="../assets/jaguar.png" alt="Mascota" class="fact-mascot">
-                <p class="fact-text">Los niños que tienen una mala dieta, tienen dificultades en la escuela, tanto en matemática como en aprendizaje verbal.</p>
-              </div>
-              <div class="fact-item">
-                <img src="../assets/animal4_finger.png" alt="Mascota" class="fact-mascot">
-                <p class="fact-text">La obesidad afecta directamente al desarrollo de tu hijo, generando problemas en la atención.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-
-    </section>
   </div>
 </template>
 
@@ -378,8 +379,7 @@ export default {
   }
 
   .bottom-section {
-    width: 70%;
-    max-width: 1400px;
+    margin-top: 40px;
   }
 
   .info-bar {
@@ -462,8 +462,7 @@ export default {
   }
 
   .bottom-section {
-    width: 75%;
-    max-width: 1200px;
+    margin-top: 35px;
   }
 
   .info-text {
@@ -543,7 +542,7 @@ export default {
   }
 
   .bottom-section {
-    width: 80%;
+    margin-top: 30px;
   }
 
   .content-card-expanded {
@@ -603,7 +602,7 @@ export default {
   }
 
   .bottom-section {
-    width: 85%;
+    margin-top: 25px;
   }
 
   .info-bar {
@@ -715,8 +714,7 @@ export default {
   }
 
   .bottom-section {
-    width: 90%;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .info-bar {
@@ -886,9 +884,11 @@ export default {
 
 /* New styles for the bottom section */
 .bottom-section {
-  width: 80%;
-  max-width: 900px;
-  margin-top: 0px;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info-bar {
@@ -902,7 +902,8 @@ export default {
   font-family: "Work Sans", sans-serif;
   font-size: 1.2em;
   margin-bottom: 20px;
-  width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-text {
@@ -911,7 +912,6 @@ export default {
   font-size: 18px;
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
-  width: 90%;
 }
 
 .info-icon {
@@ -946,7 +946,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .video-description-section {

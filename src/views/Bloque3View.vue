@@ -159,6 +159,37 @@
           Your browser does not support the video tag.
         </video>
       </div>
+
+      <!-- Info bar integrado en el contenido principal -->
+      <section class="bottom-section">
+        <div class="info-bar">
+          <div class="info-text">
+            {{ videos[currentVideoIndex].title }}
+          </div>
+          <div class="info-icon" @click="toggleCard">
+            <svg
+              :class="{ 'rotated': showCard }"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <transition name="fade">
+          <div v-if="showCard" class="content-card" :class="{ 'reverse-layout': isImageLeft }">
+            <p class="card-text">
+              {{ displayCardText }}
+            </p>
+            <div class="card-image-container">
+              <img :src="currentAnimalImage" alt="Cartoon animal" class="card-image" />
+            </div>
+          </div>
+        </transition>
+      </section>
     </main>
 
     <!-- Right side images -->
@@ -170,37 +201,6 @@
       <img src="@/assets/bloque3/image10.png" alt="Decorative image 10" class="side-image">
     </div>
   </div>
-
-    <!-- Green + White Sections -->
-    <section class="bottom-section">
-      <div class="info-bar">
-        <div class="info-text">
-          {{ videos[currentVideoIndex].title }}
-        </div>
-        <div class="info-icon" @click="toggleCard">
-          <svg
-            :class="{ 'rotated': showCard }"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-      <transition name="fade">
-        <div v-if="showCard" class="content-card" :class="{ 'reverse-layout': isImageLeft }">
-          <p class="card-text">
-            {{ displayCardText }}
-          </p>
-          <div class="card-image-container">
-            <img :src="currentAnimalImage" alt="Cartoon animal" class="card-image" />
-          </div>
-        </div>
-      </transition>
-    </section>
   </div>
 </template>
 
@@ -1521,8 +1521,7 @@ export default {
 
   /* Bottom section (info bar and content card) */
   .bottom-section {
-    width: 90%;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   .info-bar {
@@ -1760,8 +1759,7 @@ export default {
   }
 
   .bottom-section {
-    width: 95%;
-    margin-top: 8px;
+    margin-top: 15px;
   }
 
   .info-bar {
@@ -1889,7 +1887,7 @@ export default {
   }
 
   .bottom-section {
-    width: 98%;
+    margin-top: 12px;
   }
 
   .info-text {
@@ -1905,9 +1903,11 @@ export default {
    BOTTOM SECTION STYLES (Info bar & Content card)
    ================================================================= */
 .bottom-section {
-  width: 80%;
-  max-width: 900px;
-  margin-top: 0px;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info-bar {
@@ -1918,9 +1918,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-   font-family: 'Work Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 1.2em;
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-text {
@@ -1963,6 +1965,8 @@ export default {
   display: flex;
   gap: 20px;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .content-card.reverse-layout {

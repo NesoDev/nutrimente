@@ -72,6 +72,37 @@
             Your browser does not support the video tag.
           </video>
         </div>
+
+        <!-- Info bar integrado en el contenido principal -->
+        <section class="bottom-section">
+          <div class="info-bar">
+            <div class="info-text">
+              {{ videos[currentCategory][currentVideoIndex].title }}
+            </div>
+            <div class="info-icon" @click="toggleCard">
+              <svg
+                :class="{ 'rotated': showCard }"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <transition name="fade">
+            <div v-if="showCard" class="content-card" :class="{ 'reverse-layout': isImageLeft }">
+              <p class="card-text">
+                {{ displayCardText }}
+              </p>
+              <div class="card-image-container">
+                <img :src="currentAnimalImage" alt="Cartoon animal" class="card-image" />
+              </div>
+            </div>
+          </transition>
+        </section>
       </main>
 
       <!-- Right side images -->
@@ -83,37 +114,6 @@
         <img src="@/assets/bloque2/image10.png" alt="Decorative image 10" class="side-image">
       </div>
     </div>
-
-    <!-- ✅ Green + White Sections -->
-    <section class="bottom-section">
-      <div class="info-bar">
-        <div class="info-text">
-          {{ videos[currentCategory][currentVideoIndex].title }}
-        </div>
-        <div class="info-icon" @click="toggleCard">
-          <svg
-            :class="{ 'rotated': showCard }"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-      <transition name="fade">
-        <div v-if="showCard" class="content-card" :class="{ 'reverse-layout': isImageLeft }">
-          <p class="card-text">
-            {{ displayCardText }}
-          </p>
-          <div class="card-image-container">
-            <img :src="currentAnimalImage" alt="Cartoon animal" class="card-image" />
-          </div>
-        </div>
-      </transition>
-    </section>
   </div>
 </template>
 
@@ -591,8 +591,7 @@ export default {
   }
 
   .bottom-section {
-    width: 70%;
-    max-width: 1400px;
+    margin-top: 40px;
   }
 
   .info-bar {
@@ -680,8 +679,7 @@ export default {
   }
 
   .bottom-section {
-    width: 75%;
-    max-width: 1200px;
+    margin-top: 35px;
   }
 
   .info-text {
@@ -767,7 +765,7 @@ export default {
   }
 
   .bottom-section {
-    width: 80%;
+    margin-top: 30px;
   }
 
   .content-card {
@@ -841,7 +839,7 @@ export default {
   }
 
   .bottom-section {
-    width: 85%;
+    margin-top: 25px;
   }
 
   .info-bar {
@@ -954,8 +952,7 @@ export default {
   }
 
   .bottom-section {
-    width: 90%;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .info-bar {
@@ -1070,8 +1067,7 @@ export default {
   }
 
   .bottom-section {
-    width: 92%;
-    margin-top: 8px;
+    margin-top: 15px;
   }
 
   .info-bar {
@@ -1110,9 +1106,11 @@ export default {
 
 /* New styles for the bottom section */
 .bottom-section {
-  width: 80%;
-  max-width: 900px;
-  margin-top: 0px;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info-bar {
@@ -1126,6 +1124,8 @@ export default {
   font-family: "Work Sans", sans-serif;
   font-size: 1.2em;
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-text {
@@ -1219,9 +1219,11 @@ export default {
 }
 
 .bottom-section {
-  width: 80%;
-  max-width: 900px;
-  margin-top: 0px;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info-bar {
@@ -1235,6 +1237,8 @@ export default {
   font-family: "Work Sans", sans-serif;
   font-size: 1.2em;
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-text {
