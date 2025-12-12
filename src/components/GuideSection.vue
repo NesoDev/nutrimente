@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <p class="bottom-text">
-                                Alimentando el futuro desde de los primeros años.
+                               Juegos que impulsan su desarrollo, paso a paso.
                             </p>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                             <p class="bottom-text">
-                                Alimentando el futuro desde de los primeros años.
+                                Menús y hábitos saludables
                             </p>
                         </div>
                     </div>
